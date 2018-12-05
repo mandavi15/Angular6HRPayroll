@@ -20,11 +20,18 @@ namespace Angular6HRPayroll.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult HRAreaPage()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Your HR Area page.";
+
+            return View();
+        }
+        public ActionResult Location()
+        {
+            ViewBag.Message = "Your Location page.";
 
             return View();
         }
     }
+
 }

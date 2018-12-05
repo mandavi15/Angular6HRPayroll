@@ -3,40 +3,234 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <title>HR Payroll</title>
+    
+    @*@Scripts.Render("~/bundles/modernizr")*@
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap-grid.min.css" rel="stylesheet" />
+    <link href="~/Content/css/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- Polyfill(s) for older browsers -->
+    <script src="/node_modules/core-js/client/shim.min.js"></script>
+    <script src="/node_modules/zone.js/dist/zone.js"></script>
+    <script src="/node_modules/systemjs/dist/system.src.js"></script>
+
+    <script src="/systemjs.config.js"></script>
+    <script>
+        System.import('app/main.js').catch(function (err) { console.error(err); });
+    </script>
+    <script>
+        $(window).load(function () {
+            //  alert("window load occurred!");
+            var color = window.localStorage.getItem('color-key');
+            // alert(color);
+            $('body').addClass(color);
+        });
+        $(document).ready(function () {
+            $(".spinner").click(function () {
+                $(".color-picker").toggleClass("color-spinner");
+            });
+
+            $('.red').click(function () {
+                $('body').removeClass().addClass('red');
+                localStorage.setItem('color-key', 'red');
+            });
+            $('.blue').click(function () {
+                $('body').removeClass().addClass('blue');
+                localStorage.setItem('color-key', 'blue');
+            });
+            $('.black').click(function () {
+                $('body').removeClass().addClass('black');
+                localStorage.setItem('color-key', 'black');
+            });
+            $('.orange').click(function () {
+                $('body').removeClass().addClass('orange');
+                localStorage.setItem('color-key', 'orange');
+            });
+            $('.purple').click(function () {
+                $('body').removeClass().addClass('purple');
+                localStorage.setItem('color-key', 'purple');
+            });
+            $('.royal-blue').click(function () {
+                $('body').removeClass().addClass('royal-blue');
+                localStorage.setItem('color-key', 'royal-blue');
+            });
+            $('.default-color').click(function () {
+                $('body').removeClass();
+                localStorage.removeItem('color-key', 'royal-blue');
+            });
+
+        });
+
+    </script>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    <div id="wrapper">
+        <div class="container-fluid">
+            <div class="color-picker">
+                <div class="color-box">
+                    <div class="default-color">Default theme</div>
+                    <span class="red"></span>
+                    <span class="royal-blue"></span>
+                    <span class="blue"></span>
+                    <span class="orange"></span>
+                    <span class="purple"></span>
+                    <span class="black"></span>
+                </div>
+                <span class="spinner"><i class="fa fa-cog  fa-2x fa-fw"></i></span>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
+            <div class="row">
+                <div class="col-8 col-sm-4 col-md-3 col-lg-2 templateBg navHeight p-0 mobileNav ms">
+                    <div class="icon active ">
+                        <div class="hamburger"></div>
+                    </div>
+
+                    <div class="smLogo"><img src="~/Content/images/sm-logo.png" alt="" /></div>
+                    <div class="navigation">
+                        <div class="scrollbar" id="scroll-style1">
+                            <nav class="navbar p-0">
+                                <ul class="navbar-nav">
+                                    <div class="dropdown">
+
+                                        <ul class="dropdown-menu show">
+                                            <li class="nav-item"><i class="fa fa-home arrow"></i>@Html.ActionLink("Home", "HRAreaPage", "Home", new { @class = "nav-link" })</li>
+                                            @*@Html.ActionLink("HRAreaPage", "HRAreaPage", "Home");*@
+                                            <li class="dropdown-submenu">
+                                                <a class="test nav-link" tabindex="-1" href="#" onclick="javascript: document.location.href='../Master/payrollAreapage.aspx'"><i class="fa fa-credit-card arrow" style="font-size:14px !important"></i>Payroll <i class="fa fa-caret-down" style=""></i> </a>
+                                                <ul class="dropdown-menu show">
+                                                    <li><a class="nav-link" tabindex="-1" href="../Master/setup.aspx#earn"><img src="~/Content/images/earning_icon.png" class="arrow" />Earnings</a></li>
+                                                    <li><a class="nav-link" tabindex="-1" href="#" onclick="$('#earn').trigger('click')"><img src="~/Content/images/deduction_icon.png" class="arrow" />Deductions</a></li>
+                                                    <li><a class="nav-link" tabindex="-1" href="../Master/setup.aspx#paySlab"><img src="~/Content/images/paySlab_icon.png" class="arrow" />Pay Slab</a></li>
+                                                    <li><a class="nav-link" tabindex="-1" href="../Master/paycycle.aspx"><i class="fa fa-money arrow"></i>Pay Cycle</a></li>
+                                                    <li><a class="nav-link" tabindex="-1" href="../Master/setup.aspx#payStructure"><img src="~/Content/images/payStructure_icon.png" class="arrow" />Pay Structure</a></li>
+                                                    <li><a class="nav-link" tabindex="-1" href="../Master/payday.aspx"><img src="~/Content/images/payday_icon.png" class="arrow" />Payday</a></li>
+                                                </ul>
+                                            </li>
+
+                                            <li class="dropdown-submenu">
+                                                <a class="test nav-link" tabindex="-1" href="#" onclick="javascript: document.location.href='../Master/HRareapage.aspx'"><i class="fa fa-user arrow"></i> Human Resources <i class="fa fa-caret-down" style=""></i></a>
+                                                <ul class="dropdown-menu show">
+                                                    <li><a class="nav-link" tabindex="-1" href="../Master/organizationList.aspx"><i class="fa fa-building arrow"></i>Company</a></li>
+                                                    <li><i class="fa fa-map-marker arrow"></i>@Html.ActionLink("Location", "Location", "Home")</li>
+                                                    <li><a class="nav-link" tabindex="-1" href="../Master/departmentList.aspx"><i class="fa fa-sitemap arrow"></i>Department</a></li>
+                                                    <li><a class="nav-link" tabindex="-1" href="../Master/designationList.aspx"><img src="~/Content/images/id-card_icon.png" class="arrow" />Designation</a></li>
+                                                    <li><a class="nav-link" tabindex="-1" href="../Master/skills.aspx"><img src="~/Content/images/skill_icon.png" class="arrow" />Skills</a></li>
+                                                    <li><a class="nav-link" tabindex="-1" href="../Master/employeeList.aspx"><i class="fa fa-user arrow"></i>Employee</a></li>
+                                                    <li class="dropdown-submenu">
+                                                        <a class="test nav-link" href="#"><img src="~/Content/images/recruitment_icon.png" class="arrow" />Recruitment <i class="fa fa-caret-down" style=""></i></a>
+                                                        <ul class="dropdown-menu show">
+                                                            <li><a class="nav-link" href="../Master/requisitionList.aspx#requisition"><img src="~/Content/images/id-card_icon.png" class="arrow" />Requisition</a></li>
+                                                            <li><a class="nav-link" href="../Master/requisitionList.aspx#applicants"><i class="fa fa-user arrow"></i>Applicants</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a class="nav-link" tabindex="-1" href="../Master/leaveType.aspx"><img src="~/Content/images/leave_management-icon.png" class="arrow" />Leave Type</a></li>
+                                                    <li><a class="nav-link" tabindex="-1" href="../Master/errorPage.aspx"><i class="fa fa-users arrow"></i>Team</a></li>
+                                                    <li><a class="nav-link" tabindex="-1" href="../Master/errorPage.aspx"><img src="~/Content/images/approval_icon.png" class="arrow" />Approval Process</a></li>
+                                                    <li><a class="nav-link" tabindex="-1" href="../Master/errorPage.aspx"><img src="~/Content/images/appraisal_icon.png" class="arrow" />Appraisal</a></li>
+                                                    <li><a class="nav-link" tabindex="-1" href="../Master/errorPage.aspx"><img src="~/Content/images/request_icon.png" class="arrow" />Employee Request</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <li class="nav-item"> <a class="nav-link" href="#"><img src="~/Content/images/arrow-list.png" alt="arrow" class="arrow" />Purchase</a> </li>
+                                    <li class="nav-item"> <a class="nav-link" href="#"><img src="~/Content/images/arrow-list.png" alt="arrow" class="arrow" />Sale</a> </li>
+                                    <li class="nav-item"> <a class="nav-link" href="ledger-calenders.html"><img src="~/Content/images/arrow-list.png" alt="arrow" class="arrow" />General Ledger</a> </li>
+                                    <li class="nav-item"> <a class="nav-link" href="#"><img src="~/Content/images/arrow-list.png" alt="arrow" class="arrow" />Inventory</a> </li>
+                                    <li class="nav-item"> <a class="nav-link" href="#"><img src="~/Content/images/arrow-list.png" alt="arrow" class="arrow" />Production</a> </li>
+
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    @Html.ActionLink("HRAreaPage", "HRAreaPage", "Home");
+                </div>
+                @*<div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        </div>*@
+                @*<div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("About", "About", "Home")</li>
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                <li>@Html.ActionLink("Service", "Service", "Home")</li>
+                <li>@Html.ActionLink("Sales", "Sales", "Home")</li>
+            </ul>
+        </div>*@
+
+
+                <div class="col-12 col-sm-12 col-md-9 col-lg-10 p-0" id="full-content">
+                    <div class="topNav clearfix">
+                        <div class="show pull-right infoCon">
+                            <div class="headListing">
+                                <div id="notification" class="pr-2">
+                                    <span class="p1 fa-stack fa-1x has-badge" data-count="4">
+                                        <i class="p3 fa fa-bell fa-stack-1x xfa-inverse" data-count="4b"></i>
+                                    </span>
+                                </div>
+                                <div class="form-group flag">
+                                    <div class="drop-down">
+                                        <select name="options" id="ddlMCountry">
+                                            <option value="EN">EN</option>
+                                            <option value="HI">HI</option>
+                                            <option value="MR">MR</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="drop-down">
+                                        <select class="form-control" id="company" name="company">
+                                            <option>Company Name</option>
+                                            <option>Company 1</option>
+                                            <option>Company 2</option>
+                                            <option>Company 3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="profileDropdown">
+                                <div class="dropdown">
+                                    <div class="dropbtn profileCon"><img src="~/Content/images/profile-img1.png" alt="profile" /></div>
+                                    <a data-toggle="dropdown" href="#" class="dropdown-toggle no-padding dms-blue">
+                                        <span class="user-info"> Welcome User</span>
+                                    </a>
+                                    <input type="button" onclick="myFunction()" class="dropbtn hidebtn" />
+                                    <div id="myDropdown" class="dropdown-content">
+                                        <a href="#" onclick="changePwdPopUp()"><i class="logoutdiv ace-icon fa fa-key" aria-hidden="true"></i><span class="logoutcolor">Change Password</span> </a>
+                                        <a href="#" onclick="Logout()"><i class="logoutdiv ace-icon fa fa-power-off"></i><span class="logoutcolor">Logout</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @RenderBody()
+                </div>
+                
+            </div>
+            
+            <div class="container body-content">
+
+
+                <footer>
+                    <div class="pull-left copyRight">
+                        <p>Enterprise Resource Planning Application ©2018</p>
+                    </div>
+                    <div class="pull-right companyLogos">
+                        <img src="~/Content/images/AMY-logo.png" alt="AMY Softech" class="comlogo" />
+                        <img src="~/Content/images/iace-logo.png" alt="IACE" />
+                        <img src="~/Content/images/Yoeki-logo.png" alt="Yoeki" />
+                    </div>
+                </footer>
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+        @Scripts.Render("~/bundles/jquery")
+        @*@Scripts.Render("~/bundles/bootstrap")*@
+        @RenderSection("scripts", required: false)
 </body>
 </html>

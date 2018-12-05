@@ -103,7 +103,7 @@
                                                     <li><a class="nav-link" tabindex="-1" href="../Master/setup.aspx#paySlab"><img src="~/Content/images/paySlab_icon.png" class="arrow" />Pay Slab</a></li>
                                                     <li><a class="nav-link" tabindex="-1" href="../Master/paycycle.aspx"><i class="fa fa-money arrow"></i>Pay Cycle</a></li>
                                                     <li><a class="nav-link" tabindex="-1" href="../Master/setup.aspx#payStructure"><img src="~/Content/images/payStructure_icon.png" class="arrow" />Pay Structure</a></li>
-                                                    <li><a class="nav-link" tabindex="-1" href="../Master/payday.aspx"><img src="~/Content/images/payday_icon.png" class="arrow" />Payday</a></li>
+                                                    <li><img src="~/Content/images/payday_icon.png" class="arrow" />@Html.ActionLink("Payday", "Payday", "Home", new { @class = "nav-link" })</li>
                                                 </ul>
                                             </li>
 
@@ -112,10 +112,10 @@
                                                 <ul class="dropdown-menu show">
                                                     <li><a class="nav-link" tabindex="-1" href="../Master/organizationList.aspx"><i class="fa fa-building arrow"></i>Company</a></li>
                                                     <li><i class="fa fa-map-marker arrow"></i>@Html.ActionLink("Location", "Location", "Home", new { @class = "nav-link" })</li>
-                                                    <li><a class="nav-link" tabindex="-1" href="../Master/departmentList.aspx"><i class="fa fa-sitemap arrow"></i>Department</a></li>
-                                                    <li><a class="nav-link" tabindex="-1" href="../Master/designationList.aspx"><img src="~/Content/images/id-card_icon.png" class="arrow" />Designation</a></li>
-                                                    <li><a class="nav-link" tabindex="-1" href="../Master/skills.aspx"><img src="~/Content/images/skill_icon.png" class="arrow" />Skills</a></li>
-                                                    <li><a class="nav-link" tabindex="-1" href="../Master/employeeList.aspx"><i class="fa fa-user arrow"></i>Employee</a></li>
+                                                    <li><i class="fa fa-sitemap arrow"></i>@Html.ActionLink("Department", "Department", "Home", new { @class = "nav-link" })</li>
+                                                    <li><img src="~/Content/images/id-card_icon.png" class="arrow" />@Html.ActionLink("Designation", "Designation", "Home", new { @class = "nav-link" })</li>
+                                                    <li><img src="~/Content/images/skill_icon.png" class="arrow" />@Html.ActionLink("Skills", "Skills", "Home", new { @class = "nav-link" })</li>
+                                                    <li><i class="fa fa-user arrow"></i>@Html.ActionLink("Employee", "Employee", "Home", new { @class = "nav-link" })</li>
                                                     <li class="dropdown-submenu">
                                                         <a class="test nav-link" href="#"><img src="~/Content/images/recruitment_icon.png" class="arrow" />Recruitment <i class="fa fa-caret-down" style=""></i></a>
                                                         <ul class="dropdown-menu show">
@@ -123,7 +123,7 @@
                                                             <li><a class="nav-link" href="../Master/requisitionList.aspx#applicants"><i class="fa fa-user arrow"></i>Applicants</a></li>
                                                         </ul>
                                                     </li>
-                                                    <li><a class="nav-link" tabindex="-1" href="../Master/leaveType.aspx"><img src="~/Content/images/leave_management-icon.png" class="arrow" />Leave Type</a></li>
+                                                    <li><img src="~/Content/images/leave_management-icon.png" class="arrow" />@Html.ActionLink("Leave Type", "LeaveType", "Home", new { @class = "nav-link" })</li>
                                                     <li><a class="nav-link" tabindex="-1" href="../Master/errorPage.aspx"><i class="fa fa-users arrow"></i>Team</a></li>
                                                     <li><a class="nav-link" tabindex="-1" href="../Master/errorPage.aspx"><img src="~/Content/images/approval_icon.png" class="arrow" />Approval Process</a></li>
                                                     <li><a class="nav-link" tabindex="-1" href="../Master/errorPage.aspx"><img src="~/Content/images/appraisal_icon.png" class="arrow" />Appraisal</a></li>
@@ -143,7 +143,7 @@
                             </nav>
                         </div>
                     </div>
-                    @Html.ActionLink("HRAreaPage", "HRAreaPage", "Home");
+                    @*@Html.ActionLink("HRAreaPage", "HRAreaPage", "Home");*@
                 </div>
                 @*<div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">

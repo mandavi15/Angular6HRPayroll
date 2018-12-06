@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HR Payroll</title>
-    
+
     @*@Scripts.Render("~/bundles/modernizr")*@
     <link href="~/Content/css/style.css" rel="stylesheet" />
     <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
@@ -14,52 +14,113 @@
     <script src="/node_modules/core-js/client/shim.min.js"></script>
     <script src="/node_modules/zone.js/dist/zone.js"></script>
     <script src="/node_modules/systemjs/dist/system.src.js"></script>
+    <script src="~/Content/js/jquery-1.11.3.min.js"></script>
+    <script>var jquery_1_11_3_min_p = jQuery.noConflict();</script>
+    <script src="~/Content/js/jquery-2.2.3.min.js"></script>
+    <script>var jquery_2_2_3_min_p = jQuery.noConflict();</script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script>var bootstrap_min_js = jQuery.noConflict();</script>
+    <script src="~/Content/js/script.js"></script>
+
 
     <script src="/systemjs.config.js"></script>
     <script>
         System.import('app/main.js').catch(function (err) { console.error(err); });
     </script>
     <script>
-        $(window).load(function () {
+        jquery_1_11_3_min_p(window).load(function () {
             //  alert("window load occurred!");
             var color = window.localStorage.getItem('color-key');
             // alert(color);
-            $('body').addClass(color);
+            jquery_1_11_3_min_p('body').addClass(color);
         });
-        $(document).ready(function () {
-            $(".spinner").click(function () {
-                $(".color-picker").toggleClass("color-spinner");
+        jquery_1_11_3_min_p(document).ready(function () {
+            jquery_1_11_3_min_p(".spinner").click(function () {
+                jquery_1_11_3_min_p(".color-picker").toggleClass("color-spinner");
             });
 
-            $('.red').click(function () {
-                $('body').removeClass().addClass('red');
+            jquery_1_11_3_min_p('.red').click(function () {
+                jquery_1_11_3_min_p('body').removeClass().addClass('red');
                 localStorage.setItem('color-key', 'red');
             });
-            $('.blue').click(function () {
-                $('body').removeClass().addClass('blue');
+            jquery_1_11_3_min_p('.blue').click(function () {
+                jquery_1_11_3_min_p('body').removeClass().addClass('blue');
                 localStorage.setItem('color-key', 'blue');
             });
-            $('.black').click(function () {
-                $('body').removeClass().addClass('black');
+            jquery_1_11_3_min_p('.black').click(function () {
+                jquery_1_11_3_min_p('body').removeClass().addClass('black');
                 localStorage.setItem('color-key', 'black');
             });
-            $('.orange').click(function () {
-                $('body').removeClass().addClass('orange');
+            jquery_1_11_3_min_p('.orange').click(function () {
+                jquery_1_11_3_min_p('body').removeClass().addClass('orange');
                 localStorage.setItem('color-key', 'orange');
             });
-            $('.purple').click(function () {
-                $('body').removeClass().addClass('purple');
+            jquery_1_11_3_min_p('.purple').click(function () {
+                jquery_1_11_3_min_p('body').removeClass().addClass('purple');
                 localStorage.setItem('color-key', 'purple');
             });
-            $('.royal-blue').click(function () {
-                $('body').removeClass().addClass('royal-blue');
+            jquery_1_11_3_min_p('.royal-blue').click(function () {
+                jquery_1_11_3_min_p('body').removeClass().addClass('royal-blue');
                 localStorage.setItem('color-key', 'royal-blue');
             });
-            $('.default-color').click(function () {
-                $('body').removeClass();
+            jquery_1_11_3_min_p('.default-color').click(function () {
+                jquery_1_11_3_min_p('body').removeClass();
                 localStorage.removeItem('color-key', 'royal-blue');
             });
 
+        });
+
+    </script>
+    <script>
+        bootstrap_min_js(document).ready(function () {
+
+
+            jquery_1_11_3_min_p("#close").click(function () {
+
+                bootstrap_min_js("#savePopup").dialog('close');
+            });
+            jquery_1_11_3_min_p("#no").click(function () {
+
+                bootstrap_min_js("#deletePopup").dialog('close');
+            });
+
+            jquery_1_11_3_min_p("#close1").click(function () {
+
+                bootstrap_min_js("#savePopup").dialog('close');
+            });
+
+            jquery_1_11_3_min_p(".icon").click(function () {
+                jquery_1_11_3_min_p(".templateBg").removeClass("ms");
+                jquery_1_11_3_min_p(".icon").toggleClass("active");
+                jquery_1_11_3_min_p(".templateBg").toggleClass("sidemenu");
+
+
+                jquery_1_11_3_min_p("#full-content").toggleClass('col-md-12 col-lg-12 ');
+                //            jquery_1_11_3_min_p("#full-content").toggleClass('col-12 col-12');
+            });
+
+
+        })
+
+    </script>
+    <script>
+
+        jquery_1_11_3_min_p(document).ready(function () {
+
+            jquery_1_11_3_min_p('.dropdown-submenu a.test').on("click", function (e) {
+                jquery_1_11_3_min_p(this).next('ul').toggle();
+                e.stopPropagation();
+                e.preventDefault();
+            });
+            jquery_1_11_3_min_p('.vendorGrid tbody').on('click', 'tr', function () {
+
+
+                jquery_1_11_3_min_p(this).toggleClass("selected");
+                //                 var dad = jquery_1_11_3_min_p(this).parent().parent();
+                //                 dad.find('label').show();
+                //                 dad.find('input[type="text"]').hide();
+
+            });
         });
 
     </script>
@@ -103,19 +164,19 @@
                                                     <li><a class="nav-link" tabindex="-1" href="../Master/setup.aspx#paySlab"><img src="~/Content/images/paySlab_icon.png" class="arrow" />Pay Slab</a></li>
                                                     <li><a class="nav-link" tabindex="-1" href="../Master/paycycle.aspx"><i class="fa fa-money arrow"></i>Pay Cycle</a></li>
                                                     <li><a class="nav-link" tabindex="-1" href="../Master/setup.aspx#payStructure"><img src="~/Content/images/payStructure_icon.png" class="arrow" />Pay Structure</a></li>
-                                                    <li><img src="~/Content/images/payday_icon.png" class="arrow" />@Html.ActionLink("Payday", "Payday", "Home", new { @class = "nav-link" })</li>
+                                                    <li><img src="~/Content/images/payday_icon.png" class="arrow" />@Html.ActionLink("Payday", "Payday", "Home")</li>
                                                 </ul>
                                             </li>
 
                                             <li class="dropdown-submenu">
-                                                <a class="test nav-link" tabindex="-1" href="#" onclick="javascript: document.location.href='../Master/HRareapage.aspx'"><i class="fa fa-user arrow"></i> Human Resources <i class="fa fa-caret-down" style=""></i></a>
+                                                <a class="test nav-link"><i class="fa fa-user arrow"></i>@Html.ActionLink("Human Resources", "HRAreaPage", "Home")  <i class="fa fa-caret-down" style=""></i></a>
                                                 <ul class="dropdown-menu show">
-                                                    <li><a class="nav-link" tabindex="-1" href="../Master/organizationList.aspx"><i class="fa fa-building arrow"></i>Company</a></li>
-                                                    <li><i class="fa fa-map-marker arrow"></i>@Html.ActionLink("Location", "Location", "Home", new { @class = "nav-link" })</li>
-                                                    <li><i class="fa fa-sitemap arrow"></i>@Html.ActionLink("Department", "Department", "Home", new { @class = "nav-link" })</li>
-                                                    <li><img src="~/Content/images/id-card_icon.png" class="arrow" />@Html.ActionLink("Designation", "Designation", "Home", new { @class = "nav-link" })</li>
-                                                    <li><img src="~/Content/images/skill_icon.png" class="arrow" />@Html.ActionLink("Skills", "Skills", "Home", new { @class = "nav-link" })</li>
-                                                    <li><i class="fa fa-user arrow"></i>@Html.ActionLink("Employee", "Employee", "Home", new { @class = "nav-link" })</li>
+                                                    <li><i class="fa fa-building arrow"></i>@Html.ActionLink("Company", "Location", "Home")</li>
+                                                    <li><i class="fa fa-map-marker arrow"></i>@Html.ActionLink("Location", "Location", "Home")</li>
+                                                    <li><i class="fa fa-sitemap arrow"></i>@Html.ActionLink("Department", "Department", "Home")</li>
+                                                    <li><img src="~/Content/images/id-card_icon.png" class="arrow" />@Html.ActionLink("Designation", "Designation", "Home")</li>
+                                                    <li><img src="~/Content/images/skill_icon.png" class="arrow" />@Html.ActionLink("Skills", "Skills", "Home")</li>
+                                                    <li><i class="fa fa-user arrow"></i>@Html.ActionLink("Employee", "Employee", "Home")</li>
                                                     <li class="dropdown-submenu">
                                                         <a class="test nav-link" href="#"><img src="~/Content/images/recruitment_icon.png" class="arrow" />Recruitment <i class="fa fa-caret-down" style=""></i></a>
                                                         <ul class="dropdown-menu show">

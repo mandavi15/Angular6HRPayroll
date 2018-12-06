@@ -26,7 +26,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -318,6 +318,18 @@
     <Content Include="Content\images\vendor-icon.png" />
     <Content Include="Content\images\view-icon.png" />
     <Content Include="Content\images\Yoeki-logo.png" />
+    <Content Include="Content\js\bootstrap.min.js" />
+    <Content Include="Content\js\daterangepicker.min.js" />
+    <Content Include="Content\js\jquery-1.11.3.min.js" />
+    <Content Include="Content\js\jquery-2.2.3.min.js" />
+    <Content Include="Content\js\jquery-ui.js" />
+    <Content Include="Content\js\jquery-ui.min.js" />
+    <Content Include="Content\js\jquery.js" />
+    <Content Include="Content\js\mdtimepicker.js" />
+    <Content Include="Content\js\mdtimepicker.min.js" />
+    <Content Include="Content\js\moment.min.js" />
+    <Content Include="Content\js\multiselect.js" />
+    <Content Include="Content\js\script.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -331,6 +343,7 @@
     <Content Include="Content\css\font-awesome\4.5.0\fonts\fontawesome-webfont.woff2" />
     <Content Include="Content\css\vssver.scc" />
     <Content Include="Content\images\vssver.scc" />
+    <Content Include="Content\js\vssver.scc" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

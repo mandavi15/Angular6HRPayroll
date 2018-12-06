@@ -19,9 +19,10 @@ namespace Angular6HRPayroll.Controllers
 
             return View();
         }
-        public ActionResult Login2()
+   
+        public ActionResult ForgetPassword()
         {
-            ViewBag.Message = "Your Login page";
+            ViewBag.Message = "Your Registration page";
 
             return View();
         }

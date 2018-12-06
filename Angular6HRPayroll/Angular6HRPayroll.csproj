@@ -377,7 +377,7 @@
     <Content Include="Views\Home\HRAreaPage.cshtml" />
     <Content Include="Views\Home\Location.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
-    <Content Include="Views\Login\Login2.cshtml" />
+    <Content Include="Views\Login\ForgetPassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

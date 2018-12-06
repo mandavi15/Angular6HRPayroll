@@ -71,6 +71,59 @@
         });
 
     </script>
+    <script>
+        bootstrap_min_js(document).ready(function () {
+
+
+            jquery_1_11_3_min_p("#close").click(function () {
+
+                bootstrap_min_js("#savePopup").dialog('close');
+            });
+            jquery_1_11_3_min_p("#no").click(function () {
+
+                bootstrap_min_js("#deletePopup").dialog('close');
+            });
+
+            jquery_1_11_3_min_p("#close1").click(function () {
+
+                bootstrap_min_js("#savePopup").dialog('close');
+            });
+
+            jquery_1_11_3_min_p(".icon").click(function () {
+                jquery_1_11_3_min_p(".templateBg").removeClass("ms");
+                jquery_1_11_3_min_p(".icon").toggleClass("active");
+                jquery_1_11_3_min_p(".templateBg").toggleClass("sidemenu");
+
+
+                jquery_1_11_3_min_p("#full-content").toggleClass('col-md-12 col-lg-12 ');
+                //            jquery_1_11_3_min_p("#full-content").toggleClass('col-12 col-12');
+            });
+
+
+        })
+
+    </script>
+    <script>
+
+        jquery_1_11_3_min_p(document).ready(function () {
+
+            jquery_1_11_3_min_p('.dropdown-submenu a.test').on("click", function (e) {
+                jquery_1_11_3_min_p(this).next('ul').toggle();
+                e.stopPropagation();
+                e.preventDefault();
+            });
+            jquery_1_11_3_min_p('.vendorGrid tbody').on('click', 'tr', function () {
+
+
+                jquery_1_11_3_min_p(this).toggleClass("selected");
+                //                 var dad = jquery_1_11_3_min_p(this).parent().parent();
+                //                 dad.find('label').show();
+                //                 dad.find('input[type="text"]').hide();
+
+            });
+        });
+
+    </script>
 </head>
 <body>
     <div id="wrapper">

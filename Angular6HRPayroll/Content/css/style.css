@@ -500,11 +500,15 @@ p{font-size: 0.6875rem !important;}
 thead>tr>th, tbody>tr>td{ font-size:0.6875rem !important}
 #wrapper{ width:100%; background:#f5f5f5; min-height: 650px; position: fixed;}
 .logo{ padding-bottom:3px; margin-top:2%}
-.logBox{position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
+.logBox{position: absolute !important; top: 50%; left: 50%; transform: translate(-50%,-50%);}
 .mainCon{ width:100%; /*height:540px; overflow:hidden; */background:#f5f5f4;}
 .mainCon .leftCon{ float:left; background:url(../images/leftCon-bg.jpg) repeat-y; background-size:100% 100%; padding:11% 3% 30%; box-sizing: border-box;}
 .mainCon .rightCon{ float:left; background:#f5f5f4; margin-top:1px; padding:0}
-.mainCon .leftCon h1, h2, h6{ color:#fff; font-weight:400; padding-bottom:15px}
+    .mainCon .leftCon h1, h2, h6 {
+        color: #fff !important;
+        font-weight: 400;
+        padding-bottom: 15px
+    }
 .mainCon .rightCon h6, .mainCon .resetCon h6{ color:#3e3e3e; font-weight:600; border-bottom:1px solid #b7b7b6; padding: 3% 7%; font-size: 1rem; margin-bottom:0}
 .mainCon .resetCon{background:#f5f5f4; margin-top:1px; padding:0}
 .plainCon h6{font-size:1rem; line-height:1.2; text-align:center; color:#1f4c50; text-transform:uppercase; text-decoration:underline; font-weight:600}
@@ -1587,10 +1591,9 @@ span.localizationIcon { width: 64px; border-radius: 50%; margin: 0 auto; height:
 #employeeDiv .posting a.nav-link { padding: 14px 0;}
 .lblchk{ text-decoration:underline}
 .DivDesc{ width:96% !important}
-
-@media (min-width:1366px)
-{
-.companySelect { display: inline-block; width: 48%;}
+.modal-header .close { color: #fff !important}
+@media (min-width:1366px) {
+    .companySelect { display: inline-block; width: 48%;}
 }
 @media (min-width:1200px)
 {

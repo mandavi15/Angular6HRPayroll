@@ -3,7 +3,71 @@
     ViewBag.Title = "Location";
 }
 
-<div class="container-fluid gridBody">
+<html>
+<head>
+    <script src="https://unpkg.com/ag-grid-community/dist/ag-grid-community.min.noStyle.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-grid.css">
+    <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-theme-balham.css">
+</head>
+<body>
+    <h1>Location</h1>
+
+    <div id="myGrid" style="height: 300px;width:1300px;" class="ag-theme-balham"></div>
+
+    <script type="text/javascript" charset="utf-8">
+        // specify the columns
+        var columnDefs = [
+            { headerName: "Make", field: "make" },
+            { headerName: "Model", field: "model" },
+            { headerName: "Price", field: "price" },
+            { headerName: "GST", field: "GST" },
+            { headerName: "State", field: "State" },
+            { headerName: "pincode", field: "pincode" }
+        ];
+
+        // specify the data
+        var rowData = [
+            { make: "Toyota", model: "Celica", price: 35000, GST: "18%", State: "up", pincode: "201001" },
+            { make: "Ford", model: "Mondeo", price: 32000, GST: "18%", State: "uk", pincode: "201001" },
+            { make: "Porsche", model: "Boxter", price: 72000, GST: "18%", State: "hr", pincode: "201001" },
+            { make: "Porsche", model: "Boxter", price: 72000, GST: "18%", State: "jk", pincode: "201001" },
+             { make: "Toyota", model: "Celica", price: 35000, GST: "18%", State: "up", pincode: "201001" },
+            { make: "Ford", model: "Mondeo", price: 32000, GST: "18%", State: "uk", pincode: "201001" },
+            { make: "Porsche", model: "Boxter", price: 72000, GST: "18%", State: "hr", pincode: "201001" },
+            { make: "Porsche", model: "Boxter", price: 72000, GST: "18%", State: "jk", pincode: "201001" }
+        ];
+
+        // let the grid know which columns and what data to use
+        var gridOptions = {
+            columnDefs: columnDefs,
+            rowData: rowData,
+            enableSorting: true
+        };
+
+        // lookup the container we want the Grid to use
+        var eGridDiv = document.querySelector('#myGrid');
+
+        // create the grid passing in the div to use together with the columns & data we want to use
+        new agGrid.Grid(eGridDiv, gridOptions);
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<div class="container-fluid gridBody">
 
     <div class="buttonCon pull-right">
 
@@ -109,5 +173,5 @@
         <button type="button" class="btn templateBg" id="btnDelete" data-toggle="modal" data-target="#deletePopup"><img src="~/Content/images/delete-icon.png" alt="delete" />Delete</button>
 
     </div>
-</div>
+</div>*@
 

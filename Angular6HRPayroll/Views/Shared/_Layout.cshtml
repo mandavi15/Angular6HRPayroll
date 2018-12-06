@@ -14,49 +14,57 @@
     <script src="/node_modules/core-js/client/shim.min.js"></script>
     <script src="/node_modules/zone.js/dist/zone.js"></script>
     <script src="/node_modules/systemjs/dist/system.src.js"></script>
+    <script src="~/Content/js/jquery-1.11.3.min.js"></script>
+    <script>var jquery_1_11_3_min_p = jQuery.noConflict();</script>
+    <script src="~/Content/js/jquery-2.2.3.min.js"></script>
+    <script>var jquery_2_2_3_min_p = jQuery.noConflict();</script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script>var bootstrap_min_js = jQuery.noConflict();</script>
+    <script src="~/Content/js/script.js"></script>
+
 
     <script src="/systemjs.config.js"></script>
     <script>
         System.import('app/main.js').catch(function (err) { console.error(err); });
     </script>
     <script>
-        $(window).load(function () {
+        jquery_1_11_3_min_p(window).load(function () {
             //  alert("window load occurred!");
             var color = window.localStorage.getItem('color-key');
             // alert(color);
-            $('body').addClass(color);
+            jquery_1_11_3_min_p('body').addClass(color);
         });
-        $(document).ready(function () {
-            $(".spinner").click(function () {
-                $(".color-picker").toggleClass("color-spinner");
+        jquery_1_11_3_min_p(document).ready(function () {
+            jquery_1_11_3_min_p(".spinner").click(function () {
+                jquery_1_11_3_min_p(".color-picker").toggleClass("color-spinner");
             });
 
-            $('.red').click(function () {
-                $('body').removeClass().addClass('red');
+            jquery_1_11_3_min_p('.red').click(function () {
+                jquery_1_11_3_min_p('body').removeClass().addClass('red');
                 localStorage.setItem('color-key', 'red');
             });
-            $('.blue').click(function () {
-                $('body').removeClass().addClass('blue');
+            jquery_1_11_3_min_p('.blue').click(function () {
+                jquery_1_11_3_min_p('body').removeClass().addClass('blue');
                 localStorage.setItem('color-key', 'blue');
             });
-            $('.black').click(function () {
-                $('body').removeClass().addClass('black');
+            jquery_1_11_3_min_p('.black').click(function () {
+                jquery_1_11_3_min_p('body').removeClass().addClass('black');
                 localStorage.setItem('color-key', 'black');
             });
-            $('.orange').click(function () {
-                $('body').removeClass().addClass('orange');
+            jquery_1_11_3_min_p('.orange').click(function () {
+                jquery_1_11_3_min_p('body').removeClass().addClass('orange');
                 localStorage.setItem('color-key', 'orange');
             });
-            $('.purple').click(function () {
-                $('body').removeClass().addClass('purple');
+            jquery_1_11_3_min_p('.purple').click(function () {
+                jquery_1_11_3_min_p('body').removeClass().addClass('purple');
                 localStorage.setItem('color-key', 'purple');
             });
-            $('.royal-blue').click(function () {
-                $('body').removeClass().addClass('royal-blue');
+            jquery_1_11_3_min_p('.royal-blue').click(function () {
+                jquery_1_11_3_min_p('body').removeClass().addClass('royal-blue');
                 localStorage.setItem('color-key', 'royal-blue');
             });
-            $('.default-color').click(function () {
-                $('body').removeClass();
+            jquery_1_11_3_min_p('.default-color').click(function () {
+                jquery_1_11_3_min_p('body').removeClass();
                 localStorage.removeItem('color-key', 'royal-blue');
             });
 

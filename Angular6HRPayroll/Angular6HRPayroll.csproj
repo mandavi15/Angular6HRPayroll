@@ -153,6 +153,8 @@
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\css\ag-grid.css" />
+    <Content Include="Content\css\ag-theme-balham.css" />
     <Content Include="Content\css\bootstrap-grid.min.css" />
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\dashboard.css" />
@@ -320,6 +322,7 @@
     <Content Include="Content\images\vendor-icon.png" />
     <Content Include="Content\images\view-icon.png" />
     <Content Include="Content\images\Yoeki-logo.png" />
+    <Content Include="Content\js\ag-grid-community.min.noStyle.js" />
     <Content Include="Content\js\bootstrap.min.js" />
     <Content Include="Content\js\daterangepicker.min.js" />
     <Content Include="Content\js\jquery-1.11.3.min.js" />

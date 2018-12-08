@@ -509,7 +509,7 @@ thead>tr>th, tbody>tr>td{ font-size:0.6875rem !important}
         font-weight: 400;
         padding-bottom: 15px
     }
-.mainCon .rightCon h6, .mainCon .resetCon h6{ color:#3e3e3e; font-weight:600; border-bottom:1px solid #b7b7b6; padding: 3% 7%; font-size: 1rem; margin-bottom:0}
+.mainCon .rightCon h6, .mainCon .resetCon h6{ color:#3e3e3e !important; font-weight:600; border-bottom:1px solid #b7b7b6; padding: 3% 7%; font-size: 1rem; margin-bottom:0}
 .mainCon .resetCon{background:#f5f5f4; margin-top:1px; padding:0}
 .plainCon h6{font-size:1rem; line-height:1.2; text-align:center; color:#1f4c50; text-transform:uppercase; text-decoration:underline; font-weight:600}
 .loginBody, .innerBody{ padding:10% 7% 20%}
@@ -1592,6 +1592,8 @@ span.localizationIcon { width: 64px; border-radius: 50%; margin: 0 auto; height:
 .lblchk{ text-decoration:underline}
 .DivDesc{ width:96% !important}
 .modal-header .close { color: #fff !important}
+
+.loginBody button a { color:#fff !important}
 @media (min-width:1366px) {
     .companySelect { display: inline-block; width: 48%;}
 }

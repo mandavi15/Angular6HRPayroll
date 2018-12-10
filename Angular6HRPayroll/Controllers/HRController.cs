@@ -17,5 +17,9 @@ namespace Angular6HRPayroll.Controllers
         {
             return View();
         }
+        public ActionResult Department()
+        {
+            return View();
+        }
     }
 }

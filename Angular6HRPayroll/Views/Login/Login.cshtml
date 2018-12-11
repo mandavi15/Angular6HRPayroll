@@ -3,6 +3,7 @@
     Layout = null;
 }
 
+<script src="~/app/login.js"></script>
 <!DOCTYPE html>
 
 <html>
@@ -24,58 +25,64 @@
     <script src="~/Content/js/bootstrap.min.js"></script>
     <script>var bootstrap_min_js = jQuery.noConflict();</script>
     <script src="~/Content/js/script.js"></script>
+    <script src="/systemjs.config.js"></script>
+
+
+    <script>
+        System.import('app/main.js').catch(function (err) { console.error(err); });
+    </script>
     @*<script type="text/javascript" language="javascript">
 
-        jquery_1_11_3_min_p(document).ready(function () {
-            jquery_1_11_3_min_p('#txtUsername').keypress(function () {
-                if (jquery_1_11_3_min_p('#txtUsername').val() == '') {
-                    jquery_1_11_3_min_p("#txtUsername").removeClass('validate');
-                    jquery_1_11_3_min_p('#lblDispMessage').text('');
-                }
+            jquery_1_11_3_min_p(document).ready(function () {
+                jquery_1_11_3_min_p('#txtUsername').keypress(function () {
+                    if (jquery_1_11_3_min_p('#txtUsername').val() == '') {
+                        jquery_1_11_3_min_p("#txtUsername").removeClass('validate');
+                        jquery_1_11_3_min_p('#lblDispMessage').text('');
+                    }
 
+                });
+
+
+
+                jquery_1_11_3_min_p('#txtpassword').keypress(function () {
+                    if (jquery_1_11_3_min_p('#txtpassword').val() == '') {
+                        jquery_1_11_3_min_p("#txtpassword").removeClass('validate');
+                        jquery_1_11_3_min_p('#lblDispMessage').text('');
+                    }
+
+                });
+                sessionStorage.setItem('LegalId', "0");
+                sessionStorage.setItem('ProjectId', "0");
             });
 
-
-
-            jquery_1_11_3_min_p('#txtpassword').keypress(function () {
-                if (jquery_1_11_3_min_p('#txtpassword').val() == '') {
-                    jquery_1_11_3_min_p("#txtpassword").removeClass('validate');
-                    jquery_1_11_3_min_p('#lblDispMessage').text('');
+            function checkValidations() {
+                var Validation = false;
+                if (document.getElementById("<%=txtUsername.ClientID%>").value == '') {
+                    //  alert('Please Enter Username');
+                    jquery_1_11_3_min_p("#txtUsername").addClass("validate");
+                    // document.getElementById("<%=txtUsername.ClientID%>").addClass("validate");
+                    document.getElementById('txtUsername').focus();
+                    Validation = true;
                 }
 
-            });
-            sessionStorage.setItem('LegalId', "0");
-            sessionStorage.setItem('ProjectId', "0");
-        });
+                if (document.getElementById("<%=txtpassword.ClientID%>").value == '') {
+                    //  alert('Please Enter Password');
+                    jquery_1_11_3_min_p("#txtpassword").addClass("validate");
+                    document.getElementById('txtpassword').focus();
 
-        function checkValidations() {
-            var Validation = false;
-            if (document.getElementById("<%=txtUsername.ClientID%>").value == '') {
-                //  alert('Please Enter Username');
-                jquery_1_11_3_min_p("#txtUsername").addClass("validate");
-                // document.getElementById("<%=txtUsername.ClientID%>").addClass("validate");
-                document.getElementById('txtUsername').focus();
-                Validation = true;
+                    Validation = true;
+                }
+                // SetDefaultValue();
+                if (Validation == true) {
+                    return false;
+                }
+                else {
+                    return true;
+
+                }
             }
 
-            if (document.getElementById("<%=txtpassword.ClientID%>").value == '') {
-                //  alert('Please Enter Password');
-                jquery_1_11_3_min_p("#txtpassword").addClass("validate");
-                document.getElementById('txtpassword').focus();
-
-                Validation = true;
-            }
-            // SetDefaultValue();
-            if (Validation == true) {
-                return false;
-            }
-            else {
-                return true;
-
-            }
-        }
-
-    </script>*@
+        </script>*@
     <script>
         jquery_1_11_3_min_p(window).load(function () {
             //  alert("window load occurred!");
@@ -86,58 +93,58 @@
     </script>
 </head>
 <body>
- 
-        <div class="wrapper">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-8 mx-auto col-md-8 logBox">
-                        
-                        <div class="logo"><img class="img-fluid" src="~/Content/images/logo.png" alt="" /></div>
-                        <div class="mainCon">
 
-                            <div class="leftCon col-6 col-md-6">
-                                <h2>Welcome to Our Site</h2>
-                                <h6>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h6>
-                            </div>
-                            <div class="rightCon col-6 col-md-6">
-                                <h6>Sign In</h6>
-                                <div class="loginBody">
-                                    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-                                        <div class="form-group">
-                                            <label for="usr">User ID</label>
-                                            <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
-                                            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-                                                <div *ngIf="f.email.errors.required">Email is required</div>
-                                                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
-                                            </div>
+    <div class="wrapper">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-8 mx-auto col-md-8 logBox">
+
+                    <div class="logo"><img class="img-fluid" src="~/Content/images/logo.png" alt="" /></div>
+                    <div class="mainCon">
+
+                        <div class="leftCon col-6 col-md-6">
+                            <h2>Welcome to Our Site</h2>
+                            <h6>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h6>
+                        </div>
+                        <div class="rightCon col-6 col-md-6">
+                            <h6>Sign In</h6>
+                            <div class="loginBody">
+                                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                                    <div class="form-group">
+                                        <label for="usr">User ID</label>
+                                        <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                            <div *ngIf="f.email.errors.required">Email is required</div>
+                                            <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="pwd">Password</label>
-                                            <input type="password" formControlName="password" class="form-control" ng-required="true" />
-                                            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-                                                <div *ngIf="f.password.errors.required">Password is required</div>
-                                                <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
-                                            </div>
-                                        </div>
-                                        
-                                        <button type="submit" [disabled]="loading" class="btn templateBg">SIGN IN</button>
-                                    </form>
-                                </div>
-                               
-                                    <div class="loginfooter">
-                                        <p>@Html.ActionLink("Forgot User ID or password?", "ForgetPassword", "Login", new { @class = "createAcc" })</p>
-                                      
                                     </div>
-                             
+                                    <div class="form-group">
+                                        <label for="pwd">Password</label>
+                                        <input type="password" formControlName="password" class="form-control" ng-required="true" />
+                                        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                            <div *ngIf="f.password.errors.required">Password is required</div>
+                                            <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" [disabled]="loading" class="btn templateBg">SIGN IN</button>
+                                </form>
                             </div>
-                            <div class="clearfix"></div>
+
+                            <div class="loginfooter">
+                                <p>@Html.ActionLink("Forgot User ID or password?", "ForgetPassword", "Login", new { @class = "createAcc" })</p>
+
+                            </div>
 
                         </div>
-                    </div>
+                        <div class="clearfix"></div>
 
+                    </div>
                 </div>
+
             </div>
         </div>
-  
+    </div>
+
 </body>
 </html>

@@ -1,0 +1,141 @@
+﻿
+@{
+    ViewBag.Title = "designation";
+}
+
+
+
+
+
+<html>
+<head>
+    <script src="~/Content/js/ag-grid-community.min.noStyle.js"></script>
+    <link href="~/Content/css/ag-grid.css" rel="stylesheet" />
+    <link href="~/Content/css/ag-theme-balham.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="container-fluid gridBody">
+
+        <label id="lblmsg" style="display:none"></label>
+        <asp:HiddenField ID="lblUserId" runat="server" />
+
+        <div class="buttonCon pull-right">
+            <button type="button" class="btn templateBg" onclick="javascript: document.location.href='../Master/HRareapage.aspx'"><img src="~/Content/images/home-icon.png" alt="home" />Home</button>
+
+        </div>
+        <h5>DESIGNATION</h5>
+        <div class="row">
+            <div class="col-7 col-md-7">
+                <div class="buttonCon pull-left">
+
+                    <button type="button" class="btn templateBg" id="btnNew"><img src="~/Content/images/new-icon.png" alt="new">Add New</button>
+
+                </div>
+            </div>
+
+            <div class="col-12 col-md-8 col-sm-9 pull-right col-lg-5 top-space">
+                <div class="show pull-left col-6 col-md-6 pl-5 pr-0 no-space">
+                    <p>Show</p>
+                    <form>
+                        <div class="form-group">
+                            <div class="styled-select slate">
+                                <select class="form-control" id="country" name="country">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </form>
+                    <p>Entries</p>
+                </div>
+                <div class="input-group mb-2 col-6 col-md-6 pull-right pl-0">
+                    <input class="form-control border-secondary" type="search" placeholder="search">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button">
+                            <img src="~/Content/images/search-icon.png" alt="search" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div>
+            <div id="myGrid" style="height: 320px; width:100%;" class="ag-theme-balham"></div>
+
+            <script type="text/javascript" charset="utf-8">
+
+                // specify the columns
+
+
+                var columnDefs = [
+                    { headerName: "All", checkboxSelection: true, field: "all", width: 200 },
+                    { headerName: "S.No.", field: "code", width: 200 },
+                    { headerName: "Code", field: "name", width: 350 },
+                    { headerName: "name", field: "name", width: 350 },
+                    { headerName: "view", field: "button", width: 350 }
+
+                ];
+
+                // specify the data
+                var rowData = [
+                    { all: "", checkboxSelection: true, code: "201", name: "Noida", },
+                    { all: "check", checkboxSelection: true, code: "202", name: "Gurgaon" },
+                    { all: "check", checkboxSelection: true, code: "203", name: "Agra" },
+                    { all: "check", checkboxSelection: true, code: "204", name: "Faridabad" },
+                    { all: "check", checkboxSelection: true, code: "205", name: "Ghaziabad" },
+                    { all: "check", checkboxSelection: true, code: "201", name: "Noida", },
+                    { all: "check", checkboxSelection: true, code: "202", name: "Gurgaon" },
+                    { all: "check", checkboxSelection: true, code: "203", name: "Agra" },
+                    { all: "check", checkboxSelection: true, code: "204", name: "Faridabad" },
+                    { all: "check", checkboxSelection: true, code: "205", name: "Ghaziabad" },
+                    { all: "check", checkboxSelection: true, code: "201", name: "Noida", },
+                    { all: "check", checkboxSelection: true, code: "202", name: "Gurgaon" },
+                    { all: "check", checkboxSelection: true, code: "203", name: "Agra" },
+                    { all: "check", checkboxSelection: true, code: "204", name: "Faridabad" },
+                    { all: "check", checkboxSelection: true, code: "205", name: "Ghaziabad" }
+
+                ];
+
+                // let the grid know which columns and what data to use
+                var gridOptions = {
+                    columnDefs: columnDefs,
+                    rowData: rowData,
+                    enableSorting: true,
+                    enableFilter: true
+                };
+
+                // lookup the container we want the Grid to use
+                var eGridDiv = document.querySelector('#myGrid');
+
+                // create the grid passing in the div to use together with the columns & data we want to use
+                new agGrid.Grid(eGridDiv, gridOptions);
+
+
+            </script>
+        </div>
+
+
+
+        <div class="buttonCon pull-left mt-3">
+            <button type="button" class="btn templateBg" id="btnEdit" onclick="Edit()"><img src="~/Content/images/edit-icon.png" alt="edit" />Edit</button>
+            <button type="button" class="btn templateBg" id="btnDelete" data-toggle="modal" data-target="#deletePopup"><img src="~/Content/images/delete-icon.png" alt="delete" />Delete</button>
+        </div>
+    </div>
+
+
+    <script>
+        jquery_1_11_3_min_p('body').append('<div class="modal fade" id="addNew"><div class="modal-dialog modal-dialog-centered" id="Div1"><div class="modal-content"><div class="modal-header"><h5>Designation</h5> <button type="button" class="close" data-dismiss="modal">&times;</button></div><div class="modal-body"><form name="myForm" onsubmit="return checkFormValidation();" class="hr-form col-12 col-md-12" style="padding: 0px;"><div class="form-inline mb-2"> <label for="name" class="col-4 col-md-4">Name:</label> <input type="text" class="form-control col-8 col-md-8" id="txtDesignation" onkeyup="RemoveClass()" name="username" placeholder="Name"></div><div class="form-inline mb-2"> <label for="Department" class="col-4 col-md-4">Department:</label> <input type="text" class="form-control col-8 col-md-8" id="ddlDepartment" name="Department" placeholder="Department"></div><div class="form-inline mb-2"> <label for="Parent" class="col-4 col-md-4">Parent:</label> <input type="text" class="form-control col-8 col-md-8" id="ddlPDepartment" name="Parent" placeholder="Parent"></div></form></div><div class="modal-footer"> <button type="button" class="btn btn-submit" onclick="SaveDesign()" style="padding: 4px;">SUBMIT</button></div></div></div></div>');
+
+
+
+    </script>
+</body>
+</html>

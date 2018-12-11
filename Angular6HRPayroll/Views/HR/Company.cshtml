@@ -2,6 +2,9 @@
 @{
     ViewBag.Title = "Company";
 }
+<script src="~/Content/js/ag-grid-community.min.noStyle.js"></script>
+<link href="~/Content/css/ag-grid.css" rel="stylesheet" />
+<link href="~/Content/css/ag-theme-balham.css" rel="stylesheet" />
 
 <div class="container-fluid gridBody">
     <label id="lblmsg" style="display:none"></label>
@@ -16,8 +19,8 @@
     <div class="row">
         <div class="col-12 col-md-4 col-sm-3 col-lg-7">
             <div class="buttonCon pull-left">
-                
-                <button type="button" class="btn templateBg" placeholder="Add New" onclick="javascript: document.location.href='../HRPayroll/organizationPages/localization.aspx'"><img src="~/Content/images/new-icon.png" />Add New</button>
+
+                <button type="button" class="btn templateBg" placeholder="Add New"><img src="~/Content/images/new-icon.png" />@Html.ActionLink("Add New", "localization", "HR")</button>
 
             </div>
         </div>
@@ -55,95 +58,66 @@
         </div>
 
     </div>
-    <div>
-        <div id="tblegalDiv">
-            <table class="table greyBorder mb-4">
-                <thead>
-                    <tr class="lightGreen">
-                        <th>HEADING 1</th>
-                        <th>HEADING 2</th>
-                        <th>HEADING 3</th>
-                        <th>HEADING 4</th>
-                        <th>HEADING 5</th>
-                        <th>HEADING 6</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Content 1</td>
-                        <td>Content 2</td>
-                        <td>Content 3</td>
-                        <td>Content 4</td>
-                        <td>Content 5</td>
-                        <td>Content 6</td>
-                    </tr>
-                    <tr class="lightGrey">
-                        <td>Content 1</td>
-                        <td>Content 2</td>
-                        <td>Content 3</td>
-                        <td>Content 4</td>
-                        <td>Content 5</td>
-                        <td>Content 6</td>
-                    </tr>
-                    <tr>
-                        <td>Content 1</td>
-                        <td>Content 2</td>
-                        <td>Content 3</td>
-                        <td>Content 4</td>
-                        <td>Content 5</td>
-                        <td>Content 6</td>
-                    </tr>
-                    <tr class="lightGrey">
-                        <td>Content 1</td>
-                        <td>Content 2</td>
-                        <td>Content 3</td>
-                        <td>Content 4</td>
-                        <td>Content 5</td>
-                        <td>Content 6</td>
-                    </tr>
-                    <tr>
-                        <td>Content 1</td>
-                        <td>Content 2</td>
-                        <td>Content 3</td>
-                        <td>Content 4</td>
-                        <td>Content 5</td>
-                        <td>Content 6</td>
-                    </tr>
-                    <tr class="lightGrey">
-                        <td>Content 1</td>
-                        <td>Content 2</td>
-                        <td>Content 3</td>
-                        <td>Content 4</td>
-                        <td>Content 5</td>
-                        <td>Content 6</td>
-                    </tr>
-                    <tr>
-                        <td>Content 1</td>
-                        <td>Content 2</td>
-                        <td>Content 3</td>
-                        <td>Content 4</td>
-                        <td>Content 5</td>
-                        <td>Content 6</td>
-                    </tr>
-                    <tr class="lightGrey">
-                        <td>Content 1</td>
-                        <td>Content 2</td>
-                        <td>Content 3</td>
-                        <td>Content 4</td>
-                        <td>Content 5</td>
-                        <td>Content 6</td>
-                    </tr>
-                 
+    <div id="myGrid" style="height: 320px; width:100%;" class="ag-theme-balham"></div>
 
-                </tbody>
-            </table>
-        </div>
-    </div>
+    <script type="text/javascript" charset="utf-8">
+
+        // specify the columns
+
+
+        var columnDefs = [
+            { headerName: "All", checkboxSelection: true, field: "all", width: 200 },
+            { headerName: "S.No.", field: "code", width: 200 },
+            { headerName: "Code", field: "name", width: 350 },
+            { headerName: "name", field: "name", width: 350 },
+            { headerName: "view", field: "button", width: 350 }
+
+        ];
+
+        // specify the data
+        var rowData = [
+            { all: "", checkboxSelection: true, code: "201", name: "Noida", },
+            { all: "check", checkboxSelection: true, code: "202", name: "Gurgaon" },
+            { all: "check", checkboxSelection: true, code: "203", name: "Agra" },
+            { all: "check", checkboxSelection: true, code: "204", name: "Faridabad" },
+            { all: "check", checkboxSelection: true, code: "205", name: "Ghaziabad" },
+            { all: "check", checkboxSelection: true, code: "201", name: "Noida", },
+            { all: "check", checkboxSelection: true, code: "202", name: "Gurgaon" },
+            { all: "check", checkboxSelection: true, code: "203", name: "Agra" },
+            { all: "check", checkboxSelection: true, code: "204", name: "Faridabad" },
+            { all: "check", checkboxSelection: true, code: "205", name: "Ghaziabad" },
+            { all: "check", checkboxSelection: true, code: "201", name: "Noida", },
+            { all: "check", checkboxSelection: true, code: "202", name: "Gurgaon" },
+            { all: "check", checkboxSelection: true, code: "203", name: "Agra" },
+            { all: "check", checkboxSelection: true, code: "204", name: "Faridabad" },
+            { all: "check", checkboxSelection: true, code: "205", name: "Ghaziabad" }
+        
+        ];
+
+        // let the grid know which columns and what data to use
+        var gridOptions = {
+            columnDefs: columnDefs,
+            rowData: rowData,
+            enableSorting: true,
+            enableFilter: true,
+            defaultColDef: { editable: true },
+            columnDefs: columnDefs,
+            singleClickEdit: true
+        };
+
+        // lookup the container we want the Grid to use
+        var eGridDiv = document.querySelector('#myGrid');
+
+        // create the grid passing in the div to use together with the columns & data we want to use
+        new agGrid.Grid(eGridDiv, gridOptions);
+
+
+    </script>
 
 
     <div class="buttonCon pull-left mt-3 mb-3">
 
-     
+
         <button type="button" class="btn templateBg" data-toggle="modal" data-target="#deletePopup"><img src="~/Content/images/delete-icon.png" alt="delete" />Delete</button>
 
     </div>

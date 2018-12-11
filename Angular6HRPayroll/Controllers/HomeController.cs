@@ -32,6 +32,12 @@ namespace Angular6HRPayroll.Controllers
 
             return View();
         }
+        public ActionResult designation()
+        {
+            ViewBag.Message = "Your designation page.";
+
+            return View();
+        }
     }
 
 }

@@ -1594,6 +1594,17 @@ span.localizationIcon { width: 64px; border-radius: 50%; margin: 0 auto; height:
 .modal-header .close { color: #fff !important}
 
 .loginBody button a { color:#fff !important}
+
+.panel-heading h4{
+    display: block;
+    padding: 10px 15px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    word-spacing: 3px;
+    text-decoration: none;
+}
+
 @media (min-width:1366px) {
     .companySelect { display: inline-block; width: 48%;}
 }

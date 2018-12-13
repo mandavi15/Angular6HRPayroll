@@ -10,123 +10,131 @@
     @Styles.Render("~/Content/css/bootstrap.min.css")
     @Styles.Render("~/Content/css/bootstrap-grid.min.css")
     @Styles.Render("~/Content/css/font-awesome/4.5.0/css/font-awesome.min.css")
+
+    <link href="~/Content/css/jquery-ui.css" rel="stylesheet" />
     <!-- Polyfill(s) for older browsers -->
     <script src="/node_modules/core-js/client/shim.min.js"></script>
     <script src="/node_modules/zone.js/dist/zone.js"></script>
     <script src="/node_modules/systemjs/dist/system.src.js"></script>
     @*<script src="~/Content/js/jquery-1.11.3.min.js"></script>*@
     @Scripts.Render("~/Content/js/jquery-1.11.3.min.js")
-    <script> var jquery_1_11_3_min_p = jQuery.noConflict();</script>
+    <script>var jquery_1_11_3_min_p = jQuery.noConflict();</script>
     @Scripts.Render("~/Content/js/jquery-2.2.3.min.js")
-    <script> var jquery_2_2_3_min_p = jQuery.noConflict();</script>
+    <script>var jquery_2_2_3_min_p = jQuery.noConflict();</script>
     @Scripts.Render("~/Content/js/bootstrap.min.js")
-    <script> var bootstrap_min_js = jQuery.noConflict();</script>
+    <script>var bootstrap_min_js = jQuery.noConflict();</script>
     @Scripts.Render("~/Content/js/script.js")
     <script src="~/Scripts/myapp.js"></script>
+    <script src="~/Content/js/ag-grid-community.min.noStyle.js"></script>
+    <script src="~/Content/js/jquery-ui.js"></script>
 
-            <script src = "/systemjs.config.js" ></script>
+    <script> var jquery_1_12_1_min_p = jQuery.noConflict();</script>
+    <link href="~/Content/css/ag-grid.css" rel="stylesheet" />
+    <link href="~/Content/css/ag-theme-balham.css" rel="stylesheet" />
 
-
-             <script>
-                 System.import('app/main.js').catch (function (err) { console.error(err); });
-</script>
-<script>
-jquery_1_11_3_min_p(window).load(function() {
-//  alert("window load occurred!");
-var color = window.localStorage.getItem('color-key');
-// alert(color);
-jquery_1_11_3_min_p('body').addClass(color);
-});
-jquery_1_11_3_min_p(document).ready(function() {
-jquery_1_11_3_min_p(".spinner").click(function() {
-    jquery_1_11_3_min_p(".color-picker").toggleClass("color-spinner");
-});
-
-jquery_1_11_3_min_p('.red').click(function() {
-    jquery_1_11_3_min_p('body').removeClass().addClass('red');
-    localStorage.setItem('color-key', 'red');
-});
-jquery_1_11_3_min_p('.blue').click(function() {
-    jquery_1_11_3_min_p('body').removeClass().addClass('blue');
-    localStorage.setItem('color-key', 'blue');
-});
-jquery_1_11_3_min_p('.black').click(function() {
-    jquery_1_11_3_min_p('body').removeClass().addClass('black');
-    localStorage.setItem('color-key', 'black');
-});
-jquery_1_11_3_min_p('.orange').click(function() {
-    jquery_1_11_3_min_p('body').removeClass().addClass('orange');
-    localStorage.setItem('color-key', 'orange');
-});
-jquery_1_11_3_min_p('.purple').click(function() {
-    jquery_1_11_3_min_p('body').removeClass().addClass('purple');
-    localStorage.setItem('color-key', 'purple');
-});
-jquery_1_11_3_min_p('.royal-blue').click(function() {
-    jquery_1_11_3_min_p('body').removeClass().addClass('royal-blue');
-    localStorage.setItem('color-key', 'royal-blue');
-});
-jquery_1_11_3_min_p('.default-color').click(function() {
-    jquery_1_11_3_min_p('body').removeClass();
-    localStorage.removeItem('color-key', 'royal-blue');
-});
-
-});
-
-</script>
-<script>
-bootstrap_min_js(document).ready(function() {
+    <script src="/systemjs.config.js"></script>
 
 
-jquery_1_11_3_min_p("#close").click(function() {
+    <script>
+        System.import('app/main.js').catch(function (err) { console.error(err); });
+    </script>
+    <script>
+        jquery_1_11_3_min_p(window).load(function () {
+            //  alert("window load occurred!");
+            var color = window.localStorage.getItem('color-key');
+            // alert(color);
+            jquery_1_11_3_min_p('body').addClass(color);
+        });
+        jquery_1_11_3_min_p(document).ready(function () {
+            jquery_1_11_3_min_p(".spinner").click(function () {
+                jquery_1_11_3_min_p(".color-picker").toggleClass("color-spinner");
+            });
 
-    bootstrap_min_js("#savePopup").dialog('close');
-});
-jquery_1_11_3_min_p("#no").click(function() {
+            jquery_1_11_3_min_p('.red').click(function () {
+                jquery_1_11_3_min_p('body').removeClass().addClass('red');
+                localStorage.setItem('color-key', 'red');
+            });
+            jquery_1_11_3_min_p('.blue').click(function () {
+                jquery_1_11_3_min_p('body').removeClass().addClass('blue');
+                localStorage.setItem('color-key', 'blue');
+            });
+            jquery_1_11_3_min_p('.black').click(function () {
+                jquery_1_11_3_min_p('body').removeClass().addClass('black');
+                localStorage.setItem('color-key', 'black');
+            });
+            jquery_1_11_3_min_p('.orange').click(function () {
+                jquery_1_11_3_min_p('body').removeClass().addClass('orange');
+                localStorage.setItem('color-key', 'orange');
+            });
+            jquery_1_11_3_min_p('.purple').click(function () {
+                jquery_1_11_3_min_p('body').removeClass().addClass('purple');
+                localStorage.setItem('color-key', 'purple');
+            });
+            jquery_1_11_3_min_p('.royal-blue').click(function () {
+                jquery_1_11_3_min_p('body').removeClass().addClass('royal-blue');
+                localStorage.setItem('color-key', 'royal-blue');
+            });
+            jquery_1_11_3_min_p('.default-color').click(function () {
+                jquery_1_11_3_min_p('body').removeClass();
+                localStorage.removeItem('color-key', 'royal-blue');
+            });
 
-    bootstrap_min_js("#deletePopup").dialog('close');
-});
+        });
 
-jquery_1_11_3_min_p("#close1").click(function() {
-
-    bootstrap_min_js("#savePopup").dialog('close');
-});
-
-jquery_1_11_3_min_p(".icon").click(function() {
-    jquery_1_11_3_min_p(".templateBg").removeClass("ms");
-    jquery_1_11_3_min_p(".icon").toggleClass("active");
-    jquery_1_11_3_min_p(".templateBg").toggleClass("sidemenu");
-
-
-    jquery_1_11_3_min_p("#full-content").toggleClass('col-md-12 col-lg-12 ');
-    //            jquery_1_11_3_min_p("#full-content").toggleClass('col-12 col-12');
-});
-
-
-})
-
-</script>
-<script>
-
-jquery_1_11_3_min_p(document).ready(function() {
-
-jquery_1_11_3_min_p('.dropdown-submenu a.test').on("click", function(e) {
-    jquery_1_11_3_min_p(this).next('ul').toggle();
-    e.stopPropagation();
-    e.preventDefault();
-});
-jquery_1_11_3_min_p('.vendorGrid tbody').on('click', 'tr', function() {
+    </script>
+    <script>
+        bootstrap_min_js(document).ready(function () {
 
 
-    jquery_1_11_3_min_p(this).toggleClass("selected");
-    //                 var dad = jquery_1_11_3_min_p(this).parent().parent();
-    //                 dad.find('label').show();
-    //                 dad.find('input[type="text"]').hide();
+            jquery_1_11_3_min_p("#close").click(function () {
 
-});
-});
+                bootstrap_min_js("#savePopup").dialog('close');
+            });
+            jquery_1_11_3_min_p("#no").click(function () {
 
-</script>
+                bootstrap_min_js("#deletePopup").dialog('close');
+            });
+
+            jquery_1_11_3_min_p("#close1").click(function () {
+
+                bootstrap_min_js("#savePopup").dialog('close');
+            });
+
+            jquery_1_11_3_min_p(".icon").click(function () {
+                jquery_1_11_3_min_p(".templateBg").removeClass("ms");
+                jquery_1_11_3_min_p(".icon").toggleClass("active");
+                jquery_1_11_3_min_p(".templateBg").toggleClass("sidemenu");
+
+
+                jquery_1_11_3_min_p("#full-content").toggleClass('col-md-12 col-lg-12 ');
+                //            jquery_1_11_3_min_p("#full-content").toggleClass('col-12 col-12');
+            });
+
+
+        })
+
+    </script>
+    <script>
+
+        jquery_1_11_3_min_p(document).ready(function () {
+
+            jquery_1_11_3_min_p('.dropdown-submenu a.test').on("click", function (e) {
+                jquery_1_11_3_min_p(this).next('ul').toggle();
+                e.stopPropagation();
+                e.preventDefault();
+            });
+            jquery_1_11_3_min_p('.vendorGrid tbody').on('click', 'tr', function () {
+
+
+                jquery_1_11_3_min_p(this).toggleClass("selected");
+                //                 var dad = jquery_1_11_3_min_p(this).parent().parent();
+                //                 dad.find('label').show();
+                //                 dad.find('input[type="text"]').hide();
+
+            });
+        });
+
+    </script>
 </head>
 <body>
     <div ng-app="myapp">
@@ -167,14 +175,14 @@ jquery_1_11_3_min_p('.vendorGrid tbody').on('click', 'tr', function() {
                                                         <li><i class="fa fa-building arrow"></i>@Html.ActionLink("Company", "Company", "HR")</li>
                                                         <li><i class="fa fa-map-marker arrow"></i>@Html.ActionLink("Location", "Location", "Home")</li>
                                                         <li><i class="fa fa-sitemap arrow"></i>@Html.ActionLink("Department", "Department", "HR")</li>
-                                                        <li><img src="~/Content/images/id-card_icon.png" class="arrow" />@Html.ActionLink("Designation", "Designation", "Home")</li>
-                                                        <li><img src="~/Content/images/skill_icon.png" class="arrow" />@Html.ActionLink("Skills", "Skills", "Home")</li>
-                                                        <li><i class="fa fa-user arrow"></i>@Html.ActionLink("Employee", "Employee", "Home")</li>
+                                                        <li><img src="~/Content/images/id-card_icon.png" class="arrow" />@Html.ActionLink("Designation", "Designation", "HR")</li>
+                                                        <li><img src="~/Content/images/skill_icon.png" class="arrow" />@Html.ActionLink("Skills", "Skills", "HR")</li>
+                                                        <li><i class="fa fa-user arrow"></i>@Html.ActionLink("Employee", "Employees", "HR")</li>
                                                         <li class="dropdown-submenu">
                                                             <a class="test nav-link" href="#"><img src="~/Content/images/recruitment_icon.png" class="arrow" />Recruitment    <i class="fa fa-caret-down" style=""></i></a>
                                                             <ul class="dropdown-menu show">
-                                                                <li><a class="nav-link" href="../Master/requisitionList.aspx#requisition"><img src="~/Content/images/id-card_icon.png" class="arrow" />Requisition</a></li>
-                                                                <li><a class="nav-link" href="../Master/requisitionList.aspx#applicants"><i class="fa fa-user arrow"></i>Applicants</a></li>
+                                                                <li><img src="~/Content/images/id-card_icon.png" class="arrow" />@Html.ActionLink("Requisition", "Requisition", "HR")</li>
+                                                                <li><i class="fa fa-user arrow"></i>@Html.ActionLink("Applicants", "Requisition", "HR")</li>
                                                             </ul>
                                                         </li>
                                                         <li><img src="~/Content/images/leave_management-icon.png" class="arrow" />@Html.ActionLink("Leave Type", "LeaveType", "Home", new { @class = "nav-link" })</li>
@@ -199,7 +207,7 @@ jquery_1_11_3_min_p('.vendorGrid tbody').on('click', 'tr', function() {
 
                                             </ul>
                                         </div>
-
+                                        <li class="nav-item"><i class="fa fa-sign-out  arrow"></i>@Html.ActionLink("Exit Management", "ExitManagement", "HR")</li>
                                         <li class="nav-item"> <a class="nav-link" href="#"><img src="~/Content/images/arrow-list.png" alt="arrow" class="arrow" />Purchase</a> </li>
                                         <li class="nav-item"> <a class="nav-link" href="#"><img src="~/Content/images/arrow-list.png" alt="arrow" class="arrow" />Sale</a> </li>
                                         <li class="nav-item"> <a class="nav-link" href="ledger-calenders.html"><img src="~/Content/images/arrow-list.png" alt="arrow" class="arrow" />General Ledger</a> </li>

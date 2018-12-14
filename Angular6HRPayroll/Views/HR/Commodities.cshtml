@@ -1,0 +1,129 @@
+﻿
+@{
+    ViewBag.Title = "Commodities";
+}
+
+<html>
+<head>
+    <script src="~/Content/js/ag-grid-community.min.noStyle.js"></script>
+    <link href="~/Content/css/ag-grid.css" rel="stylesheet" />
+    <link href="~/Content/css/ag-theme-balham.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="container-fluid gridBody">
+
+        <div class="buttonCon pull-right">
+            <button type="button" class="btn templateBg"><img src="~/Content/images/home-icon.png" alt="home" />@Html.ActionLink("Home", "HRAreaPage", "Home")</button>
+
+        </div>
+        <h5>ALL COMMODITIES</h5>
+        <div class="row">
+            <div class="col-7 col-md-7">
+                <div class="buttonCon pull-left">
+
+                    <button type="button" class="btn templateBg"><img src="~/Content/images/new-icon.png" alt="new">Add New</button>
+
+                </div>
+            </div>
+
+            <div class="col-12 col-md-8 col-sm-9 pull-right col-lg-5 top-space">
+                @*<div class="show pull-left col-6 col-md-6 pl-5 pr-0 no-space">
+                    <p>Show</p>
+                    <form>
+                        <div class="form-group">
+                            <div class="styled-select slate">
+                                <select class="form-control" id="country" name="country">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </form>
+                    <p>Entries</p>
+                </div>*@
+                <div class="input-group mb-2 col-6 col-md-6 pull-right pl-0">
+                    <input class="form-control border-secondary" type="search" placeholder="search">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button">
+                            <img src="~/Content/images/search-icon.png" alt="search" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div>
+            <div id="myGrid1" style="height: 200px; width:100%;" class="ag-theme-balham"></div>
+        </div>
+        <div class="container p-0 mt-3">
+            <div class="buttonCon pull-left">
+                <button type="button" class="btn templateBg"><img src="~/Content/images/save-icon.png" alt="delete" />Save</button>
+                <button type="button" class="btn templateBg"><img src="~/Content/images/back-icon.png" alt="Return" />Return</button>
+            </div>
+
+            <div class="buttonCon pull-right">
+                <button type="button" class="btn templateBg">Dues Cleared</button>
+            </div>
+
+        </div>
+
+    </div>
+   
+
+
+    <script type="text/javascript" charset="utf-8">
+
+        // specify the columns
+
+
+        var columnDefs = [
+            { headerName: "All", checkboxSelection: true, field: "all", width: 60 },
+            { headerName: "Sr. No.", field: "sl", width: 100 },
+            { headerName: "Item", field: "item", width: 100, editable: true },
+            { headerName: "Serial No.", field: "serial", width: 100, editable: true },
+            { headerName: "Model", field: "model", width: 100, editable: true },
+            { headerName: "Brand", field: "brand", width: 100, editable: true },
+            { headerName: "Employee ID", field: "empId", width: 180, editable: true },
+            { headerName: "Employee Name", field: "empName", width: 180, editable: true },
+            { headerName: "Employee Department", field: "empDept", width: 180, editable: true },
+            { headerName: "Employee Designation", field: "empDesignation", width: 180, editable: true },
+            { headerName: "Return", checkboxSelection: true, width: 100, editable: true },
+            { headerName: "Return Date", field: "returnDate", width: 180, editable: true },
+        ];
+
+        // specify the data
+        var rowData = [
+            { all: "", checkboxSelection: true, sl: "1", item: "Laptop", serial: "Serial 001", model: "1234", brand: "Dell", empId: "Emp 001", empName: "Abhishek", empDept: "Technical", empDesignation: "UI Developer", checkboxSelection: true, returnDate: "dd/mm/yyyy" },
+            { all: "", checkboxSelection: true, sl: "2", item: "Mouse", serial: "Serial 002", model: "1234", brand: "Dell", empId: "Emp 001", empName: "Abhishek", empDept: "Technical", empDesignation: "UI Developer", checkboxSelection: true, returnDate: "dd/mm/yyyy" },
+            { all: "", checkboxSelection: true, sl: "3", item: "Headphone", serial: "Serial 003", model: "1234", brand: "Philips", empId: "Emp 001", empName: "Abhishek", empDept: "Technical", empDesignation: "UI Developer", checkboxSelection: true, returnDate: "dd/mm/yyyy" },
+            { all: "", checkboxSelection: true, sl: "4", item: "Mobile", serial: "Serial 004", model: "1234", brand: "Samsung", empId: "Emp 001", empName: "Abhishek", empDept: "Technical", empDesignation: "UI Developer", checkboxSelection: true, returnDate: "dd/mm/yyyy" },
+            { all: "", checkboxSelection: true, sl: "5", item: "Data Cable", serial: "Serial 001", model: "1234", brand: "Philips", empId: "Emp 001", empName: "Abhishek", empDept: "Technical", empDesignation: "UI Developer", checkboxSelection: true, returnDate: "dd/mm/yyyy" }
+        ];
+
+        // let the grid know which columns and what data to use
+        var gridOptions = {
+            columnDefs: columnDefs,
+            rowData: rowData,
+            enableSorting: true,
+            enableFilter: true
+        };
+
+        // lookup the container we want the Grid to use
+        var eGridDiv = document.querySelector('#myGrid1');
+
+        // create the grid passing in the div to use together with the columns & data we want to use
+        new agGrid.Grid(eGridDiv, gridOptions);
+
+
+    </script>
+</body>
+</html>
+

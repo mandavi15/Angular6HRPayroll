@@ -43,11 +43,27 @@ namespace Angular6HRPayroll.Controllers
         {
             return View();
         }
+        public ActionResult LeaveType()
+        {
+            ViewBag.Message = "Your LeaveType page.";
+
+            return View();
+        }
+        public ActionResult LeaveEmployee()
+        {
+            ViewBag.Message = "Your LeaveType page.";
+
+            return View();
+        }
         public ActionResult ExitManagement()
         {
             return View();
         }
         public ActionResult ResignForm()
+        {
+            return View();
+        }
+        public ActionResult Commodities()
         {
             return View();
         }

@@ -347,9 +347,7 @@
     <Content Include="Content\css\font-awesome\4.5.0\fonts\fontawesome-webfont.ttf" />
     <Content Include="Content\css\font-awesome\4.5.0\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\css\font-awesome\4.5.0\fonts\fontawesome-webfont.woff2" />
-    <Content Include="Content\css\vssver.scc" />
-    <Content Include="Content\images\vssver.scc" />
-    <Content Include="Content\js\vssver.scc" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -392,6 +390,9 @@
     <Content Include="Views\HR\Requisition.cshtml" />
     <Content Include="Views\HR\CreatenewRequisition.cshtml" />
     <Content Include="Views\HR\ResignForm.cshtml" />
+    <Content Include="Views\HR\Commodities.cshtml" />
+    <Content Include="Views\HR\LeaveType.cshtml" />
+    <Content Include="Views\HR\LeaveEmployee.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

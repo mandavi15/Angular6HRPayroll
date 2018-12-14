@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewBag.Title = "ItemMaster";
+}
+
+
+<html>
+<head>
+    <script src="~/Content/js/ag-grid-community.min.noStyle.js"></script>
+    <link href="~/Content/css/ag-grid.css" rel="stylesheet" />
+    <link href="~/Content/css/ag-theme-balham.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="container-fluid gridBody">
+
+        <div class="buttonCon pull-right">
+
+            <button type="button" class="btn templateBg"><img src="~/Content/images/home-icon.png" alt="home" />@Html.ActionLink("Home", "HRAreaPage", "Home")</button>
+        </div>
+        <h5>ALL ITEMS</h5>
+        <div class="row">
+            <div class="col-7 col-md-7">
+                <div class="buttonCon pull-left">
+                    <button type="submit" class="btn templateBg"><img src="~/Content/images/new-icon.png" alt="new">Add New</button>
+
+                </div>
+            </div>
+
+            <div class="col-12 col-md-8 col-sm-9 pull-right col-lg-5 top-space">
+                
+                <div class="input-group mb-2 col-6 col-md-6 pull-right pl-0">
+                    <input class="form-control border-secondary" type="search" placeholder="search">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button">
+                            <img src="~/Content/images/search-icon.png" alt="search" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+       
+
+        <div id="myGrid" style="height: 200px; width:100%;" class="ag-theme-balham"></div>
+
+        <script type="text/javascript" charset="utf-8">
+
+            // specify the columns
+
+
+            var columnDefs = [
+                { headerName: "Sr. No.", field: "sl", width: 367 },
+                { headerName: "Item", field: "item", width: 367 },
+                { headerName: "Item Name", field: "itemName", width: 367 }
+            ];
+
+            // specify the data
+            var rowData = [
+                { sl: "1", item: "Laptop", itemName: "Lenovo"},
+                { sl: "2", item: "Laptop", itemName: "Dell" },
+                { sl: "3", item: "Mouse", itemName: "Lenovo" },
+                { sl: "4", item: "Headphone", itemName: "Philips" },
+                { sl: "5", item: "Keyboard", itemName: "Lenovo" }
+            ];
+
+            // let the grid know which columns and what data to use
+            var gridOptions = {
+                columnDefs: columnDefs,
+                rowData: rowData,
+                enableSorting: true,
+                enableFilter: true
+            };
+
+            // lookup the container we want the Grid to use
+            var eGridDiv = document.querySelector('#myGrid');
+
+            // create the grid passing in the div to use together with the columns & data we want to use
+            new agGrid.Grid(eGridDiv, gridOptions);
+
+
+        </script>
+
+</body>
+</html>
+
+

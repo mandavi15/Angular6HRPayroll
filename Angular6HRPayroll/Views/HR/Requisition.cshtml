@@ -38,9 +38,8 @@
                     <button type="button" id="btnStatusClose" class="btn templateBg">
                         <img src="~/Content/images/close-icon.png" alt="home" />Close
                     </button>
-                    <button type="button" class="btn templateBg" onclick="javascript: document.location.href='../Master/HRareapage.aspx'">
-                        <img src="~/Content/images/home-icon.png" alt="home" />Home
-                    </button>
+                    <button type="button" class="btn templateBg"><img src="~/Content/images/home-icon.png" alt="home" />@Html.ActionLink("Home", "HRAreaPage", "Home")</button>
+
                 </div>
                 <h5 style="text-transform: uppercase">
                     All Requisitions

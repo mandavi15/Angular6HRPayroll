@@ -37,8 +37,8 @@
     <div class="tab-content">
         <div class="container-fluid gridBody tab-pane fade active show" id="Consolidated">
             <div class="buttonCon pull-right">
-                <button type="submit" class="btn templateBg" onClick="javascript: document.location.href='HR-form.html'"><img src="~/Content/images/back-icon.png" alt="back" />Back</button>
-                <button type="button" class="btn templateBg" onclick="javascript: document.location.href='../Master/HRareapage.aspx'"><img src="~/Content/images/home-icon.png" alt="home" />Home</button>
+                @*<button type="submit" class="btn templateBg" onClick="javascript: document.location.href='HR-form.html'"><img src="~/Content/images/back-icon.png" alt="back" />Back</button>*@
+                <button type="button" class="btn templateBg"><img src="~/Content/images/home-icon.png" alt="home" />@Html.ActionLink("Home", "HRAreaPage", "Home")</button>
             </div>
             <h5 style="text-transform:uppercase">All Consolidated Leaves</h5>
             <div class="row">
@@ -65,7 +65,8 @@
 
 
                 var columnDefs = [
-                    { headerName: "Sr. No", checkboxSelection: true, field: "Sr. No", width: 150 },
+                    { headerName: "All", checkboxSelection: true, field: "all", width: 150 },
+                    { headerName: "Sr.No", field: "sl", width: 150 },
                     { headerName: "Employee Name", field: "EmployeeName", width: 150 },
                     { headerName: "Employee Id", field: "EmployeeId", width: 200 },
                     { headerName: "Designation", field: "Designation", width: 200 },
@@ -150,7 +151,8 @@
 
 
                 var columnDefs = [
-                    { headerName: "Sr.No", checkboxSelection: true, field: "Sr.No", width: 150 },
+                    { headerName: "All", checkboxSelection: true, field: "all", width: 150 },
+                    { headerName: "Sr.No", field: "sl", width: 150 },
                     { headerName: "Name", field: "Name", width: 150 },
                     { headerName: "Leave Type", field: "LeaveType", width: 200 },
                     { headerName: "Leave Applied", field: "LeaveApplied", width: 200 },
@@ -161,11 +163,11 @@
 
                 // specify the data
                 var rowData = [
-                    { checkboxSelection: true, Name: "Jack", LeaveType: "Cl", LeaveApplied: "Noida", FromDate: "13-12-2018", ToDate: "18-12-2018", Status:"No" },
-                    { checkboxSelection: true, Name: "Mick", LeaveType: "Sl", LeaveApplied: "Noida", FromDate: "13-12-2018", ToDate: "18-12-2018", Status: "No" },
-                    { checkboxSelection: true, Name: "Rahul", LeaveType: "El", LeaveApplied: "Noida", FromDate: "13-12-2018", ToDate: "18-12-2018", Status: "No" },
-                    { checkboxSelection: true, Name: "Akash", LeaveType: "Cl", LeaveApplied: "Noida", FromDate: "13-12-2018", ToDate: "18-12-2018", Status: "No" },
-                    { checkboxSelection: true, Name: "Mick", LeaveType: "El", LeaveApplied: "Noida", FromDate: "13-12-2018", ToDate: "18-12-2018", Status: "No" }
+                    { checkboxSelection: true, sl:"1", Name: "Jack", LeaveType: "Cl", LeaveApplied: "Noida", FromDate: "13-12-2018", ToDate: "18-12-2018", Status:"No" },
+                    { checkboxSelection: true, sl: "2", Name: "Mick", LeaveType: "Sl", LeaveApplied: "Noida", FromDate: "13-12-2018", ToDate: "18-12-2018", Status: "No" },
+                    { checkboxSelection: true, sl: "3", Name: "Rahul", LeaveType: "El", LeaveApplied: "Noida", FromDate: "13-12-2018", ToDate: "18-12-2018", Status: "No" },
+                    { checkboxSelection: true, sl: "4", Name: "Akash", LeaveType: "Cl", LeaveApplied: "Noida", FromDate: "13-12-2018", ToDate: "18-12-2018", Status: "No" },
+                    { checkboxSelection: true, sl: "5", Name: "Mick", LeaveType: "El", LeaveApplied: "Noida", FromDate: "13-12-2018", ToDate: "18-12-2018", Status: "No" }
                 ];
 
                 // let the grid know which columns and what data to use
@@ -240,10 +242,24 @@
                         </div>
                         <div class="clearfix"></div>
                         <div class="dateCol" id="divSelectDate">
-                            <input type="text" class="form-control col-4 col-md-4 ptb-4" id="ddlMonth" name="name">
-                            <input type="text" class="form-control col-4 col-md-4 ptb-4" id="ddlYear" name="name" style="margin-top: 5PX;">
-                            <button type="button" class="btn btn-submit" style=" width: 18%; padding: 2px 0px 4px; margin-bottom: 6px;margin-top: 5PX;" data-toggle="modal" onclick="BindEmployeeLeaveBalence();">View</button>
+                            @*<input type="text" class="form-control col-4 col-md-4 ptb-4" id="ddlMonth" name="name">
+        <input type="text" class="form-control col-4 col-md-4 ptb-4" id="ddlYear" name="name" style="margin-top: 5PX;">
+        <button type="button" class="btn btn-submit" style=" width: 18%; padding: 2px 0px 4px; margin-bottom: 6px;margin-top: 5PX;" data-toggle="modal" onclick="BindEmployeeLeaveBalence();">View</button>*@
 
+                            <div class="row">
+                                <div class="col-4 col-md-4">
+                                    <input type="text" class="form-control col-4 col-md-12 ptb-4" id="ddlMonth" name="name">
+
+                                </div>
+                                <div class="col-4 col-md-4">
+                                    <input type="text" class="form-control col-4 col-md-12 ptb-4" id="ddlYear" name="name">
+
+                                </div>
+                                <div class="col-4 col-md-4 buttonCon">
+                                    @*<button type="button" class="btn btn-submit" style=" width: 50%; margin-bottom: 6px;" data-toggle="modal">View</button>*@
+                                    <button type="submit" class="btn templateBg" style="width:50%">View</button>
+                                </div>
+                            </div>
 
                         </div>
                 </form>

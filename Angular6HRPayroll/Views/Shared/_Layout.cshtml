@@ -21,12 +21,13 @@
     <script>var jquery_1_11_3_min_p = jQuery.noConflict();</script>
     @Scripts.Render("~/Content/js/jquery-2.2.3.min.js")
     <script>var jquery_2_2_3_min_p = jQuery.noConflict();</script>
-    @Scripts.Render("~/Content/js/bootstrap.min.js")>
+    @Scripts.Render("~/Content/js/bootstrap.min.js")
+    <script>var bootstrap_min_js = jQuery.noConflict();</script>
     @Scripts.Render("~/Content/js/script.js")
-     <script src="~/Content/js/ag-grid-community.min.noStyle.js"></script>
+    <script src="~/Content/js/ag-grid-community.min.noStyle.js"></script>
     <script src="~/Content/js/jquery-ui.js"></script>
 
-    <script> var jquery_1_12_1_min_p = jQuery.noConflict();</script>
+    <script>var jquery_1_12_1_min_p = jQuery.noConflict();</script>
     <link href="~/Content/css/ag-grid.css" rel="stylesheet" />
     <link href="~/Content/css/ag-theme-balham.css" rel="stylesheet" />
 
@@ -207,12 +208,13 @@
                                             </ul>
                                         </div>
                                         <li class="nav-item"><i class="fa fa-sign-out  arrow"></i>@Html.ActionLink("Exit Management", "ExitManagement", "HR")</li>
-                                        <li class="nav-item"><i class="fa fa-sign-out  arrow"></i>@Html.ActionLink("Commodities", "Commodities", "HR")
-                                                             <ul class="dropdown-menu show">
-                                                                  <li><img src="/Content/images/request_icon.png" class="arrow">@Html.ActionLink("Item Master", "ItemMaster", "Home")</li>
-                                                             </ul>
+                                        <li class="nav-item">
+                                            <i class="fa fa-sign-out  arrow"></i>@Html.ActionLink("Commodities", "Commodities", "HR")
+                                            <ul class="dropdown-menu show">
+                                                <li><img src="/Content/images/request_icon.png" class="arrow">@Html.ActionLink("Item Master", "ItemMaster", "Home")</li>
+                                            </ul>
                                         </li>
-                                        
+
                                     </ul>
                                 </nav>
                             </div>
@@ -220,22 +222,22 @@
                         @*@Html.ActionLink("HRAreaPage", "HRAreaPage", "Home");*@
                     </div>
                     @*<div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                </div>*@
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                        </div>*@
                     @*<div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li>@Html.ActionLink("About", "About", "Home")</li>
-                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                        <li>@Html.ActionLink("Service", "Service", "Home")</li>
-                        <li>@Html.ActionLink("Sales", "Sales", "Home")</li>
-                    </ul>
-                </div>*@
+                            <ul class="nav navbar-nav">
+                                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                                <li>@Html.ActionLink("About", "About", "Home")</li>
+                                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                                <li>@Html.ActionLink("Service", "Service", "Home")</li>
+                                <li>@Html.ActionLink("Sales", "Sales", "Home")</li>
+                            </ul>
+                        </div>*@
 
 
                     <div class="col-12 col-sm-12 col-md-9 col-lg-10 p-0" id="full-content">
@@ -251,62 +253,62 @@
                                         <div class="drop-down">
                                             <select name="options" id="ddlMCountry">
                                                 <option value="EN">EN </option>
-                                                    <option value="HI">HI</option>
+                                                <option value="HI">HI</option>
                                                 <option value="MR">MR </option>
-                                                    </select>
-                                                    </div>
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                    <div class="drop-down">
-                                                        <select class="form-control" id="company" name="company">
-                                                            <option>Company Name</option>
-                                                            <option>Company 1</option>
-                                                            <option>Company 2</option>
-                                                            <option>Company 3</option>
-                                                        </select>
-                                                    </div>
+                                            </select>
                                         </div>
                                     </div>
-                                    <div class="profileDropdown">
-                                        <div class="dropdown">
-                                            <div class="dropbtn profileCon"><img src="~/Content/images/profile-img1.png" alt="profile" /></div>
-                                            <a data-toggle="dropdown" href="#" class="dropdown-toggle no-padding dms-blue">
-                                                <span class="user-info"> Welcome User</span>
-                                            </a>
-                                            <input type="button" onclick="myFunction()" class="dropbtn hidebtn" />
-                                            <div id="myDropdown" class="dropdown-content">
-                                                <a href="#" onclick="changePwdPopUp()"><i class="logoutdiv ace-icon fa fa-key" aria-hidden="true"></i><span class="logoutcolor">Change Password</span> </a>
-                                                <a href="#" onclick="Logout()">< i class="logoutdiv ace-icon fa fa-power-off"></i><span class="logoutcolor">Logout</span></a>
-                                            </div>
+
+                                    <div class="form-group">
+                                        <div class="drop-down">
+                                            <select class="form-control" id="company" name="company">
+                                                <option>Company Name</option>
+                                                <option>Company 1</option>
+                                                <option>Company 2</option>
+                                                <option>Company 3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="profileDropdown">
+                                    <div class="dropdown">
+                                        <div class="dropbtn profileCon"><img src="~/Content/images/profile-img1.png" alt="profile" /></div>
+                                        <a data-toggle="dropdown" href="#" class="dropdown-toggle no-padding dms-blue">
+                                            <span class="user-info"> Welcome User</span>
+                                        </a>
+                                        <input type="button" onclick="myFunction()" class="dropbtn hidebtn" />
+                                        <div id="myDropdown" class="dropdown-content">
+                                            <a href="#" onclick="changePwdPopUp()"><i class="logoutdiv ace-icon fa fa-key" aria-hidden="true"></i><span class="logoutcolor">Change Password</span> </a>
+                                            <a href="#" onclick="Logout()">< i class="logoutdiv ace-icon fa fa-power-off"></i><span class="logoutcolor">Logout</span></a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            @RenderBody()
                         </div>
-
+                        @RenderBody()
                     </div>
 
-                    <div class="container body-content">
+                </div>
+
+                <div class="container body-content">
 
 
-                        <footer>
-                            <div class="pull-left copyRight">
-                                <p>Enterprise Resource Planning Application ©2018</p>
-                            </div>
-                            <div class="pull-right companyLogos">
-                                <img src="~/Content/images/AMY-logo.png" alt="AMY Softech" class="comlogo" />
-                                <img src="~/Content/images/iace-logo.png" alt="IACE" />
-                                <img src="~/Content/images/Yoeki-logo.png" alt="Yoeki" />
-                            </div>
-                        </footer>
-                    </div>
+                    <footer>
+                        <div class="pull-left copyRight">
+                            <p>Enterprise Resource Planning Application ©2018</p>
+                        </div>
+                        <div class="pull-right companyLogos">
+                            <img src="~/Content/images/AMY-logo.png" alt="AMY Softech" class="comlogo" />
+                            <img src="~/Content/images/iace-logo.png" alt="IACE" />
+                            <img src="~/Content/images/Yoeki-logo.png" alt="Yoeki" />
+                        </div>
+                    </footer>
                 </div>
             </div>
         </div>
-        @Scripts.Render("~/bundles/jquery")
-        @*@Scripts.Render("~/bundles/bootstrap")*@
-        @RenderSection("scripts", required: false)
-    </body>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @*@Scripts.Render("~/bundles/bootstrap")*@
+    @RenderSection("scripts", required: false)
+</body>
 </html>

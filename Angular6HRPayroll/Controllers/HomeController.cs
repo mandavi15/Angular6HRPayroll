@@ -36,6 +36,12 @@ namespace Angular6HRPayroll.Controllers
 
             return View();
         }
+        public ActionResult EmployeeDocMaster()
+        {
+
+            return View();
+        }
+        
     }
 
 }

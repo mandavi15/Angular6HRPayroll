@@ -394,6 +394,7 @@
     <Content Include="Views\HR\LeaveType.cshtml" />
     <Content Include="Views\HR\LeaveEmployee.cshtml" />
     <Content Include="Views\Home\ItemMaster.cshtml" />
+    <Content Include="Views\Home\EmployeeDocMaster.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

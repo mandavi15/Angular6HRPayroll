@@ -195,11 +195,11 @@
                                                 <li class="dropdown-submenu">
                                                     <a class="test nav-link" tabindex="-1" href="#" onclick="javascript: document.location.href='../Master/payrollAreapage.aspx'"><i class="fa fa-credit-card arrow" style="font-size:14px !important"></i>Payroll    <i class="fa fa-caret-down" style=""></i> </a>
                                                     <ul class="dropdown-menu show">
-                                                        <li><a class="nav-link" tabindex="-1" href="../Master/setup.aspx#earn"><img src="~/Content/images/earning_icon.png" class="arrow" />Earnings</a></li>
-                                                        <li><a class="nav-link" tabindex="-1" href="#" onclick="$('#earn').trigger('click')"><img src="~/Content/images/deduction_icon.png" class="arrow" />Deductions</a></li>
-                                                        <li><a class="nav-link" tabindex="-1" href="../Master/setup.aspx#paySlab"><img src="~/Content/images/paySlab_icon.png" class="arrow" />Pay Slab</a></li>
+                                                        <li><img src="~/Content/images/earning_icon.png" class="arrow" />@Html.ActionLink("Earnings", "setup", "PR")</li>
+                                                        <li><img src="~/Content/images/deduction_icon.png" class="arrow" />@Html.ActionLink("Deductions", "setup", "PR")</li>
+                                                        <li><img src="~/Content/images/paySlab_icon.png" class="arrow" />@Html.ActionLink("Pay Slab", "setup", "PR")</li>
                                                         <li><a class="nav-link" tabindex="-1" href="../Master/paycycle.aspx"><i class="fa fa-money arrow"></i>Pay Cycle</a></li>
-                                                        <li><a class="nav-link" tabindex="-1" href="../Master/setup.aspx#payStructure"><img src="~/Content/images/payStructure_icon.png" class="arrow" />Pay Structure</a></li>
+                                                        <li><img src="~/Content/images/payStructure_icon.png" class="arrow" />@Html.ActionLink("Pay Structure", "setup", "PR")</li>
                                                         <li><img src="~/Content/images/payday_icon.png" class="arrow" />@Html.ActionLink("Payday", "Payday", "Home")</li>
                                                     </ul>
                                                 </li>

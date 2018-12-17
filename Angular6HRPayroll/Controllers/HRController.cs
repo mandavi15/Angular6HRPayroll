@@ -67,5 +67,13 @@ namespace Angular6HRPayroll.Controllers
         {
             return View();
         }
+        public ActionResult payslab()
+        {
+            return View();
+        }
+        public ActionResult paystructure()
+        {
+            return View();
+        }
     }
 }

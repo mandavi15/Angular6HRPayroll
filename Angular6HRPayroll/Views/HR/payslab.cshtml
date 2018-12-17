@@ -1,0 +1,286 @@
+﻿
+@{
+    ViewBag.Title = "payslab";
+}
+
+
+
+<html>
+<head>
+
+   
+    @*<style>
+    @media screen and (max-width: 380px){
+.gridBody {
+    overflow-y: scroll !important;
+    height: 410px !important;
+}
+
+
+
+
+
+.rangeBox {
+    width: 100% !important;
+    display: inline-block;
+}
+.totalearn{font-size: 9px;}
+}
+
+
+i.faSearch {
+    position: absolute;
+    top: 10px;
+    right: 4px;
+}
+
+@media screen and (max-width: 414px){
+.gridBody {
+    overflow-y: scroll !important;
+    height: 411px !important;
+}
+.rangeBox {
+    width: 100% !important;
+    display: inline-block;
+}
+.totalearn{font-size: 9px;}
+
+.posting .nav-tabs li.leaveLi {
+    width: 100% !important;
+}
+
+
+
+
+
+
+
+}
+
+
+
+
+    </style>*@
+</head>
+
+
+<body>
+<div class="tab-content">
+    <label id="lblmsg" style="display: none">
+    </label>
+    <asp:HiddenField ID="lblUserId" runat="server" />
+    <div class="container-fluid gridBody tab-pane fade active show" id="print">
+        <div class="clearfix">
+        </div>
+        <div class="buttonCon pull-right">
+            <button type="button" class="btn templateBg" onclick="SavePaySlab();">
+                <img src="~/Content/images/save-icon.png" alt="home">Save
+            </button>
+            <button type="button" id="Button1" class="btn templateBg" onclick="javascript: document.location.href='../Master/setup.aspx'">
+                <img src="~/Content/images/back-icon.png" alt="home">Back
+            </button>
+        </div>
+        <div class="panel-head">
+            <div class="panel-title">
+                <h5 style="text-transform: uppercase">
+                    Pay Slab
+                </h5>
+
+            </div>
+        </div>
+        <div class="formBody clearfix">
+            <form>
+                <div class="pull-left col-12 col-md-6 pl-0">
+                    <div class="form-inline">
+                        <label for="Employee Name" class="col-5 col-md-4 pl-0">
+                            Name:
+                        </label>
+                        <label style="display: none" id="lblname">
+                        </label>
+                        <div id="Divname" class="form-control col-7 col-md-7 p-0" style="border: 0">
+                            <input type="text" class="form-control col-12 col-md-12 ptb-4" id="name" name="name"
+                                   placeholder="Enter Name" onkeyup="RemoveValidate()">
+                        </div>
+                    </div>
+
+                    <div class="form-inline">
+                        <label for="type" class="col-5 col-md-4 pl-0">
+                            Type:
+                        </label>
+                        <label style="display: none" id="lblM">
+                        </label>
+                        <div id="DivddlM" class="form-control formSelect col-7 col-md-7 p-0" style="border:0">
+                            <input class="form-control formSelect col-12 col-md-12" type="text" id="ddlM" style="width:100%"/>
+                        </div>
+                    </div>
+
+                    <div class="form-inline">
+                        <label for="Designation" class="col-5 col-md-4 pl-0">
+                            Employee Name/Designation Name:
+                        </label>
+                        <label style="display: none" id="lblMType">
+                        </label>
+                        <div id="DivddlMType" class="form-control col-7 col-md-7 p-0" style="border:0">
+                            <input type="text" class="form-control formSelect col-12 col-md-12" id="ddlMType"
+                                   name="type" style="width:100%; min-height: 24px; margin-left: 0px" />
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-left col-12 col-md-6 pl-0">
+
+                    <div class="form-inline">
+                        <label for="Currency" class="col-5 col-md-4 pl-0">
+                            Currency:
+                        </label>
+                        <label style="display: none" id="lblcurrency">
+                        </label>
+                        <div id="Divddlcurrency" class="form-control formSelect col-7 col-md-7 p-0" style="border:0">
+                            <input type="text" class="form-control formSelect col-12 col-md-12" id="ddlcurrency"
+                                   name="type" style="width:100%"/>
+                        </div>
+                    </div>
+                    <div class="form-inline">
+                        <label for="name" class="col-5 col-md-4 p-0">
+                            Range:
+                        </label>
+                        <span class="col-7 col-md-7 p-0">
+                            <label style="display: none" id="lblfrom">
+                            </label>
+
+                            <div id="Divtxtfrom" class="rangeBox">
+                                <input type="text" class="form-control ptb-3" id="txtfrom" name="from" placeholder="From"
+                                       onkeyup="RemoveValidate()" />
+                            </div>
+
+                            <div class="labelTo">
+                                <span class="col-1 col-md-1" style="color: #3e3e3e; font-size: 0.7875rem;">to</span>
+                                <label style="display: none" id="lblto"></label>
+                            </div>
+                            <div id="Divtxtto" class="rangeBox">
+                                <input type="text" class="form-control ptb-3" id="txtto" name="to" placeholder="To"
+                                       onkeyup="RemoveValidate()" />
+                            </div>
+                        </span>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+        <div class="row p-0 paychecks" id="payChecks">
+            <div class="width-49  col-12 col-md-6">
+                <table id="ListEarningType" class="table greyBorder mb-4 top-border p-0">
+                    <thead class="scrollbar">
+                        <tr class="lightGreen paystructure-head" style="height: 52px;">
+                            <th class="width-10">
+                                <div class="form-check checkCol" style="margin-bottom: 14px;">
+                                    <label class="checkBox smallFont mb-0">
+                                        <input type="checkbox" name="chkAllEList" id="chkAllEList">
+                                        <span class="checkmark check1 mt-1"></span>
+                                    </label>
+                                </div>
+                            </th>
+                            <th class="width-20" style="position: relative">
+                                <div>
+                                    Earnings <i onclick="ShowSearch(this)" class="fa fa-search faSearch"></i>
+                                </div>
+                                <div class="search" style="display: none">
+                                    <input type="text" placeholder="search" onkeyup="filterEarning(this)" class="form-control col-10 col-md-10"><i onclick="ShowSearch(this)" class="fa fa-close"></i>
+                                </div>
+                            </th>
+                            <th class="width-20">
+                                Range (From)
+                            </th>
+                            <th class="width-20">
+                                Range (To)
+                            </th>
+                            <th class="width-5">
+                                Is Mandatory
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="scrollbar" id="scroll-style1"></tbody>
+                    <tfoot class="scrollbar">
+                        <tr>
+                            <td class="earnings totalearn" colspan="3">
+                                Total Earnings
+                            </td>
+                            <td class="FRangeF totalearn">
+                                Rs.
+                                <label class="lblFRangeF">
+                                    0.00
+                                </label>
+                            </td>
+                            <td class="TRangeT totalearn">
+                                Rs.
+                                <label class="lblTRangeT">
+                                    0.00
+                                </label>
+                            </td>
+
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="width-49 ">
+                <table id="ListDeductionType" class="table greyBorder mb-4 top-border p-0">
+                    <thead class="scrollbar">
+                        <tr class="lightGreen paystructure-head" style="height: 52px;">
+                            <th class="width-10">
+                                <div class="form-check checkCol" style="margin-bottom: 14px;">
+                                    <label class="checkBox smallFont mb-0">
+                                        <input type="checkbox" name="chkAllDList" id="chkAllDList">
+                                        <span class="checkmark check1 mt-1"></span>
+                                    </label>
+                                </div>
+                            </th>
+                            <th class="width-20" style="position: relative">
+                                <div class="Column">
+                                    Deductions <i onclick="ShowSearch(this)" class="fa fa-search faSearch"></i>
+                                </div>
+                                <div class="search" style="display: none">
+                                    <input type="text" placeholder="search" onkeyup="filterDeduction(this)" class="form-control col-10 col-md-10">
+                                    <i class="fa fa-close" onclick="ShowSearch(this)"></i>
+                                </div>
+                            </th>
+
+                            <th class="width-20">
+                                Range (From)
+                            </th>
+                            <th class="width-20">
+                                Range (To)
+                            </th>
+                            <th class="width-5">
+                                Is Mandatory
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="scrollbar" id="scroll-style1"></tbody>
+                    <tfoot class="scrollbar">
+                        <tr>
+                            <td class="earnings totalearn" colspan="3">
+                                Total Deductions
+                            </td>
+                            <td class="FRangeF totalearn">
+                                Rs.
+                                <label class="lblFRangeF">
+                                    0.00
+                                </label>
+                            </td>
+                            <td class="TRangeT totalearn">
+                                Rs.
+                                <label class="lblTRangeT">
+                                    0.00
+                                </label>
+                            </td>
+
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+

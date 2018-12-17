@@ -30,6 +30,16 @@
             </div>
             <div>
                 <div id="myGrid2" style="height: 200px; width:100%;" class="ag-theme-balham "></div>
+
+
+                <div class="buttonCon pull-left mt-3">
+
+                    <button type="button" class="btn templateBg" id="btnEdit" onclick="Edit();" value="Add New"><img src="~/Content/images/edit-icon.png" alt="edit" />Edit</button>
+
+
+                    <button type="button" class="btn templateBg" id="btnDelete" data-toggle="modal" data-target="#deletePopup"><img src="~/Content/images/delete-icon.png" alt="delete" />Delete</button>
+
+                </div>
             </div>
             <script type="text/javascript" charset="utf-8">
 
@@ -37,25 +47,25 @@
 
 
                 var columnDefs = [
-                    { headerName: "All", checkboxSelection: true, field: "all", width: 150 },
-                    { headerName: "Sr.No", field: "sl", width: 150 },
-                    { headerName: "Employee Name", field: "employeeName", width: 200 },
-                    { headerName: "Designation", field: "designation", width: 200 },
-                    { headerName: "Department", field: "department", width: 200 },
-                    { headerName: "Manager", field: "manager", width: 200 },
-                    { headerName: "Complaints/Grievances", field: "complaints", width: 250 },
-                    { headerName: "Complaints/Grievances Against", field: "complaintsAgainst", width: 300 },
-                    { headerName: "Status", field: "status", width: 150 }
+                    { headerName: "All", checkboxSelection: true, field: "all", width: 100 },
+                    { headerName: "Sr. No.", field: "sl", width: 120 },
+                    { headerName: "Effective Date", field: "effectiveDate", width: 150, editable: true },
+                    { headerName: "Employee ID", field: "employeeID", width: 150, editable: true },
+                    { headerName: "Branch", field: "branch", width: 150, editable: true },
+                    { headerName: "Name", field: "name", width: 150, editable: true },
+                    { headerName: "Period", field: "period", width: 150, editable: true },
+                    { headerName: "Amount", field: "amount", width: 150, editable: true },
+                    { headerName: "Active", field: "active", checkboxSelection: true, width: 150 }
 
                 ];
 
                 // specify the data
                 var rowData = [
-                    { checkboxSelection: true, sl: "1", employeeName: "Rakesh", designation: "Developer", department: ".Net", manager: "Rakesh", complaints: "Harrassment", complaintsAgainst: "Abhishek", status: "No"},
-                    { checkboxSelection: true, sl: "2", employeeName: "Akash", designation: "Developer", department: ".Net", manager: "Rakesh", complaints: "Bad Behaviour", complaintsAgainst: "Mohan", status: "Yes"},
-                    { checkboxSelection: true, sl: "3", employeeName: "Mohan", designation: "Developer", department: ".Net", manager: "Rakesh", complaints: "Molestation", complaintsAgainst: "Akash", status: "No"},
-                    { checkboxSelection: true, sl: "4", employeeName: "Jack", designation: "Developer", department: ".Net", manager: "Rakesh", complaints: "Harrassment", complaintsAgainst: "Abhishek", status: "Yes"},
-                    { checkboxSelection: true, sl: "5", employeeName: "Mack", designation: "Developer", department: ".Net", manager: "Rakesh", complaints: "Harrassment", complaintsAgainst: "Mohan", status: "No"}
+                    { checkboxSelection: true, sl: "1", effectiveDate: "dd/mm/yyyy", employeeID: "EMP 001", branch: "Branch", name: "Branch Name", period: "Quarterly", amount: "Rs. 1000", checkboxSelection: true},
+                    { checkboxSelection: true, sl: "2", effectiveDate: "dd/mm/yyyy", employeeID: "EMP 002", branch: "Branch", name: "Branch Name", period: "Half Yearly", amount: "Rs. 1000", checkboxSelection: true },
+                    { checkboxSelection: true, sl: "3", effectiveDate: "dd/mm/yyyy", employeeID: "EMP 003", branch: "Branch", name: "Branch Name", period: "Annualy", amount: "Rs. 1000", checkboxSelection: true },
+                    { checkboxSelection: true, sl: "4", effectiveDate: "dd/mm/yyyy", employeeID: "EMP 004", branch: "Branch", name: "Branch Name", period: "Quarterly", amount: "Rs. 1000", checkboxSelection: true },
+                    { checkboxSelection: true, sl: "5", effectiveDate: "dd/mm/yyyy", employeeID: "EMP 005", branch: "Branch", name: "Branch Name", period: "Annualy", amount: "Rs. 1000", checkboxSelection: true },
                 ];
 
                 // let the grid know which columns and what data to use

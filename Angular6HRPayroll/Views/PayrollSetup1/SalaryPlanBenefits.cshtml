@@ -1,0 +1,105 @@
+﻿
+@{
+    ViewBag.Title = "SalaryPlanBenefits";
+}
+
+<body>
+
+
+    <div class="container-fluid gridBody">
+        <div class="buttonCon pull-right">
+            @*<button type="submit" class="btn templateBg" onClick="javascript: document.location.href='HR-form.html'"><img src="~/Content/images/back-icon.png" alt="back" />Back</button>*@
+            <button type="button" class="btn templateBg"><img src="~/Content/images/home-icon.png" alt="home" />@Html.ActionLink("Home", "HRAreaPage", "Home")</button>
+        </div>
+        <h5 style="text-transform:uppercase">Salary Plan Benefits</h5>
+        <div class="row">
+
+            <div class="col-7 col-md-7">
+                <div class="buttonCon pull-left">
+                    @*<button type="button" class="btn templateBg"><img src="~/Content/images/new-icon.png" alt="new" />@Html.ActionLink("Add New", "CreateComplaint", "HR")</button>*@
+                </div>
+            </div>
+            <div class="col-5 col-md-5 pull-right">
+                <div class="input-group mb-2 col-6 col-md-6 pull-right pl-0">
+                    <input class="form-control border-secondary" type="search" placeholder="search">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button"> <img src="~/Content/images/search-icon.png" alt="search" /> </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div id="myGrid2" style="height: 200px; width:100%;" class="ag-theme-balham "></div>
+
+
+            <div class="buttonCon pull-left mt-3">
+
+                <button type="button" class="btn templateBg" id="btnEdit" onclick="Edit();" value="Add New"><img src="~/Content/images/edit-icon.png" alt="edit" />Edit</button>
+
+
+                <button type="button" class="btn templateBg" id="btnDelete" data-toggle="modal" data-target="#deletePopup"><img src="~/Content/images/delete-icon.png" alt="delete" />Delete</button>
+
+            </div>
+        </div>
+        <script type="text/javascript" charset="utf-8">
+
+                // specify the columns
+
+
+                var columnDefs = [
+                    { headerName: "All", checkboxSelection: true, field: "all", width: 100 },
+                    { headerName: "Sr. No.", field: "sl", width: 160 },
+                    { headerName: "Salary Plan", field: "salaryPlan", width: 220, editable: true },
+                    { headerName: "Benefit Code", field: "benefitCode", width: 220, editable: true },
+                    { headerName: "Period", field: "period", width: 220, editable: true },
+                    { headerName: "Effective Date", field: "effectiveDate", width: 220, editable: true }
+                ];
+
+                // specify the data
+                var rowData = [
+                    { checkboxSelection: true, sl: "1", salaryPlan: "Contractual", benefitCode: "Benefit Code1", period: "Quarterly", effectiveDate: "dd/mm/yyyy"},
+                    { checkboxSelection: true, sl: "2", salaryPlan: "On Roll", benefitCode: "Benefit Code2", period: "Half Yearly", effectiveDate: "dd/mm/yyyy" },
+                    { checkboxSelection: true, sl: "3", salaryPlan: "Part Time", benefitCode: "Benefit Code3", period: "Annualy", effectiveDate: "dd/mm/yyyy" },
+                    { checkboxSelection: true, sl: "4", salaryPlan: "Full Time", benefitCode: "Benefit Code4", period: "Quarterly", effectiveDate: "dd/mm/yyyy" },
+                    { checkboxSelection: true, sl: "5", salaryPlan: "Contractual", benefitCode: "Benefit Code5", period: "Annualy", effectiveDate: "dd/mm/yyyy" }
+                ];
+
+                // let the grid know which columns and what data to use
+                var gridOptions = {
+                    columnDefs: columnDefs,
+                    rowData: rowData,
+                    enableSorting: true,
+                    enableFilter: true
+                };
+
+                // lookup the container we want the Grid to use
+                var eGridDiv = document.querySelector('#myGrid2');
+
+                // create the grid passing in the div to use together with the columns & data we want to use
+                new agGrid.Grid(eGridDiv, gridOptions);
+
+
+        </script>
+
+
+
+    </div>
+
+
+
+    <div id="gvDiv" style="width:100%" class="mt-2"></div>
+    <table class="table greyBorder mb-4 mt-2">
+        <thead>
+
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <div class="buttonCon pull-right mt-3">
+        <button type="button" class="btn templateBg" data-toggle="modal" onclick="javascript: document.location.href='../HRPayroll/leave-balance-employee.aspx'" style="display:none;">Day Wise Report</button>
+    </div>
+
+
+
+</body>
+

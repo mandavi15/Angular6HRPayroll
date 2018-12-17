@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace Angular6HRPayroll.Controllers
 {
-    public class PayrollSetupController : Controller
+    public class PayrollSetup1Controller : Controller
     {
-        // GET: PayrollSetup
+        // GET: PayrollSetup1
         public ActionResult Index()
         {
             return View();

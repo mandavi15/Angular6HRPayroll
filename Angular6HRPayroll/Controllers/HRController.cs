@@ -67,5 +67,13 @@ namespace Angular6HRPayroll.Controllers
         {
             return View();
         }
+        public ActionResult ComplaintGrievance()
+        {
+            return View();
+        }
+        public ActionResult CreateComplaint()
+        {
+            return View();
+        }
     }
 }

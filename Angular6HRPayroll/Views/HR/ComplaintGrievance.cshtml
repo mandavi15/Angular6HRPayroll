@@ -1,0 +1,287 @@
+﻿
+@{
+    ViewBag.Title = "ComplaintGrievance";
+}
+<html>
+<head>
+    <script src="~/Content/js/ag-grid-community.min.noStyle.js"></script>
+    <link href="~/Content/css/ag-grid.css" rel="stylesheet" />
+    <link href="~/Content/css/ag-theme-balham.css" rel="stylesheet" />
+
+
+
+</head>
+<body>
+    <div class="posting">
+        <ul class="nav nav-tabs" role="tablist" id="approval">
+            <li class="nav-item leaveLi">
+                <a class="nav-link active" data-toggle="tab" href="#grievance">
+
+                    Complaint / Grievance
+                </a>
+            </li>
+            <li class="nav-item leaveLi">
+                <a class="nav-link" data-toggle="tab" href="#manager">
+
+                    Manager
+                </a>
+            </li>
+            <li class="nav-item leaveLi">
+                <a class="nav-link" data-toggle="tab" href="#hr">
+                    Human Resource
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="tab-content">
+        <div class="container-fluid gridBody tab-pane fade active show" id="grievance">
+            <div class="buttonCon pull-right">
+                @*<button type="submit" class="btn templateBg" onClick="javascript: document.location.href='HR-form.html'"><img src="~/Content/images/back-icon.png" alt="back" />Back</button>*@
+                <button type="button" class="btn templateBg"><img src="~/Content/images/home-icon.png" alt="home" />@Html.ActionLink("Home", "HRAreaPage", "Home")</button>
+            </div>
+            <h5 style="text-transform:uppercase">All Complaints / Grievances</h5>
+            <div class="row">
+                <div class="col-7 col-md-7">
+                    <div class="buttonCon pull-left">
+                        <button type="button" class="btn templateBg"><img src="~/Content/images/new-icon.png" alt="new" />@Html.ActionLink("Add New", "CreateComplaint", "HR")</button>
+                    </div>
+                </div>
+                <div class="col-5 col-md-5 pull-right">
+                    <div class="input-group mb-2 col-6 col-md-6 pull-right pl-0">
+                        <input class="form-control border-secondary" type="search" placeholder="search">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button"> <img src="~/Content/images/search-icon.png" alt="search" /> </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div id="myGrid2" style="height: 200px; width:100%;" class="ag-theme-balham "></div>
+            </div>
+            <script type="text/javascript" charset="utf-8">
+
+                // specify the columns
+
+
+                var columnDefs = [
+                    { headerName: "All", checkboxSelection: true, field: "all", width: 150 },
+                    { headerName: "Sr.No", field: "sl", width: 150 },
+                    { headerName: "Employee Name", field: "employeeName", width: 200 },
+                    { headerName: "Designation", field: "designation", width: 200 },
+                    { headerName: "Department", field: "department", width: 200 },
+                    { headerName: "Manager", field: "manager", width: 200 },
+                    { headerName: "Complaints/Grievances", field: "complaints", width: 250 },
+                    { headerName: "Complaints/Grievances Against", field: "complaintsAgainst", width: 300 },
+                    { headerName: "Status", field: "status", width: 150 }
+                   
+                ];
+
+                // specify the data
+                var rowData = [
+                    { checkboxSelection: true, sl: "1", employeeName: "Rakesh", designation: "Developer", department: ".Net", manager: "Rakesh", complaints: "Harrassment", complaintsAgainst: "Abhishek", status: "No"},
+                    { checkboxSelection: true, sl: "2", employeeName: "Akash", designation: "Developer", department: ".Net", manager: "Rakesh", complaints: "Bad Behaviour", complaintsAgainst: "Mohan", status: "Yes"},
+                    { checkboxSelection: true, sl: "3", employeeName: "Mohan", designation: "Developer", department: ".Net", manager: "Rakesh", complaints: "Molestation", complaintsAgainst: "Akash", status: "No"},
+                    { checkboxSelection: true, sl: "4", employeeName: "Jack", designation: "Developer", department: ".Net", manager: "Rakesh", complaints: "Harrassment", complaintsAgainst: "Abhishek", status: "Yes"},
+                    { checkboxSelection: true, sl: "5", employeeName: "Mack", designation: "Developer", department: ".Net", manager: "Rakesh", complaints: "Harrassment", complaintsAgainst: "Mohan", status: "No"}
+                ];
+
+                // let the grid know which columns and what data to use
+                var gridOptions = {
+                    columnDefs: columnDefs,
+                    rowData: rowData,
+                    enableSorting: true,
+                    enableFilter: true
+                };
+
+                // lookup the container we want the Grid to use
+                var eGridDiv = document.querySelector('#myGrid2');
+
+                // create the grid passing in the div to use together with the columns & data we want to use
+                new agGrid.Grid(eGridDiv, gridOptions);
+
+
+            </script>
+            @*<div class="buttonCon pull-left mt-3">
+                <button type="button" id="btnEdit" class="btn templateBg"><img src="~/Content/images/edit-icon.png" alt="edit" />Edit</button>
+                <button type="submit" class="btn templateBg" data-toggle="modal" data-target="#successPopup"><img src="~/Content/images/save-icon.png" alt="save" />Save</button>
+                <button type="button" id="btnDelete" class="btn templateBg" data-toggle="modal" data-target="#deletePopup"><img src="~/Content/images/delete-icon.png" alt="delete" />Delete</button>
+                <button type="submit" class="btn templateBg"><img src="~/Content/images/download-icon.png" alt="download" />Download</button>
+                <button type="submit" class="btn templateBg"><img src="~/Content/images/download-icon.png" alt="download" />Reject</button>
+                <button type="submit" class="btn templateBg"><img src="~/Content/images/download-icon.png" alt="download" />Accept</button>
+                <button type="submit" class="btn templateBg" data-toggle="modal" data-target="#successPopup"><img src="~/Content/images/save-icon.png" alt="save" />Leave</button>
+            </div>*@
+
+
+
+
+
+        </div>
+        <div class="container-fluid gridBody tab-pane fade " id="manager">
+            <div class="buttonCon pull-right">
+                <button type="submit" class="btn templateBg" onClick="javascript: document.location.href='HR-form.html'"><img src="~/Content/images/back-icon.png" alt="back" />Back</button>
+                <button type="button" class="btn templateBg" onclick="javascript: document.location.href='../Master/HRareapage.aspx'"><img src="~/Content/images/home-icon.png" alt="home" />Home</button>
+            </div>
+            <h5 style="text-transform:uppercase">All Complaints / Grievances</h5>
+            <div class="row">
+                <div class="col-7 col-md-7">
+                    <div class="buttonCon pull-left">
+                        <button type="button" class="btn templateBg" data-toggle="modal" id="addNew" data-target="#leaveRequest"><img src="~/Content/images/new-icon.png" alt="new" />Add New</button>
+                    </div>
+                </div>
+                <div class="col-5 col-md-5 pull-right">
+                    <div class="input-group mb-2 col-6 col-md-6 pull-right pl-0">
+                        <input class="form-control border-secondary" type="search" placeholder="search">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button"> <img src="~/Content/images/search-icon.png" alt="search" /> </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div>
+                <div id="myGrid1" style="height: 200px; width:100%;" class="ag-theme-balham "></div>
+            </div>
+            <script type="text/javascript" charset="utf-8">
+
+                // specify the columns
+
+
+                var columnDefs = [
+                    { headerName: "All", checkboxSelection: true, field: "all", width: 150 },
+                    { headerName: "Sr.No", field: "sl", width: 150 },
+                    { headerName: "Name", field: "Name", width: 150 },
+                    { headerName: "Leave Type", field: "LeaveType", width: 200 },
+                    { headerName: "Leave Applied", field: "LeaveApplied", width: 200 },
+                    { headerName: "From Date", field: "FromDate", width: 200 },
+                    { headerName: "To Date", field: "ToDate", width: 200 },
+                    { headerName: "Status", field: "Status", width: 200 },
+                ];
+
+                // specify the data
+                var rowData = [
+                    { checkboxSelection: true, sl:"1", Name: "Jack", LeaveType: "Cl", LeaveApplied: "Noida", FromDate: "13-12-2018", ToDate: "18-12-2018", Status:"No" },
+                    { checkboxSelection: true, sl: "2", Name: "Mick", LeaveType: "Sl", LeaveApplied: "Noida", FromDate: "13-12-2018", ToDate: "18-12-2018", Status: "No" },
+                    { checkboxSelection: true, sl: "3", Name: "Rahul", LeaveType: "El", LeaveApplied: "Noida", FromDate: "13-12-2018", ToDate: "18-12-2018", Status: "No" },
+                    { checkboxSelection: true, sl: "4", Name: "Akash", LeaveType: "Cl", LeaveApplied: "Noida", FromDate: "13-12-2018", ToDate: "18-12-2018", Status: "No" },
+                    { checkboxSelection: true, sl: "5", Name: "Mick", LeaveType: "El", LeaveApplied: "Noida", FromDate: "13-12-2018", ToDate: "18-12-2018", Status: "No" }
+                ];
+
+                // let the grid know which columns and what data to use
+                var gridOptions = {
+                    columnDefs: columnDefs,
+                    rowData: rowData,
+                    enableSorting: true,
+                    enableFilter: true
+                };
+
+                // lookup the container we want the Grid to use
+                var eGridDiv = document.querySelector('#myGrid1');
+
+                // create the grid passing in the div to use together with the columns & data we want to use
+                new agGrid.Grid(eGridDiv, gridOptions);
+
+
+            </script>
+
+            <div class="buttonCon pull-left mt-3">
+                <button type="button" id="btnEdit" class="btn templateBg"><img src="~/Content/images/edit-icon.png" alt="edit" />Edit</button>
+                <button type="submit" class="btn templateBg" data-toggle="modal" data-target="#successPopup"><img src="~/Content/images/save-icon.png" alt="save" />Save</button>
+                <button type="button" id="btnDelete" class="btn templateBg" data-toggle="modal" data-target="#deletePopup"><img src="~/Content/images/delete-icon.png" alt="delete" />Delete</button>
+                <button type="submit" class="btn templateBg"><img src="~/Content/images/download-icon.png" alt="download" />Download</button>
+            </div>
+        </div>
+        <div class="container-fluid gridBody tab-pane fade" id="hr">
+            <div class="buttonCon pull-right">
+                <button type="submit" class="btn templateBg" onClick="javascript: document.location.href='HR-form.html'"><img src="~/Content/images/back-icon.png" alt="back" />Back</button>
+                <button type="submit" class="btn templateBg"><img src="~/Content/images/home-icon.png" alt="home" />Home</button>
+            </div>
+            <h5 style="text-transform:uppercase">All Complaints / Grievances</h5>
+            <div class="container p-0">
+                <form name="myForm" onsubmit="return checkFormValidation();" class="hr-form full-width">
+
+                    <div class="col-6 col-md-6 clearfix p-0">
+                        <div class="col-6 col-md-6 pull-left p-0 greenBorder pt-2">
+                            <div class="form-inline mb-2">
+                                <label for="Appraisee Name" class="col-6 col-md-6">Total Users:</label>
+                                <label for="Employee Name" class="col-6 col-md-6 pl-0 font-weight-normal">1</label>
+                            </div>
+                            <div class="form-inline mb-2">
+                                <label for="Respondents" class="col-6 col-md-6">Present:</label>
+                                <label for="Respondent Name" class="col-6 col-md-6 pl-0 font-weight-normal">0</label>
+                            </div>
+                            <div class="form-inline mb-2">
+                                <label for="Appraisee Name" class="col-6 col-md-6">On Duty:</label>
+                                <label for="Employee Name" class="col-6 col-md-6 pl-0 font-weight-normal">0</label>
+                            </div>
+                            <div class="form-inline mb-2">
+                                <label for="Respondents" class="col-6 col-md-6">Paid Leave:</label>
+                                <label for="Respondent Name" class="col-6 col-md-6 pl-0 font-weight-normal">0</label>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-6 pull-left p-0 greenBorder pt-2">
+                            <div class="form-inline mb-2">
+                                <label for="Appraisee Name" class="col-6 col-md-6">Absent:</label>
+                                <label for="Employee Name" class="col-6 col-md-6 pl-0 font-weight-normal">1</label>
+                            </div>
+                            <div class="form-inline mb-2">
+                                <label for="Respondents" class="col-6 col-md-6">Unpaid Leave:</label>
+                                <label for="Respondent Name" class="col-6 col-md-6 pl-0 font-weight-normal">0</label>
+                            </div>
+                            <div class="form-inline mb-2">
+                                <label for="Appraisee Name" class="col-6 col-md-6">Holidays:</label>
+                                <label for="Employee Name" class="col-6 col-md-6 pl-0 font-weight-normal">0</label>
+                            </div>
+                            <div class="form-inline mb-2">
+                                <label for="Respondents" class="col-6 col-md-6">Weekend:</label>
+                                <label for="Respondent Name" class="col-6 col-md-6 pl-0 font-weight-normal">0</label>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="dateCol" id="divSelectDate">
+                            @*<input type="text" class="form-control col-4 col-md-4 ptb-4" id="ddlMonth" name="name">
+                                <input type="text" class="form-control col-4 col-md-4 ptb-4" id="ddlYear" name="name" style="margin-top: 5PX;">
+                                <button type="button" class="btn btn-submit" style=" width: 18%; padding: 2px 0px 4px; margin-bottom: 6px;margin-top: 5PX;" data-toggle="modal" onclick="BindEmployeeLeaveBalence();">View</button>*@
+
+                            <div class="row">
+                                <div class="col-4 col-md-4">
+                                    <input type="text" class="form-control col-4 col-md-12 ptb-4" id="ddlMonth" name="name">
+
+                                </div>
+                                <div class="col-4 col-md-4">
+                                    <input type="text" class="form-control col-4 col-md-12 ptb-4" id="ddlYear" name="name">
+
+                                </div>
+                                <div class="col-4 col-md-4 buttonCon">
+                                    @*<button type="button" class="btn btn-submit" style=" width: 50%; margin-bottom: 6px;" data-toggle="modal">View</button>*@
+                                    <button type="submit" class="btn templateBg" style="width:50%">View</button>
+                                </div>
+                            </div>
+
+                        </div>
+                </form>
+
+            </div>
+
+        </div>
+
+        <div id="gvDiv" style="width:100%" class="mt-2"></div>
+        <table class="table greyBorder mb-4 mt-2">
+            <thead>
+
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <div class="buttonCon pull-right mt-3">
+            <button type="button" class="btn templateBg" data-toggle="modal" onclick="javascript: document.location.href='../HRPayroll/leave-balance-employee.aspx'" style="display:none;">Day Wise Report</button>
+        </div>
+    </div>
+
+    <script>
+        jquery_1_11_3_min_p('body').append('<div class="modal fade" id="leaveRequest"><div class="modal-dialog modal-dialog-centered" id="leavePopup1"><div class="modal-content"><div class="modal-header"><h5>Leave Request Form</h5> <button type="button" class="close" data-dismiss="modal">&times;</button></div><div class="modal-body"><div class="row"><form name="myForm" onsubmit="return checkFormValidation();" class="hr-form full-width"><div class="col-12 col-md-12 pull-left" id="divManager"><div class="col-6 col-md-6 pull-left pl-0"><div class="form-inline mb-2"> <label for="name" class="col-5 col-md-5 p-0">Employee Name:</label> <input type="text" class="form-control col-7 col-md-7 ptb-4" id="ddlEmpName" name="name" placeholder="Enter Name"></div></div><div class="col-6 col-md-6 pull-left p-0"><div class="form-inline mb-2"> <label for="name" class="col-5 col-md-5 p-0">Employee Code:</label> <input type="text" id="txtEmpCode" class="form-control col-7 col-md-7 ptb-4" name="department" placeholder="Employee Code"></div></div></div><div class="col-12 col-md-12 pull-left" id="divEmployee"><div class="col-6 col-md-6 pull-left pl-0"><div class="form-inline mb-2"> <label for="name" class="col-5 col-md-5 p-0">Employee Name:</label> <input type="text" class="form-control col-7 col-md-7 ptb-4" id="ddlEmpName" name="name" placeholder="Enter Name"></div></div><div class="col-6 col-md-6 pull-left p-0"><div class="form-inline mb-2"> <label for="name" class="col-5 col-md-5 p-0">Employee Code:</label> <input type="text" id="txtEmpCode" class="form-control col-7 col-md-7 ptb-4" name="department" placeholder="Employee Code"></div></div></div><div class="col-6 col-md-6 pull-left"><div class="form-inline mb-2"> <label for="balance" class="col-5 col-md-5 p-0">Leave Type:</label> <input type="text" class="form-control col-7 col-md-7 ptb-4" id="ddlLeaveType" name="balance" placeholder="Leave Type"></div><div class="form-inline mb-2"> <label for="Leave" class="col-5 col-md-5 p-0">No. of days leave applied for :</label> <input type="text" class="form-control col-7 col-md-7 ptb-4" id="txtAppliedLV" name="Leave" placeholder="No. of Days"></div><div class="form-inline mb-2"> <label for="postal" class="col-5 col-md-5 p-0">Reason for leave:</label> <input type="text" class="form-control col-7 col-md-7 ptb-4" id="ddlReason" name="reason for leave"></div></div><div class="col-6 col-md-6 pull-left pl-0"><div class="form-inline mb-2"> <label for="startdate" class="col-5 col-md-5 p-0">Start Date:</label> <input type="text" class="form-control col-7 col-md-7 ptb-4" id="txtStartDate" name="startdate" placeholder="dd/mm/yy"></div><div class="form-inline mb-2"> <label for="enddate" class="col-5 col-md-5 p-0">End Date:</label> <input type="text" class="form-control col-7 col-md-7 ptb-4" id="txtEndDate" name="enddate" placeholder="dd/mm/yy"></div></div></form></div><div class="clearfix"></div><div class="panel panel-default clearfix"><div class="clearfix top-border mt-3"><div class="col-12 col-md-8 p-0 pull-right"><div class="row approval mt-4"><div class="col-6 col-md-6 p-0"><p><strong>Approved By:</strong>&nbsp; <input type="text" id="txtApprovedBy" class="dashed" readonly /></p></div><div class="col-6 col-md-6 p-0"><p><strong>Approved Date:</strong>&nbsp; <input type="text" id="txtApprovedDate" class="dashed" readonly /></p></div></div></div></div></div></div><div class="modal-footer"> <button type="button" class="btn btn-submit" data-dismiss="modal" onclick="SaveLeaveRequest();">SUBMIT</button></div></div></div></div>');
+    </script>
+
+</body>
+</html>
+

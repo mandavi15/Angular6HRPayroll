@@ -6,9 +6,7 @@
 
     <div class="center-block">
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-            <label id="lblmsg" style="display: none">
-            </label>
-            <asp:HiddenField ID="lblUserId" runat="server" />
+           
             <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingTwo">
                     <h4 class="panel-title"> Human Resource</h4>
@@ -27,50 +25,50 @@
                             <li>
                                 <a href="location.aspx">
                                     <span class="areaIcon"><img src="~/Content/images/location-icon1.png" alt="" /></span>
-                                    Location
+                                    @Html.ActionLink("Location", "Location", "Home")
                                 </a>
                             </li>
 
                             <li>
                                 <a href="departmentList.aspx">
                                     <span class="areaIcon"><img src="~/Content/images/department-icon1.png" alt="" /></span>
-                                    Department
+                                    @Html.ActionLink("Department", "Department", "HR")
                                 </a>
                             </li>
                             <li>
                                 <a href="designationList.aspx">
                                     <span class="areaIcon"><img src="~/Content/images/designation-icon1.png" alt="" /></span>
-                                    Designation
+                                    @Html.ActionLink("Designation", "Designation", "HR")
                                 </a>
                             </li>
                             <li>
                                 <a href="skills.aspx">
                                     <span class="areaIcon"><img src="~/Content/images/skill-icon1.png" alt="" /></span>
-                                    Skills
+                                    @Html.ActionLink("Skills", "Skills", "HR")
                                 </a>
                             </li>
                             <li>
                                 <a href="employeeList.aspx">
                                     <span class="areaIcon"><img src="~/Content/images/employee-icon1.png" alt="" /></span>
-                                    Employee
+                                    @Html.ActionLink("Employee", "Employees", "HR")
                                 </a>
                             </li>
                             <li>
                                 <a href="requisitionList.aspx">
                                     <span class="areaIcon"><img src="~/Content/images/recruitment-icon1.png" alt="" /></span>
-                                    Recruitment
+                                    @Html.ActionLink("Recruitment", "Requisition", "HR")
                                 </a>
                             </li>
                             <li>
                                 <a href="leaveType.aspx">
                                     <span class="areaIcon"><img src="~/Content/images/leave-icon1.png" alt="" /></span>
-                                    Leave Type
+                                    @Html.ActionLink("Leave Type", "LeaveType", "HR")
                                 </a>
                             </li>
                             <li>
                                 <a href="leaveEmployee.aspx">
                                     <span class="areaIcon"><img src="~/Content/images/leave-icon1.png" alt="" /></span>
-                                    Leave Employee
+                                    @Html.ActionLink("Leave Employee", "LeaveEmployee", "HR")
                                 </a>
                             </li>
                             <li>

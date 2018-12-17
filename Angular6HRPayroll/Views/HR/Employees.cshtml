@@ -92,14 +92,13 @@
 
 
 
-        jquery_1_11_3_min_p('body').append('<div class="modal right fade" id="myModal2" role="dialog" aria-labelledby="myModalLabel2"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" style=" padding: 0 !important; color: #fff;">Benefits</h4></div><div class="modal-body"><div class="container-fluid employeeTable" id="benefits"><div class="commandBtn pull-left pb-2"> <span class="mr-1" onclick="AddBenefits();"><img src="../Content/images/add.png" alt="add icon" />Add Line </span> <span onclick="RemoveBenefits();"><img src="../Content/images/remove-icon.png" alt="remove icon" />Remove Line</span></div><table class="table greyBorder mb-0 vendorGrid" id="tblBenefitDetail"><thead><tr class="lightGreen"><th>Sr No.</th><th>Leave Benefits</th><th>No. of Days</th></tr></thead><tbody></tbody></table></div></div><div class="modal-footer"> <button type="button" onclick="SaveEmpBenefit();" class="btn btn-submit">SUBMIT</button></div></div></div></div>');
     </script>
-    <script>
-        jquery_1_11_3_min_p('body').append('<div class="modal fade" id="addNew"><div class="modal-dialog modal-dialog-centered" id="employeePopup"><div class="modal-content"><div class="modal-header"><h5>Employee</h5> <button type="button" class="close" data-dismiss="modal">&times;</button></div><div class="modal-body tab-content p-0 mb-3" id="employeeDiv"><div class="posting container p-0 mb-4"><ul class="nav nav-tabs" role="tablist"><li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#personalInformation"> Personal Information</a></li><li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#employment">Employment</a></li><li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#contacts"> Personal Contacts</a></li><li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#skills1"> Skills</a></li><li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#experiences"> Experiences</a></li><li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#edu"> Education</a></li><li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#certificate"> Certificate</a></li><li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#bank"> Bank Accounts</a></li><li class="nav-item border-right-0"> <a class="nav-link" data-toggle="tab" href="#bank"> Pay Element</a></li></ul></div><div class="container-fluid tab-pane fade active show employeeTable" id="personalInformation"><form name="myForm" onsubmit="return checkFormValidation();" class="hr-form col-12 col-md-12"><div class="row"><div class="col-12 col-md-6"><div class="form-inline mb-2"> <label for="Employee code" class="col-5 col-md-5">Employee Code:</label> <input type="text" class="form-control col-7 col-md-7 ptb-4" readonly id="txtEmployee" name="employee code" placeholder="Employee Code"></div><div class="form-inline mb-2"> <label for="name" class="col-5 col-md-5">Title:</label> <input type="text" class="form-control col-7 col-md-7 ptb-4" onkeyup="RemoveValidate()" id="ddlTitle" name="name"></div><div class="form-inline mb-2"> <label for="name" class="col-5 col-md-5">Name:</label> <input type="text" class="form-control col-7 col-md-7 ptb-4" onkeyup="RemoveValidate()" id="txtNamePersonal" name="name" placeholder="Enter Name"></div><div class="form-inline mb-2"> <label for="dob" class="col-5 col-md-5">Date of Birth:</label> <input type="text" id="datepicker" class="form-control col-7 col-md-7 ptb-4" id="txtdobb" name="txtDOB" placeholder="dd/mm/yyyy"></div><div class="form-inline mb-2"> <label for="gender" class="col-5 col-md-5">Gender:</label><div class="col-7 col-md-7 p-0 popgenderemploy"><div class="form-check checkCol col-6 col-md-6 pull-left"> <label class="checkBox">Male <input type="radio" value="M" name="rdbGender" checked> <span class="checkmark check mt-1"></span> </label></div><div class="form-check checkCol col-6 col-md-6 pull-left"> <label class="checkBox">Female <input type="radio" value="F" name="rdbGender"> <span class="checkmark check mt-1"></span> </label></div><div class="form-check checkCol col-6 col-md-6 pull-left"> <label class="checkBox">Others <input type="radio" value="O" name="rdbGender"> <span class="checkmark check mt-1"></span> </label></div></div></div><div class="form-inline mb-2"> <label for="marital" class="col-5 col-md-5">Marital Status:</label> <input type="text" class="form-control col-7 col-md-7 ptb-4" id="ddlMartlStatus" name="group"></div></div><div class="col-12 col-md-6"><div class="form-inline mb-2"> <label for="name" class="col-5 col-md-5">Email ID:</label> <input type="email" class="form-control col-7 col-md-7 ptb-4" onkeyup="RemoveValidate()" id="txtEmail" name="email" placeholder="Enter Email ID"></div><div class="form-inline mb-2"> <label for="dependents" class="col-5 col-md-5">No. of Dependents:</label> <input type="text" class="form-control col-7 col-md-7 ptb-4" id="txtDependent" maxlength="1" name="Dependents" placeholder="No. of Dependents"></div><div class="form-inline mb-2"> <label for="address" class="col-5 col-md-5">Address:</label> <input type="text" class="form-control col-7 col-md-7 ptb-4" id="txtAddress" name="address" placeholder="Enter Address"></div><div class="form-inline mb-2"> <label for="postal" class="col-5 col-md-5">State:</label> <input type="text" class="form-control col-7 col-md-7 ptb-4" id="ddlState" name="group"></div><div class="form-inline mb-2"> <label for="postal" class="col-5 col-md-5">Postal Code:</label> <input type="text" class="form-control col-7 col-md-7 ptb-4" maxlength="6" id="txtPostalCode" name="postal" placeholder="Enter Postal Code"></div><div class="form-inline mb-2"> <label for="postal" class="col-5 col-md-5">Country:</label> <input type="text" class="form-control col-7 col-md-7 ptb-4" id="ddlCountry" name="group"></div></div></div></form><div class="commandBtn pull-left pb-1" id="btn11"> <span onclick="AddDependent();" class="mr-1"><img src="../Content/images/add.png" alt="add icon">Add Line</span><span onclick="RemoveDependent()"><img src="../Content/images/remove-icon.png" alt="remove icon" />Remove Line</span></div><div class="scrollbar-popup scroll-style"><table class="table greyBorder mb-0 vendorGrid" id="tblDependent"><thead><tr class="lightGreen"><th>Sr. No.</th><th>Name</th><th>Relationship</th><th>Contact</th><th style="width:8%">Documents</th><th style="width:28%">Document No.</th></tr></thead><tbody></tbody></table></div></div><div class="container-fluid tab-pane fade employeeTable" id="employment"><div class="row"><form name="myForm" onsubmit="return checkFormValidation();" class="hr-form full-width"><div class="col-12 col-md-6 pl-0 pull-left"><div class="form-inline mb-2"> <label for="Start Date" class="col-4 col-md-4">Start Date:</label> <input type="text" class="form-control col-7 col-md-7 ptb-4" id="txtStartdate" name="Start Date" placeholder="Start Date"></div><div class="form-inline mb-2"> <label for="Last Day" class="col-4 col-md-4">Last Day Worked:</label> <input type="text" class="form-control col-7 col-md-7 ptb-4" id="txtLastday" name="Last Day" placeholder="Last Day Worked"></div><div class="form-inline mb-2"> <label for="Termination" class="col-4 col-md-4">Termination Date:</label> <input type="text" class="form-control col-7 col-md-7 ptb-4" id="txtTerminationDate" name="Termination" placeholder="dd/mm/yyyy"></div></div><div class="col-12 col-md-6 pl-0 pull-left"><div class="form-inline mb-2"> <label for="Designation" class="col-4 col-md-4">Designation:</label> <input type="text" class="form-control col-7 col-md-7 ptb-4" id="ddlDesignation" name="group"></div><div class="form-inline mb-2"> <label for="Probation Period" class="col-4 col-md-4">Probation Period:</label><div class="col-7 col-md-7 p-0"> <input type="text" class="form-control col-12 col-md-5 col-sm-6 pull-left ptb-4 mr-1" id="txtProbation" name="Probation Period" placeholder="Probation Period"> <input type="text" class="form-control mblMargin pull-right col-12 col-sm-6 col-md-6 ptb-4" id="ddlYearProbation" name="Probation Period" placeholder="Probation Period"></div></div><div class="form-inline mb-2"> <label for="Termination" class="col-4 col-md-4">Termination Reason:</label> <input type="text" class="form-control col-7 col-md-7 ptb-4" id="ddlReason" name="group"></div></div></form></div><div class="commandBtn pull-left pb-1"> <input style="display:none" type="file" name="imgInp" id="imgInp" /> <span id="browseImg" class="mr-1"><img src="../Content/images/add.png" alt="add icon" />Add Document </span><span onclick="RemoveDoc()" class="removedocument"><img src="../Content/images/remove-icon.png" alt="remove icon" />Remove Document </span></div><div class="scrollbar-popup scroll-style"><table class="table greyBorder mb-0 vendorGrid" id="employeeeeTable"><thead><tr class="lightGreen"><th>Sr No.</th><th>Document Type</th><th>Attachment</th></tr></thead><tbody></tbody></table></div></div><div class="container-fluid tab-pane fade employeeTable" id="contacts"><div class="commandBtn pull-left pb-1"> <span onclick="AddPersonalContactInfo();" class="mr-1"><img src="../Content/images/add.png" alt="add icon" />Add Line</span><span onclick="RemovePC()"><img src="../Content/images/remove-icon.png" alt="remove icon" />Remove Line</span></div><div class="scrollbar-popup scroll-style"><table class="table greyBorder mb-0 vendorGrid" id="employeeTable"><thead><tr class="lightGreen"><th>Sr No.</th><th>Name</th><th>Relationship</th><th>Primary</th><th>Contact Information</th></tr></thead><tbody></tbody></table></div></div><div class="container-fluid tab-pane fade employeeTable" id="skills1"><div class="commandBtn pull-left pb-1"> <span onclick="AddSkill();" id="btnAddSkills"><img src="../Content/images/add.png" alt="add icon" />Add Line</span> <span onclick="RemoveSkills()"><img src="../Content/images/remove-icon.png" alt="remove icon" />Remove Line</span></div><div class="scrollbar-popup scroll-style"><table class="table greyBorder mb-0 vendorGrid" id="tblSkill"><thead><tr class="lightGreen"><th>Sr No.</th><th>Skills</th><th>Level</th><th>Experience</th></tr></thead><tbody></tbody></table></div></div><div class="container-fluid tab-pane fade employeeTable" id="experiences"><div class="commandBtn pull-left pb-1"> <span onclick="GetExperienceDetails();"><img src="../Content/images/add.png" alt="add icon" />Add Line</span> <span onclick="RemoveExperience();"><img src="../Content/images/remove-icon.png" alt="remove icon" />Remove Line</span></div><div class="scrollbar-popup scroll-style"><table class="table greyBorder mb-0 vendorGrid" id="tblDesignation"><thead><tr class="lightGreen"><th>Sr No.</th><th>Employer</th><th>Designation</th><th>Address</th><th>Contact No.</th><th>Start Date</th><th>End Date</th></tr></thead><tbody></tbody></table></div></div><div class="container-fluid tab-pane fade employeeTable" id="edu"><div class="commandBtn pull-left pb-1"> <span onclick="AddEducation();"><img src="../Content/images/add.png" alt="add icon" />Add Line</span> <span onclick="RemoveEducation()"><img src="../Content/images/remove-icon.png" alt="remove icon" />Remove Line</span></div><div class="scrollbar-popup scroll-style"><table class="table greyBorder mb-0 vendorGrid" id="tblEducation"><thead><tr class="lightGreen"><th>Sr No.</th><th>Qualification</th><th>Institution</th><th>Degree Name</th><th>Marks[%/cgpa]</th><th>Duration</th><th>Start Date</th><th>End Date</th></tr></thead><tbody></tbody></table></div></div><div class="container-fluid tab-pane fade employeeTable" id="certificate"><div class="commandBtn pull-left pb-1"> <span onclick="AddCertificate();"><img src="../Content/images/add.png" alt="add icon" />Add Line</span> <span onclick="RemoveCertificate()"><img src="../Content/images/remove-icon.png" alt="remove icon" />Remove Line</span></div><div class="scrollbar-popup scroll-style"><table class="table greyBorder mb-0 vendorGrid" id="tblCertificate"><thead><tr class="lightGreen"><th>Sr No.</th><th>Certificate Type</th><th>Name</th><th>Start Date</th><th>End Date</th></tr></thead><tbody></tbody></table></div></div><div class="container-fluid tab-pane fade employeeTable" id="bank"><div class="commandBtn pull-left pb-1"> <span onclick="AddBankDetails();" class="mr-1"><img src="../Content/images/add.png" alt="add icon" />Add Line </span> <span onclick="RemoveProjects()"><img src="../Content/images/remove-icon.png" alt="remove icon" />Remove Line</span></div><div class="scrollbar-popup scroll-style"><table class="table greyBorder mb-0 vendorGrid" id="tblBankDetail"><thead><tr class="lightGreen"><th>Sr No.</th><th>Name</th><th>Branch</th><th>Account No.</th><th>IFSC Code</th><th>Account Type</th></tr></thead><tbody></tbody></table></div></div></div><div class="modal-footer mt-3"> <button type="button" class="btn btn-submit" id="btnSubmit" onclick="SaveEmployee();">SUBMIT</button></div></div></div></div> ');        jquery_1_11_3_min_p("#browseImg").click(function () {
-            jquery_1_11_3_min_p("#imgInp").trigger('click');
+    @*<script>
+            jquery_1_11_3_min_p('body').append('<div class="modal fade" id="addNew"><div class="modal-dialog modal-dialog-centered" id="employeePopup"><div class="modal-content"><div class="modal-header"><h5>Employee</h5> <button type="button" class="close" data-dismiss="modal">&times;</button></div><div class="modal-body tab-content p-0 mb-3" id="employeeDiv"><div class="posting container p-0 mb-4"><ul class="nav nav-tabs" role="tablist"><li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#personalInformation"> Personal Information</a></li><li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#employment">Employment</a></li><li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#contacts"> Personal Contacts</a></li><li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#skills1"> Skills</a></li><li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#experiences"> Experiences</a></li><li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#edu"> Education</a></li><li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#certificate"> Certificate</a></li><li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#bank"> Bank Accounts</a></li><li class="nav-item border-right-0"> <a class="nav-link" data-toggle="tab" href="#bank"> Pay Element</a></li></ul></div><div class="container-fluid tab-pane fade active show employeeTable" id="personalInformation"><form name="myForm" onsubmit="return checkFormValidation();" class="hr-form col-12 col-md-12"><div class="row"><div class="col-12 col-md-6"><div class="form-inline mb-2"> <label for="Employee code" class="col-5 col-md-5">Employee Code:</label> <input type="text" class="form-control col-7 col-md-7 ptb-4" readonly id="txtEmployee" name="employee code" placeholder="Employee Code"></div><div class="form-inline mb-2"> <label for="name" class="col-5 col-md-5">Title:</label> <input type="text" class="form-control col-7 col-md-7 ptb-4" onkeyup="RemoveValidate()" id="ddlTitle" name="name"></div><div class="form-inline mb-2"> <label for="name" class="col-5 col-md-5">Name:</label> <input type="text" class="form-control col-7 col-md-7 ptb-4" onkeyup="RemoveValidate()" id="txtNamePersonal" name="name" placeholder="Enter Name"></div><div class="form-inline mb-2"> <label for="dob" class="col-5 col-md-5">Date of Birth:</label> <input type="text" id="datepicker" class="form-control col-7 col-md-7 ptb-4" id="txtdobb" name="txtDOB" placeholder="dd/mm/yyyy"></div><div class="form-inline mb-2"> <label for="gender" class="col-5 col-md-5">Gender:</label><div class="col-7 col-md-7 p-0 popgenderemploy"><div class="form-check checkCol col-6 col-md-6 pull-left"> <label class="checkBox">Male <input type="radio" value="M" name="rdbGender" checked> <span class="checkmark check mt-1"></span> </label></div><div class="form-check checkCol col-6 col-md-6 pull-left"> <label class="checkBox">Female <input type="radio" value="F" name="rdbGender"> <span class="checkmark check mt-1"></span> </label></div><div class="form-check checkCol col-6 col-md-6 pull-left"> <label class="checkBox">Others <input type="radio" value="O" name="rdbGender"> <span class="checkmark check mt-1"></span> </label></div></div></div><div class="form-inline mb-2"> <label for="marital" class="col-5 col-md-5">Marital Status:</label> <input type="text" class="form-control col-7 col-md-7 ptb-4" id="ddlMartlStatus" name="group"></div></div><div class="col-12 col-md-6"><div class="form-inline mb-2"> <label for="name" class="col-5 col-md-5">Email ID:</label> <input type="email" class="form-control col-7 col-md-7 ptb-4" onkeyup="RemoveValidate()" id="txtEmail" name="email" placeholder="Enter Email ID"></div><div class="form-inline mb-2"> <label for="dependents" class="col-5 col-md-5">No. of Dependents:</label> <input type="text" class="form-control col-7 col-md-7 ptb-4" id="txtDependent" maxlength="1" name="Dependents" placeholder="No. of Dependents"></div><div class="form-inline mb-2"> <label for="address" class="col-5 col-md-5">Address:</label> <input type="text" class="form-control col-7 col-md-7 ptb-4" id="txtAddress" name="address" placeholder="Enter Address"></div><div class="form-inline mb-2"> <label for="postal" class="col-5 col-md-5">State:</label> <input type="text" class="form-control col-7 col-md-7 ptb-4" id="ddlState" name="group"></div><div class="form-inline mb-2"> <label for="postal" class="col-5 col-md-5">Postal Code:</label> <input type="text" class="form-control col-7 col-md-7 ptb-4" maxlength="6" id="txtPostalCode" name="postal" placeholder="Enter Postal Code"></div><div class="form-inline mb-2"> <label for="postal" class="col-5 col-md-5">Country:</label> <input type="text" class="form-control col-7 col-md-7 ptb-4" id="ddlCountry" name="group"></div></div></div></form><div class="commandBtn pull-left pb-1" id="btn11"> <span onclick="AddDependent();" class="mr-1"><img src="../Content/images/add.png" alt="add icon">Add Line</span><span onclick="RemoveDependent()"><img src="../Content/images/remove-icon.png" alt="remove icon" />Remove Line</span></div><div class="scrollbar-popup scroll-style"><table class="table greyBorder mb-0 vendorGrid" id="tblDependent"><thead><tr class="lightGreen"><th>Sr. No.</th><th>Name</th><th>Relationship</th><th>Contact</th><th style="width:8%">Documents</th><th style="width:28%">Document No.</th></tr></thead><tbody></tbody></table></div></div><div class="container-fluid tab-pane fade employeeTable" id="employment"><div class="row"><form name="myForm" onsubmit="return checkFormValidation();" class="hr-form full-width"><div class="col-12 col-md-6 pl-0 pull-left"><div class="form-inline mb-2"> <label for="Start Date" class="col-4 col-md-4">Start Date:</label> <input type="text" class="form-control col-7 col-md-7 ptb-4" id="txtStartdate" name="Start Date" placeholder="Start Date"></div><div class="form-inline mb-2"> <label for="Last Day" class="col-4 col-md-4">Last Day Worked:</label> <input type="text" class="form-control col-7 col-md-7 ptb-4" id="txtLastday" name="Last Day" placeholder="Last Day Worked"></div><div class="form-inline mb-2"> <label for="Termination" class="col-4 col-md-4">Termination Date:</label> <input type="text" class="form-control col-7 col-md-7 ptb-4" id="txtTerminationDate" name="Termination" placeholder="dd/mm/yyyy"></div></div><div class="col-12 col-md-6 pl-0 pull-left"><div class="form-inline mb-2"> <label for="Designation" class="col-4 col-md-4">Designation:</label> <input type="text" class="form-control col-7 col-md-7 ptb-4" id="ddlDesignation" name="group"></div><div class="form-inline mb-2"> <label for="Probation Period" class="col-4 col-md-4">Probation Period:</label><div class="col-7 col-md-7 p-0"> <input type="text" class="form-control col-12 col-md-5 col-sm-6 pull-left ptb-4 mr-1" id="txtProbation" name="Probation Period" placeholder="Probation Period"> <input type="text" class="form-control mblMargin pull-right col-12 col-sm-6 col-md-6 ptb-4" id="ddlYearProbation" name="Probation Period" placeholder="Probation Period"></div></div><div class="form-inline mb-2"> <label for="Termination" class="col-4 col-md-4">Termination Reason:</label> <input type="text" class="form-control col-7 col-md-7 ptb-4" id="ddlReason" name="group"></div></div></form></div><div class="commandBtn pull-left pb-1"> <input style="display:none" type="file" name="imgInp" id="imgInp" /> <span id="browseImg" class="mr-1"><img src="../Content/images/add.png" alt="add icon" />Add Document </span><span onclick="RemoveDoc()" class="removedocument"><img src="../Content/images/remove-icon.png" alt="remove icon" />Remove Document </span></div><div class="scrollbar-popup scroll-style"><table class="table greyBorder mb-0 vendorGrid" id="employeeeeTable"><thead><tr class="lightGreen"><th>Sr No.</th><th>Document Type</th><th>Attachment</th></tr></thead><tbody></tbody></table></div></div><div class="container-fluid tab-pane fade employeeTable" id="contacts"><div class="commandBtn pull-left pb-1"> <span onclick="AddPersonalContactInfo();" class="mr-1"><img src="../Content/images/add.png" alt="add icon" />Add Line</span><span onclick="RemovePC()"><img src="../Content/images/remove-icon.png" alt="remove icon" />Remove Line</span></div><div class="scrollbar-popup scroll-style"><table class="table greyBorder mb-0 vendorGrid" id="employeeTable"><thead><tr class="lightGreen"><th>Sr No.</th><th>Name</th><th>Relationship</th><th>Primary</th><th>Contact Information</th></tr></thead><tbody></tbody></table></div></div><div class="container-fluid tab-pane fade employeeTable" id="skills1"><div class="commandBtn pull-left pb-1"> <span onclick="AddSkill();" id="btnAddSkills"><img src="../Content/images/add.png" alt="add icon" />Add Line</span> <span onclick="RemoveSkills()"><img src="../Content/images/remove-icon.png" alt="remove icon" />Remove Line</span></div><div class="scrollbar-popup scroll-style"><table class="table greyBorder mb-0 vendorGrid" id="tblSkill"><thead><tr class="lightGreen"><th>Sr No.</th><th>Skills</th><th>Level</th><th>Experience</th></tr></thead><tbody></tbody></table></div></div><div class="container-fluid tab-pane fade employeeTable" id="experiences"><div class="commandBtn pull-left pb-1"> <span onclick="GetExperienceDetails();"><img src="../Content/images/add.png" alt="add icon" />Add Line</span> <span onclick="RemoveExperience();"><img src="../Content/images/remove-icon.png" alt="remove icon" />Remove Line</span></div><div class="scrollbar-popup scroll-style"><table class="table greyBorder mb-0 vendorGrid" id="tblDesignation"><thead><tr class="lightGreen"><th>Sr No.</th><th>Employer</th><th>Designation</th><th>Address</th><th>Contact No.</th><th>Start Date</th><th>End Date</th></tr></thead><tbody></tbody></table></div></div><div class="container-fluid tab-pane fade employeeTable" id="edu"><div class="commandBtn pull-left pb-1"> <span onclick="AddEducation();"><img src="../Content/images/add.png" alt="add icon" />Add Line</span> <span onclick="RemoveEducation()"><img src="../Content/images/remove-icon.png" alt="remove icon" />Remove Line</span></div><div class="scrollbar-popup scroll-style"><table class="table greyBorder mb-0 vendorGrid" id="tblEducation"><thead><tr class="lightGreen"><th>Sr No.</th><th>Qualification</th><th>Institution</th><th>Degree Name</th><th>Marks[%/cgpa]</th><th>Duration</th><th>Start Date</th><th>End Date</th></tr></thead><tbody></tbody></table></div></div><div class="container-fluid tab-pane fade employeeTable" id="certificate"><div class="commandBtn pull-left pb-1"> <span onclick="AddCertificate();"><img src="../Content/images/add.png" alt="add icon" />Add Line</span> <span onclick="RemoveCertificate()"><img src="../Content/images/remove-icon.png" alt="remove icon" />Remove Line</span></div><div class="scrollbar-popup scroll-style"><table class="table greyBorder mb-0 vendorGrid" id="tblCertificate"><thead><tr class="lightGreen"><th>Sr No.</th><th>Certificate Type</th><th>Name</th><th>Start Date</th><th>End Date</th></tr></thead><tbody></tbody></table></div></div><div class="container-fluid tab-pane fade employeeTable" id="bank"><div class="commandBtn pull-left pb-1"> <span onclick="AddBankDetails();" class="mr-1"><img src="../Content/images/add.png" alt="add icon" />Add Line </span> <span onclick="RemoveProjects()"><img src="../Content/images/remove-icon.png" alt="remove icon" />Remove Line</span></div><div class="scrollbar-popup scroll-style"><table class="table greyBorder mb-0 vendorGrid" id="tblBankDetail"><thead><tr class="lightGreen"><th>Sr No.</th><th>Name</th><th>Branch</th><th>Account No.</th><th>IFSC Code</th><th>Account Type</th></tr></thead><tbody></tbody></table></div></div></div><div class="modal-footer mt-3"> <button type="button" class="btn btn-submit" id="btnSubmit" onclick="SaveEmployee();">SUBMIT</button></div></div></div></div> ');        jquery_1_11_3_min_p("#browseImg").click(function () {
+                jquery_1_11_3_min_p("#imgInp").trigger('click');
 
-        });
-    </script>
+            });
+        </script>*@
     <script type="text/javascript" charset="utf-8">
         // specify the columns
 
@@ -174,6 +173,313 @@
             });
         });
     </script>
+
+
+    <div class="modal fade" id="addNew">
+        <div class="modal-dialog modal-dialog-centered" id="employeePopup">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Employee</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body tab-content p-0 mb-3" id="employeeDiv">
+                    <div class="posting container p-0 mb-4">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#personalInformation"> Personal Information</a></li>
+                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#employment">Employment</a></li>
+                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#contacts"> Personal Contacts</a></li>
+                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#skills1"> Skills</a></li>
+                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#experiences"> Experiences</a></li>
+                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#edu"> Education</a></li>
+                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#certificate"> Certificate</a></li>
+                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#bank"> Bank Accounts</a></li>
+                            <li class="nav-item border-right-0"> <a class="nav-link" data-toggle="tab" href="#payElement"> Pay Element</a></li>
+                        </ul>
+                    </div>
+                    <div class="container-fluid tab-pane fade active show employeeTable" id="personalInformation">
+                        <form name="myForm" onsubmit="return checkFormValidation();" class="hr-form col-12 col-md-12">
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <div class="form-inline mb-2">
+                                        <label for="Employee code" class="col-5 col-md-5">Employee Code:</label>
+                                        <input type="text" class="form-control col-7 col-md-7 ptb-4" readonly id="txtEmployee" name="employee code" placeholder="Employee Code">
+                                    </div>
+                                    <div class="form-inline mb-2">
+                                        <label for="name" class="col-5 col-md-5">Title:</label>
+                                        <input type="text" class="form-control col-7 col-md-7 ptb-4" onkeyup="RemoveValidate()" id="ddlTitle" name="name">
+                                    </div>
+                                    <div class="form-inline mb-2">
+                                        <label for="name" class="col-5 col-md-5">Name:</label>
+                                        <input type="text" class="form-control col-7 col-md-7 ptb-4" onkeyup="RemoveValidate()" id="txtNamePersonal" name="name" placeholder="Enter Name">
+                                    </div>
+                                    <div class="form-inline mb-2">
+                                        <label for="dob" class="col-5 col-md-5">Date of Birth:</label>
+                                        <input type="text" id="datepicker" class="form-control col-7 col-md-7 ptb-4" id="txtdobb" name="txtDOB" placeholder="dd/mm/yyyy">
+                                    </div>
+                                    <div class="form-inline mb-2">
+                                        <label for="gender" class="col-5 col-md-5">Gender:</label>
+                                        <div class="col-7 col-md-7 p-0 popgenderemploy">
+                                            <div class="form-check checkCol col-6 col-md-6 pull-left">
+                                                <label class="checkBox">
+                                                    Male
+                                                    <input type="radio" value="M" name="rdbGender" checked>
+                                                    <span class="checkmark check mt-1"></span>
+                                                </label>
+                                            </div>
+                                            <div class="form-check checkCol col-6 col-md-6 pull-left">
+                                                <label class="checkBox">
+                                                    Female
+                                                    <input type="radio" value="F" name="rdbGender">
+                                                    <span class="checkmark check mt-1"></span>
+                                                </label>
+                                            </div>
+                                            <div class="form-check checkCol col-6 col-md-6 pull-left">
+                                                <label class="checkBox">
+                                                    Others
+                                                    <input type="radio" value="O" name="rdbGender">
+                                                    <span class="checkmark check mt-1"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-inline mb-2">
+                                        <label for="marital" class="col-5 col-md-5">Marital Status:</label>
+                                        <input type="text" class="form-control col-7 col-md-7 ptb-4" id="ddlMartlStatus" name="group">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-inline mb-2">
+                                        <label for="name" class="col-5 col-md-5">Email ID:</label>
+                                        <input type="email" class="form-control col-7 col-md-7 ptb-4" onkeyup="RemoveValidate()" id="txtEmail" name="email" placeholder="Enter Email ID">
+                                    </div>
+                                    <div class="form-inline mb-2">
+                                        <label for="dependents" class="col-5 col-md-5">No. of Dependents:</label>
+                                        <input type="text" class="form-control col-7 col-md-7 ptb-4" id="txtDependent" maxlength="1" name="Dependents" placeholder="No. of Dependents">
+                                    </div>
+                                    <div class="form-inline mb-2">
+                                        <label for="address" class="col-5 col-md-5">Address:</label>
+                                        <input type="text" class="form-control col-7 col-md-7 ptb-4" id="txtAddress" name="address" placeholder="Enter Address">
+                                    </div>
+                                    <div class="form-inline mb-2">
+                                        <label for="postal" class="col-5 col-md-5">State:</label>
+                                        <input type="text" class="form-control col-7 col-md-7 ptb-4" id="ddlState" name="group">
+                                    </div>
+                                    <div class="form-inline mb-2">
+                                        <label for="postal" class="col-5 col-md-5">Postal Code:</label>
+                                        <input type="text" class="form-control col-7 col-md-7 ptb-4" maxlength="6" id="txtPostalCode" name="postal" placeholder="Enter Postal Code">
+                                    </div>
+                                    <div class="form-inline mb-2">
+                                        <label for="postal" class="col-5 col-md-5">Country:</label>
+                                        <input type="text" class="form-control col-7 col-md-7 ptb-4" id="ddlCountry" name="group">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="commandBtn pull-left pb-1" id="btn11"> <span onclick="AddDependent();" class="mr-1"><img src="../Content/images/add.png" alt="add icon">Add Line</span><span onclick="RemoveDependent()"><img src="../Content/images/remove-icon.png" alt="remove icon" />Remove Line</span></div>
+                        <div class="scrollbar-popup scroll-style">
+                            <table class="table greyBorder mb-0 vendorGrid" id="tblDependent">
+                                <thead>
+                                    <tr class="lightGreen">
+                                        <th>Sr. No.</th>
+                                        <th>Name</th>
+                                        <th>Relationship</th>
+                                        <th>Contact</th>
+                                        <th style="width:8%">Documents</th>
+                                        <th style="width:28%">Document No.</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="container-fluid tab-pane fade employeeTable" id="employment">
+                        <div class="row">
+                            <form name="myForm" onsubmit="return checkFormValidation();" class="hr-form full-width">
+                                <div class="col-12 col-md-6 pl-0 pull-left">
+                                    <div class="form-inline mb-2">
+                                        <label for="Start Date" class="col-4 col-md-4">Start Date:</label>
+                                        <input type="text" class="form-control col-7 col-md-7 ptb-4" id="txtStartdate" name="Start Date" placeholder="Start Date">
+                                    </div>
+                                    <div class="form-inline mb-2">
+                                        <label for="Last Day" class="col-4 col-md-4">Last Day Worked:</label>
+                                        <input type="text" class="form-control col-7 col-md-7 ptb-4" id="txtLastday" name="Last Day" placeholder="Last Day Worked">
+                                    </div>
+                                    <div class="form-inline mb-2">
+                                        <label for="Termination" class="col-4 col-md-4">Termination Date:</label>
+                                        <input type="text" class="form-control col-7 col-md-7 ptb-4" id="txtTerminationDate" name="Termination" placeholder="dd/mm/yyyy">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 pl-0 pull-left">
+                                    <div class="form-inline mb-2">
+                                        <label for="Designation" class="col-4 col-md-4">Designation:</label>
+                                        <input type="text" class="form-control col-7 col-md-7 ptb-4" id="ddlDesignation" name="group">
+                                    </div>
+                                    <div class="form-inline mb-2">
+                                        <label for="Probation Period" class="col-4 col-md-4">Probation Period:</label>
+                                        <div class="col-7 col-md-7 p-0">
+                                            <input type="text" class="form-control col-12 col-md-5 col-sm-6 pull-left ptb-4 mr-1" id="txtProbation" name="Probation Period" placeholder="Probation Period">
+                                            <input type="text" class="form-control mblMargin pull-right col-12 col-sm-6 col-md-6 ptb-4" id="ddlYearProbation" name="Probation Period" placeholder="Probation Period">
+                                        </div>
+                                    </div>
+                                    <div class="form-inline mb-2">
+                                        <label for="Termination" class="col-4 col-md-4">Termination Reason:</label>
+                                        <input type="text" class="form-control col-7 col-md-7 ptb-4" id="ddlReason" name="group">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="commandBtn pull-left pb-1">
+                            <input style="display:none" type="file" name="imgInp" id="imgInp" />
+                            <span id="browseImg" class="mr-1"><img src="../Content/images/add.png" alt="add icon" />Add Document </span><span onclick="RemoveDoc()" class="removedocument"><img src="../Content/images/remove-icon.png" alt="remove icon" />Remove Document </span>
+                        </div>
+                        <div class="scrollbar-popup scroll-style">
+                            <table class="table greyBorder mb-0 vendorGrid" id="employeeeeTable">
+                                <thead>
+                                    <tr class="lightGreen">
+                                        <th>Sr No.</th>
+                                        <th>Document Type</th>
+                                        <th>Attachment</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="container-fluid tab-pane fade employeeTable" id="contacts">
+                        <div class="commandBtn pull-left pb-1"> <span onclick="AddPersonalContactInfo();" class="mr-1"><img src="../Content/images/add.png" alt="add icon" />Add Line</span><span onclick="RemovePC()"><img src="../Content/images/remove-icon.png" alt="remove icon" />Remove Line</span></div>
+                        <div class="scrollbar-popup scroll-style">
+                            <table class="table greyBorder mb-0 vendorGrid" id="employeeTable">
+                                <thead>
+                                    <tr class="lightGreen">
+                                        <th>Sr No.</th>
+                                        <th>Name</th>
+                                        <th>Relationship</th>
+                                        <th>Primary</th>
+                                        <th>Contact Information</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="container-fluid tab-pane fade employeeTable" id="skills1">
+                        <div class="commandBtn pull-left pb-1"> <span onclick="AddSkill();" id="btnAddSkills"><img src="../Content/images/add.png" alt="add icon" />Add Line</span> <span onclick="RemoveSkills()"><img src="../Content/images/remove-icon.png" alt="remove icon" />Remove Line</span></div>
+                        <div class="scrollbar-popup scroll-style">
+                            <table class="table greyBorder mb-0 vendorGrid" id="tblSkill">
+                                <thead>
+                                    <tr class="lightGreen">
+                                        <th>Sr No.</th>
+                                        <th>Skills</th>
+                                        <th>Level</th>
+                                        <th>Experience</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="container-fluid tab-pane fade employeeTable" id="experiences">
+                        <div class="commandBtn pull-left pb-1"> <span onclick="GetExperienceDetails();"><img src="../Content/images/add.png" alt="add icon" />Add Line</span> <span onclick="RemoveExperience();"><img src="../Content/images/remove-icon.png" alt="remove icon" />Remove Line</span></div>
+                        <div class="scrollbar-popup scroll-style">
+                            <table class="table greyBorder mb-0 vendorGrid" id="tblDesignation">
+                                <thead>
+                                    <tr class="lightGreen">
+                                        <th>Sr No.</th>
+                                        <th>Employer</th>
+                                        <th>Designation</th>
+                                        <th>Address</th>
+                                        <th>Contact No.</th>
+                                        <th>Start Date</th>
+                                        <th>End Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="container-fluid tab-pane fade employeeTable" id="edu">
+                        <div class="commandBtn pull-left pb-1"> <span onclick="AddEducation();"><img src="../Content/images/add.png" alt="add icon" />Add Line</span> <span onclick="RemoveEducation()"><img src="../Content/images/remove-icon.png" alt="remove icon" />Remove Line</span></div>
+                        <div class="scrollbar-popup scroll-style">
+                            <table class="table greyBorder mb-0 vendorGrid" id="tblEducation">
+                                <thead>
+                                    <tr class="lightGreen">
+                                        <th>Sr No.</th>
+                                        <th>Qualification</th>
+                                        <th>Institution</th>
+                                        <th>Degree Name</th>
+                                        <th>Marks[%/cgpa]</th>
+                                        <th>Duration</th>
+                                        <th>Start Date</th>
+                                        <th>End Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="container-fluid tab-pane fade employeeTable" id="certificate">
+                        <div class="commandBtn pull-left pb-1"> <span onclick="AddCertificate();"><img src="../Content/images/add.png" alt="add icon" />Add Line</span> <span onclick="RemoveCertificate()"><img src="../Content/images/remove-icon.png" alt="remove icon" />Remove Line</span></div>
+                        <div class="scrollbar-popup scroll-style">
+                            <table class="table greyBorder mb-0 vendorGrid" id="tblCertificate">
+                                <thead>
+                                    <tr class="lightGreen">
+                                        <th>Sr No.</th>
+                                        <th>Certificate Type</th>
+                                        <th>Name</th>
+                                        <th>Start Date</th>
+                                        <th>End Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="container-fluid tab-pane fade employeeTable" id="bank">
+                        <div class="commandBtn pull-left pb-1"> <span onclick="AddBankDetails();" class="mr-1"><img src="../Content/images/add.png" alt="add icon" />Add Line </span> <span onclick="RemoveProjects()"><img src="../Content/images/remove-icon.png" alt="remove icon" />Remove Line</span></div>
+                        <div class="scrollbar-popup scroll-style">
+                            <table class="table greyBorder mb-0 vendorGrid" id="tblBankDetail">
+                                <thead>
+                                    <tr class="lightGreen">
+                                        <th>Sr No.</th>
+                                        <th>Name</th>
+                                        <th>Branch</th>
+                                        <th>Account No.</th>
+                                        <th>IFSC Code</th>
+                                        <th>Account Type</th>
+                                        <th>Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="container-fluid tab-pane fade employeeTable" id="payElement">
+                        <div class="commandBtn pull-left pb-1"> <span class="mr-1"><img src="../Content/images/add.png" alt="add icon" />Add Line </span> <span onclick="RemoveProjects()"><img src="../Content/images/remove-icon.png" alt="remove icon" />Remove Line</span></div>
+                        <div class="scrollbar-popup scroll-style">
+                            <table class="table greyBorder mb-0 vendorGrid" id="tblBankDetail">
+                                <thead>
+                                    <tr class="lightGreen">
+                                        <th>Sr No.</th>
+                                        <th>From Date</th>
+                                        <th>To Date</th>
+                                        <th>Pay Element</th>
+                                        <th>Account Number</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer mt-3">
+                    <button type="button" class="btn btn-submit" id="btnSubmit" onclick="SaveEmployee();">SUBMIT</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
 

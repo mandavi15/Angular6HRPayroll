@@ -24,8 +24,7 @@
     @Scripts.Render("~/Content/js/bootstrap.min.js")
     <script>var bootstrap_min_js = jQuery.noConflict();</script>
     @Scripts.Render("~/Content/js/script.js")
-    <script src="~/Scripts/myapp.js"></script>
-    <script src="~/Content/js/ag-grid-community.min.noStyle.js"></script>
+     <script src="~/Content/js/ag-grid-community.min.noStyle.js"></script>
     <script src="~/Content/js/jquery-ui.js"></script>
 
     <script> var jquery_1_12_1_min_p = jQuery.noConflict();</script>
@@ -138,7 +137,7 @@
 </head>
 <body>
     <div ng-app="myapp">
-        <div id="wrapper">
+        <div>
 
             <div class="container-fluid">
                 <div class="color-picker">
@@ -190,7 +189,7 @@
                                                         <li><a class="nav-link" tabindex="-1" href="../Master/errorPage.aspx"><i class="fa fa-users arrow"></i>Team</a></li>
                                                         <li><a class="nav-link" tabindex="-1" href="../Master/errorPage.aspx"><img src="~/Content/images/approval_icon.png" class="arrow" />Approval Process</a></li>
                                                         <li><a class="nav-link" tabindex="-1" href="../Master/errorPage.aspx"><img src="~/Content/images/appraisal_icon.png" class="arrow" />Appraisal</a></li>
-                                                        <li><img src="~/Content/images/request_icon.png" class="arrow" />@Html.ActionLink("Employee Document Master", "EmployeeDocMaster", "Home")</li>
+                                                        <li><img src="~/Content/images/request_icon.png" class="arrow" />@Html.ActionLink("Employee Doc Master", "EmployeeDocMaster", "Home")</li>
                                                     </ul>
                                                 </li>
                                                 <li class="dropdown-submenu">

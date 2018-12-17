@@ -57,18 +57,19 @@
 
 
             var columnDefs = [
-                { headerName: "Sr. No.", field: "sl", width: 367 },
-                { headerName: "Name Of Document", field: "documentName", width: 367, editable: true },
-                { headerName: "Description", field: "description", width: 367, editable: true }
+                { headerName: "Sr. No.", field: "sl", width: 150 },
+                { headerName: "Name Of Document", field: "documentName", width: 320, editable: true },
+                { headerName: "Description", field: "description", width: 320, editable: true },
+                { headerName: "Country", field: "country", width: 320, editable: true }
             ];
 
             // specify the data
             var rowData = [
-                { sl: "1", documentName: "Aadhar Card", description: "Aadhar Card" },
-                { sl: "2", documentName: "PAN Card", description: "PAN Card" },
-                { sl: "3", documentName: "Voter ID Card", description: "Voter ID Card" },
-                { sl: "4", documentName: "Ration Card", description: "Ration Card" },
-                { sl: "5", documentName: "Passport", description: "Passport" }
+                { sl: "1", documentName: "Aadhar Card", description: "Aadhar Card", country: "India" },
+                { sl: "2", documentName: "PAN Card", description: "PAN Card", country: "India"  },
+                { sl: "3", documentName: "Voter ID Card", description: "Voter ID Card", country: "India"  },
+                { sl: "4", documentName: "Ration Card", description: "Ration Card", country: "India" },
+                { sl: "5", documentName: "Passport", description: "Passport", country: "India" }
             ];
 
             // let the grid know which columns and what data to use

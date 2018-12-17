@@ -11,9 +11,8 @@
     <asp:HiddenField ID="lblUserId" runat="server" />
     <div class="buttonCon pull-right">
 
-        <button type="button" class="btn templateBg" onclick="javascript: document.location.href='../Master/HRareapage.aspx'">
-            <img src="~/Content/images/home-icon.png" />Home
-        </button>
+        <button type="button" class="btn templateBg"><img src="~/Content/images/home-icon.png" alt="home" />@Html.ActionLink("Home", "HRAreaPage", "Home")</button>
+
     </div>
     <h5>COMPANY</h5>
     <div class="row">

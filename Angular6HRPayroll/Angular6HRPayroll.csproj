@@ -347,9 +347,7 @@
     <Content Include="Content\css\font-awesome\4.5.0\fonts\fontawesome-webfont.ttf" />
     <Content Include="Content\css\font-awesome\4.5.0\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\css\font-awesome\4.5.0\fonts\fontawesome-webfont.woff2" />
-    <Content Include="Content\css\vssver.scc" />
-    <Content Include="Content\images\vssver.scc" />
-    <Content Include="Content\js\vssver.scc" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -385,8 +383,18 @@
     <Content Include="Views\Login\ForgetPassword.cshtml" />
     <Content Include="Views\HR\Company.cshtml" />
     <Content Include="Views\HR\Department.cshtml" />
-    <Content Include="Views\HR\localization.cshtml" />
-    <Content Include="Views\Home\designation.cshtml" />
+    <Content Include="Views\HR\Designation.cshtml" />
+    <Content Include="Views\HR\Skills.cshtml" />
+    <Content Include="Views\HR\Employees.cshtml" />
+    <Content Include="Views\HR\ExitManagement.cshtml" />
+    <Content Include="Views\HR\Requisition.cshtml" />
+    <Content Include="Views\HR\CreatenewRequisition.cshtml" />
+    <Content Include="Views\HR\ResignForm.cshtml" />
+    <Content Include="Views\HR\Commodities.cshtml" />
+    <Content Include="Views\HR\LeaveType.cshtml" />
+    <Content Include="Views\HR\LeaveEmployee.cshtml" />
+    <Content Include="Views\Home\ItemMaster.cshtml" />
+    <Content Include="Views\Home\EmployeeDocMaster.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -408,6 +416,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="app\app.component.ts" />
     <TypeScriptCompile Include="app\app.module.ts" />
+    <TypeScriptCompile Include="app\login.ts" />
     <TypeScriptCompile Include="app\main.ts" />
   </ItemGroup>
   <ItemGroup>

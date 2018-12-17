@@ -1,7 +1,5 @@
 ﻿
 
-
-
 <div class="container-fluid gridBody">
 
     <h5>HR AREA PAGE</h5>
@@ -13,20 +11,17 @@
             <asp:HiddenField ID="lblUserId" runat="server" />
             <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingTwo">
-                    <h4 class="panel-title">
-                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                            Human Resource
-                        </a>
-                    </h4>
+                    <h4 class="panel-title"> Human Resource</h4>
                 </div>
-                <div id="collapseTwo" class="panel-collapse  in " role="tabpanel" aria-labelledby="headingTwo">
+                <div id="collapseTwo" class="panel-collapse in">
                     <div class="panel-body">
                         <ul class="hrListing">
                             <li>
                                 <a href="organizationList.aspx">
                                     <span class="areaIcon"><img src="~/Content/images/company-icon1.png" alt="" /></span>
+                                   
+                                    @Html.ActionLink("Company", "Company", "HR")
 
-                                    Company
                                 </a>
                             </li>
                             <li>

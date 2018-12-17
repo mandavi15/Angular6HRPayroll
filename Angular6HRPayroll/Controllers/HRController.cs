@@ -21,7 +21,49 @@ namespace Angular6HRPayroll.Controllers
         {
             return View();
         }
-        public ActionResult localization()
+        public ActionResult Designation()
+        {
+            return View();
+        }
+        public ActionResult Skills()
+        {
+            return View();
+        }
+        public ActionResult Employees()
+        {
+            return View();
+        }
+        public ActionResult Requisition()
+
+        {
+            return View();
+        }
+        public ActionResult CreatenewRequisition()
+
+        {
+            return View();
+        }
+        public ActionResult LeaveType()
+        {
+            ViewBag.Message = "Your LeaveType page.";
+
+            return View();
+        }
+        public ActionResult LeaveEmployee()
+        {
+            ViewBag.Message = "Your LeaveType page.";
+
+            return View();
+        }
+        public ActionResult ExitManagement()
+        {
+            return View();
+        }
+        public ActionResult ResignForm()
+        {
+            return View();
+        }
+        public ActionResult Commodities()
         {
             return View();
         }

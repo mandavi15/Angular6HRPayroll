@@ -28,16 +28,20 @@ namespace Angular6HRPayroll.Controllers
         }
         public ActionResult Location()
         {
-            ViewBag.Message = "Your Location page.";
-
+           
             return View();
         }
-        public ActionResult designation()
+        public ActionResult ItemMaster()
         {
-            ViewBag.Message = "Your designation page.";
 
             return View();
         }
+        public ActionResult EmployeeDocMaster()
+        {
+
+            return View();
+        }
+        
     }
 
 }

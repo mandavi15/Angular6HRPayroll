@@ -1,0 +1,203 @@
+﻿
+@{
+    ViewBag.Title = "ResignForm";
+}
+<html>
+<head>
+    <script src="~/Content/js/ag-grid-community.min.noStyle.js"></script>
+    <link href="~/Content/css/ag-grid.css" rel="stylesheet" />
+    <link href="~/Content/css/ag-theme-balham.css" rel="stylesheet" />
+    <link href="~/Content/css/jquery-ui.css" rel="stylesheet" />
+    <script src="~/Content/js/jquery-ui.js"></script>
+    <script>var jquery_1_12_1_min_p = jQuery.noConflict();</script>
+</head>
+
+<body>
+
+    <div class="container-fluid p-0">
+
+
+        <div class="tab-content">
+            <div class="container-fluid gridBody tab-pane fade active show" id="resign">
+                <div class="buttonCon pull-right">
+                    <button type="button" class="btn templateBg"><img src="~/Content/images/home-icon.png" alt="home" />@Html.ActionLink("Home", "HRAreaPage", "Home")</button>
+
+                </div>
+                <h5 style="text-transform: uppercase">
+                    Resignation Form
+                </h5>
+
+                <div>
+                    <div>
+                    </div>
+                    <div class="">
+                        <div class="formBody clearfix">
+                            <form>
+                                <div class="pull-left col-12 col-md-6">
+                                    <div class="form-inline">
+                                        <label for="Employee Name">Employee Name:</label>
+                                        <label class="col-7 col-md-7 p-0">Employee 1 </label>
+
+                                    </div>
+
+                                    <div class="form-inline">
+                                        <label for="position">Department:</label>
+                                        <label class="col-7 col-md-7 p-0">Dot Net</label>
+                                    </div>
+                                    <div class="form-inline">
+                                        <label for="department">Designation:</label>
+                                        <label class="col-7 col-md-7 p-0">Developer</label>
+                                    </div>
+                                    <div class="form-inline">
+                                        <label for="Resignation Reason">Resignation Reason:</label>
+
+                                        <label class="col-7 col-md-7 p-0">Personal Problem</label>
+                                    </div>
+                                    <div id="other" style="display:none;">
+                                        <div class="form-inline">
+                                            <label for="Reason Specified">Reason Specified:</label><div class="col-7 col-md-7 p-0">
+                                                <input type="text" class="form-control col-12 col-md-12" id="reason" name="position" placeholder="Reason" style="width:100%" />
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="form-inline">
+                                        <label for="Notice Period">Notice Period (In Days):</label>
+                                        <label class="col-7 col-md-7 p-0">90 Days</label>
+                                    </div>
+
+                                </div>
+
+                                <div class="pull-right col-12 col-md-6">
+                                    <div class="form-inline">
+                                        <label for="Requisition ID">Employee ID:</label>
+                                        <label class="col-7 col-md-7 p-0">ID 001</label>
+
+                                    </div>
+
+
+                                    <div class="form-inline">
+                                        <label for="Last Serving Day">Last Serving Date:</label>
+                                        <label class="col-7 col-md-7 p-0">dd/mm/yyyy</label>
+                                    </div>
+
+                                    <div class="form-inline">
+                                        <label for="Proable Serving Day">Proable Serving Date:</label>
+                                        <label class="col-7 col-md-7 p-0">dd/mm/yyyy</label>
+                                    </div>
+                                    <div class="form-inline">
+                                        <label for="Proable Serving Period">Approved Serving Date:</label>
+                                        <label class="col-7 col-md-7 p-0">dd/mm/yyyy</label>
+
+                                    </div>
+                                    <div class="form-inline">
+                                        <label for="Status">Status</label>
+
+                                        <select class="form-control col-6 col-md-4 p-0" name="quantity" id="dropSelect" style="height: 26px; border: 1px solid #6694b4;">
+                                            <option>Select</option>
+                                            <option>Approved</option>
+                                            <option>Rejected</option>
+                                            <option>Waiting</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                    <div class="container pt-4" style="overflow:hidden">
+
+                        <div class="buttonCon pull-right mr-4">
+                            <button type="button" class="btn templateBg" id="btnSave">Approve</button>
+                            <button type="button" class="btn templateBg" id="btnDelete">Reject</button>
+                        </div>
+                    </div>
+                    <div class="container top-border pt-3 mt-3" style="overflow:hidden">
+                        <div class="formBody clearfix">
+                            <form>
+                                <div class="pull-left col-12 col-md-5 p-0">
+                                    <div class="form-inline">
+                                        <label for="Last Serving Day">Notice Period Date:</label><div class="col-7 col-md-7 p-0">
+                                            <input type="text" id="datepicker" class="form-control col-12 col-md-12 ptb-4" name="txtDOB" placeholder="dd/mm/yyyy" style="width:100%" />
+                                        </div>
+                                        <label class="col-7 col-md-7 p-0" style="display:none" id="lblRequisitionName"></label>
+                                    </div>
+
+                                </div>
+
+                            </form>
+                        </div>
+                        <div class="buttonCon pull-right mr-4">
+                            <button type="button" class="btn templateBg" id="btnSave">Approve</button>
+
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+  
+
+        </div>
+
+    </div>
+
+    <script>
+        jquery_1_11_3_min_p('body').append('<div class="modal fade" id="savePopup"><div class="modal-dialog modal-dialog-centered popup-sm"><div class="modal-content"><div class="modal-header"><h4 class="modal-title"><img src="../Content/images/success-icon.png" alt="Success"/></h4> <button type="button" class="close" data-dismiss="modal">&times;</button></div><div class="modal-body"> Are you sure you want to save?</div><div class="modal-footer"> <input type="button" class="btn btn-delete" data-dismiss="modal" value="CANCEL" placeholder="CANCEL" /> <input type="button" class="btn btn-delete" data-dismiss="modal" value="SAVE" placeholder="SAVE" /></div></div></div></div>');
+
+    </script>
+
+
+
+
+    <script>
+        jquery_1_12_1_min_p(document).ready(function () {
+            jquery_1_12_1_min_p('#dropSelect').on('change', function () {
+                if (this.value == 'Other') {
+                    jquery_1_12_1_min_p("#other").show();
+                }
+                else {
+                    jquery_1_12_1_min_p("#other").hide();
+                }
+            });
+
+        })
+    </script>
+
+    <script>
+        jquery_1_12_1_min_p(function () {
+            jquery_1_12_1_min_p("#datepicker").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                yearRange: '1920:2018'
+            });
+            jquery_1_12_1_min_p("#datepicker1").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                yearRange: '1920:2018'
+            });
+            jquery_1_12_1_min_p("#txtStartdate").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                yearRange: '1990:2022'
+            });
+            jquery_1_12_1_min_p("#txtLastday").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                yearRange: '1990:2022'
+            });
+            jquery_1_12_1_min_p("#txtTerminationDate").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                yearRange: '1990:2022'
+            });
+        });
+    </script>
+
+    
+
+</body>
+</html>
+

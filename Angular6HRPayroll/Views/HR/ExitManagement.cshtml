@@ -1,0 +1,351 @@
+﻿
+@{
+    ViewBag.Title = "ExitManagement";
+}
+
+<html>
+<head>
+    <script src="~/Content/js/ag-grid-community.min.noStyle.js"></script>
+    <link href="~/Content/css/ag-grid.css" rel="stylesheet" />
+    <link href="~/Content/css/ag-theme-balham.css" rel="stylesheet" />
+    <link href="~/Content/css/jquery-ui.css" rel="stylesheet" />
+    <script src="~/Content/js/jquery-ui.js"></script>
+    <script>var jquery_1_12_1_min_p = jQuery.noConflict();</script>
+</head>
+
+<body>
+
+    <div class="container-fluid p-0">
+
+
+        <div class="posting">
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item approvalLi  ">
+                    <a class="nav-link active" data-toggle="tab" href="#resign"
+                       data-value="#add">Resignation</a>
+                </li>
+
+                <li class="nav-item approvalLi">
+                    <a class="nav-link" data-toggle="tab" href="#empResign"
+                       data-value="#add1">Other Employee Resignations</a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="tab-content">
+            <div class="container-fluid gridBody tab-pane fade active show" id="resign">
+                <div class="buttonCon pull-right">
+                    <button type="button" class="btn templateBg" data-toggle="modal" data-target="#dues" >
+                        <img src="~/Content/images/save-icon.png" alt="home" />Dues
+                    </button>
+                    <button type="button" class="btn templateBg" onclick="javascript: document.location.href='../Master/HRareapage.aspx'">
+                        <img src="~/Content/images/home-icon.png" alt="home" />Home
+                    </button>
+                </div>
+                <h5 style="text-transform: uppercase">
+                    Resignation Form
+                </h5>
+
+                <div>
+                    <div>
+                    </div>
+                    <div class="">
+                        <div class="formBody clearfix">
+                            <form>
+                                <div class="pull-left col-12 col-md-6">
+                                    <div class="form-inline">
+                                        <label for="Employee Name">Employee Name:</label>
+                                        <div class="col-7 col-md-7 p-0">
+                                            <input type="text" class="form-control col-12 col-md-12" name="Employee Name" placeholder="Employee Name" readonly style="width:100%" />
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="form-inline">
+                                        <label for="position">Department:</label><div id="DivDesignationReq" class="col-7 col-md-7 p-0">
+                                            <input type="text" class="form-control col-12 col-md-12" id="ddlDesignationReq" name="position" placeholder="Dot Net" readonly style="width:100%" />
+                                        </div>
+                                        <label class="col-7 col-md-7 p-0" style="display:none" id="lblDesignationReq"></label>
+                                    </div>
+                                    <div class="form-inline">
+                                        <label for="department">Designation:</label><div id="DivDepartmentReq" class="col-7 col-md-7 p-0">
+                                            <input type="text" class="form-control col-12 col-md-12" id="ddlDepartmentReq" name="department" placeholder="Developer" readonly style="width:100%" />
+                                        </div>
+                                        <label class="col-7 col-md-7 p-0" style="display:none" id="lblDepartmentReq"></label>
+                                    </div>
+                                    <div class="form-inline">
+                                        <label for="Resignation Reason">Resignation Reason:</label>
+
+                                        <select class="form-control col-7 col-md-7 p-0" name="quantity" id="dropSelect" style="height: 26px; border: 1px solid #6694b4;">
+                                            <option value="Select">Select</option>
+                                            <option value="Other">Other</option>
+                                            <option value="Reason1">Personal Problem</option>
+                                            <option value="Reason2">Limited growth at the company</option>
+                                            <option value="Reason3">Feeling underpaid</option>
+                                            <option value="Reason4">No longer challenged</option>
+                                        </select>
+
+                                    </div>
+                                    <div id="other" style="display:none;">
+                                        <div class="form-inline">
+                                            <label for="Reason Specified">Reason Specified:</label><div class="col-7 col-md-7 p-0">
+                                                <input type="text" class="form-control col-12 col-md-12" id="reason" name="position" placeholder="Reason" style="width:100%" />
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="form-inline">
+                                        <label for="Notice Period">Notice Period (In Days):</label><div id="notice" class="col-7 col-md-7 p-0">
+                                            <input type="text" class="form-control col-12 col-md-12" id="txtExpectedNotice" name="position" placeholder="90 Days" readonly style="width:100%" />
+                                        </div>
+                                        <label class="col-7 col-md-7 p-0" style="display:none" id="lbltxtExpectedSal"></label>
+                                    </div>
+
+                                </div>
+
+                                <div class="pull-right col-12 col-md-6">
+                                    <div class="form-inline">
+                                        <label for="Requisition ID">Employee ID:</label>
+                                        <div class="col-7 col-md-7 p-0">
+                                            <input type="text" class="form-control col-12 col-md-12" name="Employee ID" placeholder="Employee ID" readonly style="width:100%" />
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="form-inline">
+                                        <label for="Last Serving Day">Last Serving Date:</label><div class="col-7 col-md-7 p-0">
+                                            <input type="text" class="form-control col-12 col-md-12 ptb-4" name="txtDOB" placeholder="dd/mm/yyyy" readonly style="width:100%" />
+                                        </div>
+                                        <label class="col-7 col-md-7 p-0" style="display:none" id="lblRequisitionName"></label>
+                                    </div>
+
+                                    <div class="form-inline">
+                                        <label for="Proable Serving Day">Proable Serving Date:</label><div class="col-7 col-md-7 p-0">
+                                            <input type="text" id="datepicker1" class="form-control col-12 col-md-12 ptb-4" name="txtDOB" placeholder="dd/mm/yyyy" style="width:100%" />
+                                        </div>
+                                        <label class="col-7 col-md-7 p-0" style="display:none" id="lblRequisitionName"></label>
+                                    </div>
+                                    <div class="form-inline">
+                                        <label for="Proable Serving Period">Approved Serving Date:</label>
+                                        <div class="col-7 col-md-7 p-0">
+                                            <input type="text" class="form-control col-12 col-md-12" name="Proable Serving Period" placeholder="dd/mm/yyyy" readonly style="width:100%" />
+                                        </div>
+
+                                    </div>
+                                    <div class="form-inline">
+                                        <label for="Status">Status</label>
+                                        <div class="col-7 col-md-7 p-0">
+                                            <input type="text" class="form-control col-12 col-md-12" name="Status" placeholder="Approved" readonly style="width:100%" />
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                    <div class="container top-border pt-4" style="overflow:hidden">
+                       
+                        <div class="buttonCon pull-right mr-4">
+                            <button type="button" class="btn templateBg" id="btnSave" data-toggle="modal" data-target="#savePopup">Submit</button>
+                            <button type="button" class="btn templateBg" id="btnDelete">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    jquery_1_11_3_min_p('body').append('<div class="modal fade" id="addNew"><div class="modal-dialog modal-dialog-centered" id="Div1"><div class="modal-content"><div class="modal-header"><h5>Designation</h5> <button type="button" class="close" data-dismiss="modal">&times;</button></div><div class="modal-body"><form name="myForm" onsubmit="return checkFormValidation();" class="hr-form col-12 col-md-12" style="padding: 0px;"><div class="form-inline mb-2"> <label for="name" class="col-4 col-md-4">Name:</label> <input type="text" class="form-control col-8 col-md-8" id="txtDesignation" onkeyup="RemoveClass()" name="username" placeholder="Name"></div><div class="form-inline mb-2"> <label for="Department" class="col-4 col-md-4">Department:</label> <input type="text" class="form-control col-8 col-md-8" id="ddlDepartment" name="Department" placeholder="Department"></div><div class="form-inline mb-2"> <label for="Parent" class="col-4 col-md-4">Parent:</label> <input type="text" class="form-control col-8 col-md-8" id="ddlPDepartment" name="Parent" placeholder="Parent"></div></form></div><div class="modal-footer"> <button type="button" class="btn btn-submit" onclick="SaveDesign()" style="padding: 4px;">SUBMIT</button></div></div></div></div>');
+
+                    jquery_1_11_3_min_p('body').append('<div class="modal fade" id="dues"><div class="modal-dialog modal-dialog-centered" id="Div3"><div class="modal-content"><div class="modal-header"><h5>Dues Clearance</h5> <button type="button" class="close" data-dismiss="modal">&times;</button></div><div class="modal-body" ><form name="myForm" onsubmit="return checkFormValidation();" class="hr-form col-12 col-md-12" style="padding:0px;"><div class="form-inline mb-2" style=" border-bottom: 1px solid #66a3a9; padding-bottom: 0 !important;"> <label for="name" class="col-7 col-md-7 pr-0" style=" font-size: 14px !important;">DEPARTMENT</label><div class="form-check checkCol pull-left col-4 col-md-4"> <label class="" style="font-size: 14px !important;">STATUS</label></div></div><div class="form-inline mb-2"> <label for="name" class="col-7 col-md-7">Human Resource:</label><div class="form-check checkCol pull-left col-4 col-md-4" style="margin-bottom: 14px;"> <label class="checkBox smallFont mb-0"> <input type="checkbox" name="option1" checked=""> <span class="checkmark check1 mt-1"></span> </label></div></div><div class="form-inline mb-2"> <label for="email" class="col-7 col-md-7">Production Manager:</label><div class="form-check checkCol pull-left col-4 col-md-4" style="margin-bottom: 14px;"> <label class="checkBox smallFont mb-0"> <input type="checkbox" name="option1" checked=""> <span class="checkmark check1 mt-1"></span> </label></div></div><div class="form-inline mb-2"> <label for="email" class="col-7 col-md-7">Account Manager:</label><div class="form-check checkCol pull-left col-4 col-md-4" style="margin-bottom: 14px;"> <label class="checkBox smallFont mb-0"> <input type="checkbox" name="option1" checked=""> <span class="checkmark check1 mt-1"></span> </label></div></div></form></div><div class="modal-footer"> <button type="button" id="btnSave" class="btn btn-submit" data-dismiss="modal "style="padding:4px;">SUBMIT</button></div></div></div></div> ');
+
+                </script>
+
+            </div>
+            <div class="container-fluid gridBody tab-pane fade" id="empResign">
+
+                <div class="row">
+                    <div class="col-12 col-md-11">
+                        <h5 style="text-transform: uppercase">
+                            Other Employee Resignations
+                        </h5>
+                    </div>
+                    
+                        <div class="buttonCon pull-right">
+                                   <button type="button" class="btn templateBg" onclick="javascript: document.location.href='../Master/HRareapage.aspx'">
+                                    <img src="~/Content/images/home-icon.png" alt="home">Home
+                                </button>
+                         
+                        </div>
+                   
+                </div>
+
+                <div class="row mt-3">
+
+                    <div class="col-12 col-md-9">
+                        <div class="row ">
+                            <div class="col-4 col-md-2">
+                                <div class="buttonCon pull-left ">
+
+                                    <button type="button" class="btn templateBg" placeholder="Add New" id="btnNewReq"
+                                            onclick="NewRequisition()">
+                                        <img src="~/Content/images/new-icon.png" alt="new">@Html.ActionLink("Add New", "ResignForm", "HR")
+                                    </button>
+
+
+                                </div>
+
+                            </div>
+                           
+                       </div>
+
+                    </div>
+
+                    <div class="col-12 col-md-3 pull-right">
+                        <div class="input-group mb-2 pull-right pl-0 searchboxmargin">
+                            <input class="form-control border-secondary" type="search" placeholder="search">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button">
+                                    <img src="~/Content/images/search-icon.png" alt="search">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div>
+                    <div>
+                    </div>
+                    <div>
+                        <div id="myGrid2" style="height: 200px; width:100%;" class="ag-theme-balham"></div>
+                    </div>
+                </div>
+
+                <div class="buttonCon pull-right mt-3">
+                    <button type="button" class="btn templateBg" id="btnEdit">Submit</button>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        jquery_1_11_3_min_p('body').append('<div class="modal fade" id="savePopup"><div class="modal-dialog modal-dialog-centered popup-sm"><div class="modal-content"><div class="modal-header"><h4 class="modal-title"><img src="../Content/images/success-icon.png" alt="Success"/></h4> <button type="button" class="close" data-dismiss="modal">&times;</button></div><div class="modal-body"> Are you sure you want to save?</div><div class="modal-footer"> <input type="button" class="btn btn-delete" data-dismiss="modal" value="CANCEL" placeholder="CANCEL" /> <input type="button" class="btn btn-delete" data-dismiss="modal" value="SAVE" placeholder="SAVE" /></div></div></div></div>');
+                
+    </script>
+
+
+
+
+    <script>
+        jquery_1_12_1_min_p(document).ready(function () {
+            jquery_1_12_1_min_p('#dropSelect').on('change', function () {
+                if (this.value == 'Other') {
+                    jquery_1_12_1_min_p("#other").show();
+                }
+                else {
+                    jquery_1_12_1_min_p("#other").hide();
+                }
+            });
+
+        })
+    </script>
+
+    <script>
+        jquery_1_12_1_min_p(function () {
+            jquery_1_12_1_min_p("#datepicker").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                yearRange: '1920:2018'
+            });
+            jquery_1_12_1_min_p("#datepicker1").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                yearRange: '1920:2018'
+            });
+            jquery_1_12_1_min_p("#txtStartdate").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                yearRange: '1990:2022'
+            });
+            jquery_1_12_1_min_p("#txtLastday").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                yearRange: '1990:2022'
+            });
+            jquery_1_12_1_min_p("#txtTerminationDate").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                yearRange: '1990:2022'
+            });
+        });
+    </script>
+
+      <script>
+        jquery_2_2_3_min_p(window).load(function () {
+
+            jquery_2_2_3_min_p('.nav-tabs a:first').trigger('click');
+
+            var hash = window.location.hash;
+            hash && jquery_2_2_3_min_p('ul.nav a[href="' + hash + '"]').tab('show');
+
+            jquery_2_2_3_min_p('.nav-tabs a').click(function (e) {
+                jquery_2_2_3_min_p(this).tab('show');
+                var scrollmem = jquery_2_2_3_min_p('body').scrollTop() || jquery_2_2_3_min_p('html').scrollTop();
+                window.location.hash = this.hash;
+                jquery_2_2_3_min_p('html,body').scrollTop(scrollmem);
+            });
+
+            /*$('.approvalLi .nav-link').click(function(){
+            var linkId = $(this).attr("href");
+            var hash = $(this).attr('href');
+            location.hash = linkId;
+            })*/
+        })
+    </script>
+
+    <script type="text/javascript" charset="utf-8">
+
+        // specify the columns
+
+
+        var columnDefs = [
+            { headerName: "All", checkboxSelection: true, field: "all", width: 80 },
+            { headerName: "Sr. No.", field: "sl", width: 100 },
+            { headerName: "Name", field: "Name", width: 240, editable: true },
+            { headerName: "Department", field: "Department", width: 220, editable: true },
+            { headerName: "Designation", field: "Designation", width: 240, editable: true },
+            { headerName: "Resignation Reason", field: "ResignReason", width: 250, editable: true }
+        ];
+
+        // specify the data
+        var rowData = [
+            { all: "", checkboxSelection: true, sl: "1", Name: "ABC", Department: ".NET", Designation: "Developer", ResignReason: "Feeling Underpaid" },
+            { all: "", checkboxSelection: true, sl: "2", Name: "DEF", Department: "AX", Designation: "Developer", ResignReason: "Personal Underpaid" },
+            { all: "", checkboxSelection: true, sl: "3", Name: "GHI", Department: ".NET", Designation: "Developer", ResignReason: "Feeling Underpaid" }
+        ];
+
+        // let the grid know which columns and what data to use
+        var gridOptions = {
+            columnDefs: columnDefs,
+            rowData: rowData,
+            enableSorting: true,
+            enableFilter: true
+        };
+
+        // lookup the container we want the Grid to use
+        var eGridDiv = document.querySelector('#myGrid2');
+
+        // create the grid passing in the div to use together with the columns & data we want to use
+        new agGrid.Grid(eGridDiv, gridOptions);
+
+
+    </script>
+
+</body>
+</html>
+

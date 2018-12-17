@@ -722,7 +722,8 @@ ul.navbar-nav{ width:100%}
         color: #fff;
         font-size: 0.825rem;
         line-height: 1.2;
-        display: inline-block !important
+        display: inline-block !important;
+        padding:.6rem 0 !important;
     }
     a.nav-link {
         color: #fff;
@@ -756,7 +757,7 @@ tbody>tr>td, thead>tr>th{ border-right:1px solid #6a8d90; font-size:0.875rem; co
 .gridBody .input-group input::placeholder{color:#969696; font-size:0.75rem; }
 .btn-outline-secondary:not(:disabled):not(.disabled).active:focus, .btn-outline-secondary:not(:disabled):not(.disabled):active:focus, .show>.btn-outline-secondary.dropdown-toggle:focus{box-shadow:0 0 0 .16rem rgba(123,202,205,.25) !important}
 .btn-outline-secondary:hover{ background:#b7dbde}
-.show p{ display:inline-block; font-size:14px; font-weight:600; color:#1f4c50; vertical-align:middle; padding-right:10px}
+.show p{ display:inline-block; font-size:14px !important; font-weight:600; color:#1f4c50; vertical-align:middle; padding-right:10px}
 .show form{ display:inline-block; }
 .show .flag{ display:inline-block; margin-right:10px}
 .show .styled-select.slate{height: 27px !important;}
@@ -787,9 +788,11 @@ tbody>tr>td, thead>tr>th{ border-right:1px solid #6a8d90; font-size:0.875rem; co
 .natureSearch .input-group .btn-outline-secondary.active, .employeeSearch .input-group .btn-outline-secondary.active{ background-color:transparent; box-shadow:none}
 .natureSearch .input-group .btn-outline-secondary:hover, .employeeSearch .input-group .btn-outline-secondary:hover{ background:none; box-shadow:none}
 .buttonCon button{ margin:0}
-#print .formBody {
-    padding: 2% 1% 0%;
-}
+    .buttonCon button a {
+    color:#fff !important}
+    #print .formBody {
+        padding: 2% 1% 0%;
+    }
 input.sidemenu{ margin:0}
 #notification .p1[data-count]:after{ position:absolute;
   right:-13%;
@@ -1092,7 +1095,12 @@ select.addrCon{ height: 25px !important; padding: 2px 10px !important;}
 	overflow:auto;
 }
 
-.hr-form label{justify-content: left; font-size: 0.75rem; font-weight: 600; text-align: left;}
+.hr-form label {
+    justify-content: left !important;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    text-align: left !important;
+}
 #addpopUp{ max-width: 650px !important}
 .modal-header h5{margin: 0 auto; color: #fff;}
 .form-inline .checkCol label{ width:100%}
@@ -1108,12 +1116,23 @@ td.drop{ margin-bottom: 0 !important;
 	
 .posting{ /*border-bottom: 2px solid #398d94;*/ background-color: #9cbac6; border-radius:0; padding:0; color:#3e3e3e}
 .posting .nav-tabs .nav-item{width: 20% !important; text-align: center !important; border-right: 1px solid #fff}
-.posting .nav-tabs .nav-item.show .nav-link, .posting .nav-tabs .nav-link.active { border-radius: 0; background-color: #2e6d72; color: #fff; border:0;}
+    .posting .nav-tabs .nav-item.show .nav-link, .posting .nav-tabs .nav-link.active {
+        border-radius: 0;
+        background-color: #2e6d72;
+        color: #fff;
+        border: 0;
+        width: 100%;
+    }
 .posting .nav-tabs .nav-link:focus, .posting .nav-tabs .nav-link:hover{ border:0}
-.posting a.nav-link  {color:#1f4c50; font-size: 0.825rem; line-height: 1.2; font-weight: 600; }
+.posting a.nav-link  {color:#1f4c50; font-size: 0.825rem; line-height: 1.2; font-weight: 600; width:100% !important }
 .contentDivider{float:left;}
 .postinggrid{margin-top: 30px;}
-#posting-radio .checkBox{ font-size: 11px; padding-top: 0px;}
+#employeeDiv .container {
+max-width:100%}
+#posting-radio .checkBox {
+    font-size: 11px;
+    padding-top: 0px;
+}
 #posting-radio label{ text-align:left}
 #qnty{ width: 100%; margin-top: 0 !important;}
 .left-content{border-right: 1px solid #cccaca;}
@@ -1150,7 +1169,7 @@ span.check1:after { top: -4px !important;
 .mycheck{ top:-4px}
 
 #employeeDiv{ margin-bottom:0 !important; padding:20px 0 0 !important}
-#employeeDiv .nav-tabs .nav-item{ width:12.5% !important}
+#employeeDiv .nav-tabs .nav-item{ width:11.1% !important}
 
 #searchCon input, #searchCon button{ height:28px; border:1px solid #b6ced8 !important}
 #searchCon button img{ padding:2px 0px 15px}
@@ -1588,14 +1607,22 @@ span.localizationIcon { width: 64px; border-radius: 50%; margin: 0 auto; height:
     background-image: url(../images/prev-icon-black1.png) !important;
 }
 
-#employeeDiv .posting a.nav-link { padding: 14px 0;}
+#employeeDiv .posting a.nav-link { padding: 14px 0; width: 100%;}
 .lblchk{ text-decoration:underline}
 .DivDesc{ width:96% !important}
 .modal-header .close { color: #fff !important}
 
 .loginBody button a { color:#fff !important}
-.buttonCon button a { color:#fff !important}
 
+.panel-heading h4{
+    display: block;
+    padding: 10px 15px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    word-spacing: 3px;
+    text-decoration: none;
+}
 
 @media (min-width:1366px) {
     .companySelect { display: inline-block; width: 48%;}
@@ -1851,6 +1878,7 @@ span.addrCon { width: 49% !important;}
 .primaryField { max-width: 100%; margin-right:0 !important; margin-bottom:5px}
 .navigation .scrollbar {height: 480px;}
 .posting .nav-tabs li.leaveLi { width: 100%!important;}
+ 
 }
 
 @media screen and (max-width: 320px)

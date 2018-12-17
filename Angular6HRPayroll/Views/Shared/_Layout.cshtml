@@ -23,8 +23,7 @@
     <script>var jquery_2_2_3_min_p = jQuery.noConflict();</script>
     @Scripts.Render("~/Content/js/bootstrap.min.js")>
     @Scripts.Render("~/Content/js/script.js")
-    <script src="~/Scripts/myapp.js"></script>
-    <script src="~/Content/js/ag-grid-community.min.noStyle.js"></script>
+     <script src="~/Content/js/ag-grid-community.min.noStyle.js"></script>
     <script src="~/Content/js/jquery-ui.js"></script>
 
     <script> var jquery_1_12_1_min_p = jQuery.noConflict();</script>
@@ -137,7 +136,7 @@
 </head>
 <body>
     <div ng-app="myapp">
-        <div id="wrapper">
+        <div>
 
             <div class="container-fluid">
                 <div class="color-picker">
@@ -189,17 +188,17 @@
                                                         <li><a class="nav-link" tabindex="-1" href="../Master/errorPage.aspx"><i class="fa fa-users arrow"></i>Team</a></li>
                                                         <li><a class="nav-link" tabindex="-1" href="../Master/errorPage.aspx"><img src="~/Content/images/approval_icon.png" class="arrow" />Approval Process</a></li>
                                                         <li><a class="nav-link" tabindex="-1" href="../Master/errorPage.aspx"><img src="~/Content/images/appraisal_icon.png" class="arrow" />Appraisal</a></li>
-                                                        <li><a class="nav-link" tabindex="-1" href="../Master/errorPage.aspx"><img src="~/Content/images/request_icon.png" class="arrow" />Employee Request</a></li>
+                                                        <li><img src="~/Content/images/request_icon.png" class="arrow" />@Html.ActionLink("Employee Doc Master", "EmployeeDocMaster", "Home")</li>
                                                     </ul>
                                                 </li>
                                                 <li class="dropdown-submenu">
                                                     <a class="test nav-link" tabindex="-1" href="#" onclick="javascript: document.location.href='../Master/payrollAreapage.aspx'"><i class="fa fa-credit-card arrow" style="font-size:14px !important"></i>Payroll    <i class="fa fa-caret-down" style=""></i> </a>
                                                     <ul class="dropdown-menu show">
-                                                        <li><a class="nav-link" tabindex="-1" href="../Master/setup.aspx#earn"><img src="~/Content/images/earning_icon.png" class="arrow" />Earnings</a></li>
-                                                        <li><a class="nav-link" tabindex="-1" href="#" onclick="$('#earn').trigger('click')"><img src="~/Content/images/deduction_icon.png" class="arrow" />Deductions</a></li>
-                                                        <li><a class="nav-link" tabindex="-1" href="../Master/setup.aspx#paySlab"><img src="~/Content/images/paySlab_icon.png" class="arrow" />Pay Slab</a></li>
+                                                        <li><img src="~/Content/images/earning_icon.png" class="arrow" />@Html.ActionLink("Earnings", "setup", "PR")</li>
+                                                        <li><img src="~/Content/images/deduction_icon.png" class="arrow" />@Html.ActionLink("Deductions", "setup", "PR")</li>
+                                                        <li><img src="~/Content/images/paySlab_icon.png" class="arrow" />@Html.ActionLink("Pay Slab", "setup", "PR")</li>
                                                         <li><a class="nav-link" tabindex="-1" href="../Master/paycycle.aspx"><i class="fa fa-money arrow"></i>Pay Cycle</a></li>
-                                                        <li><a class="nav-link" tabindex="-1" href="../Master/setup.aspx#payStructure"><img src="~/Content/images/payStructure_icon.png" class="arrow" />Pay Structure</a></li>
+                                                        <li><img src="~/Content/images/payStructure_icon.png" class="arrow" />@Html.ActionLink("Pay Structure", "setup", "PR")</li>
                                                         <li><img src="~/Content/images/payday_icon.png" class="arrow" />@Html.ActionLink("Payday", "Payday", "Home")</li>
                                                     </ul>
                                                 </li>

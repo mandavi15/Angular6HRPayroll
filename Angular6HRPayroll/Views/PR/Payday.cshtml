@@ -1,0 +1,380 @@
+﻿
+@{
+    ViewBag.Title = "Payday";
+}
+
+<html>
+
+<head>
+@*<style>
+      @media screen and (max-width: 414px){
+.gridBody {
+    overflow-y: scroll !important;
+    height: 358px !important;
+}
+}
+
+  @media screen and (max-width: 380px){
+.gridBody {
+    overflow-y: scroll !important;
+    height: 314px !important;
+}
+}
+
+
+</style>*@
+
+
+
+
+
+
+</head>
+<body>
+
+    <div class="posting">
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item leaveLi">
+                <a class="nav-link active" data-toggle="tab" href="#createPaychecks">
+                    Create Paychecks
+                </a>
+            </li>
+            <li class="nav-item leaveLi">
+                <a class="nav-link" data-toggle="tab" href="#approvePaychecks">
+                    Approve Paychecks
+                </a>
+            </li>
+            <li class="nav-item leaveLi">
+                <a class="nav-link" data-toggle="tab" href="#print">Print</a>
+            </li>
+        </ul>
+    </div>
+    <div class="tab-content">
+        <div class="container-fluid gridBody tab-pane fade active show" id="createPaychecks">
+            <div class="panel-head">
+                <div class="panel-title">
+                    <h6 class="mb-0 pl-0">
+                        Create Paychecks
+                    </h6>
+                </div>
+            </div>
+            <div class="formBody clearfix top-border">
+                <form>
+                    <div class="pull-left col-12 col-md-6 pl-0">
+                        <div class="form-inline">
+                            <label for="Slab" class="col-4 col-md-4 pl-0">
+                                Slab:
+                            </label>
+                            <input type="text" id="ddlSlab" class="form-control addrCon formSelect col-7 col-md-7" />
+
+                        </div>
+                        <div class="form-inline">
+                            <label for="Employee" class="col-4 col-md-4 pl-0">
+                                Employee:
+                            </label>
+                            <input type="text" id="ddlEmployee" class="form-control addrCon formSelect col-7 col-md-7" />
+
+                        </div>
+                    </div>
+                    <div class="pull-right col-12 col-md-6 pl-0">
+                        <div class="form-inline">
+                            <label for="Department" class="col-4 col-md-4 pl-0">
+                                Department:
+                            </label>
+                            <input type="text" id="ddlDepartment" class="form-control addrCon formSelect col-7 col-md-7" />
+
+                        </div>
+                        <div class="form-inline">
+                            <label for="pay" class="col-4 col-md-4 pl-0">
+                                Pay Period:
+                            </label>
+                            <input type="text" id="ddlPayPeriode" class="form-control addrCon formSelect col-7 col-md-7" />
+
+                        </div>
+
+
+                    </div>
+                </form>
+            </div>
+
+            <div id="divGridMain">
+                <div class="buttonCon pull-right pr-3" id="divGrid">
+                </div>
+
+
+            </div>
+
+            <div id="myGrid" style="height: 250px; width:100%;" class="ag-theme-balham">
+
+            </div>
+
+            <script type="text/javascript" charset="utf-8">
+
+                // specify the columns
+
+
+                var columnDefs = [
+                    { headerName: "All", checkboxSelection: true, field: "all", width: 150 },
+                    { headerName: "Sr.No.", field: "sr", width: 150 },
+                    { headerName: "Employee Name", field: "EmployeeName", width: 200 },
+                    { headerName: "Department", field: "Department", width: 200 },
+                    { headerName: "Earning Amount", field: "EarningAmount", width: 250 },
+                    { headerName: "Deduction  Amount", field: "DeductionAmount", width: 250 },
+                    { headerName: "Gross Amount", field: "GrossAmount", width: 150 }, 
+                    { headerName: "Over Time", field: "OverTime", width: 150 },
+                    { headerName: "Sick Pay", field: "SickPay", width: 150 },
+                    { headerName: "Vacation Pay", field: "VacationPay", width: 150 },
+                    { headerName: "Last Check", field: "LastCheck", width: 150 },
+                    
+                ];
+
+                // specify the data
+                var rowData = [
+                    { all: "", checkboxSelection: true, sr: "1", EmployeeName: "jack", Department: "Yes", EarningAmount: "No", DeductionAmount: "Nill", GrossAmount: "200-3000", OverTime: "Rs", SickPay: "No", VacationPay: "No", LastCheck:"12-12-2014" },
+                    { all: "", checkboxSelection: true, sr: "1", EmployeeName: "jack", Department: "Yes", EarningAmount: "No", DeductionAmount: "Nill", GrossAmount: "200-3000", OverTime: "Rs", SickPay: "No", VacationPay: "No", LastCheck: "12-12-2014" },
+                    { all: "", checkboxSelection: true, sr: "1", EmployeeName: "jack", Department: "Yes", EarningAmount: "No", DeductionAmount: "Nill", GrossAmount: "200-3000", OverTime: "Rs", SickPay: "No", VacationPay: "No", LastCheck: "12-12-2014" },
+                    { all: "", checkboxSelection: true, sr: "1", EmployeeName: "jack", Department: "Yes", EarningAmount: "No", DeductionAmount: "Nill", GrossAmount: "200-3000", OverTime: "Rs", SickPay: "No", VacationPay: "No", LastCheck: "12-12-2014" },
+                    { all: "", checkboxSelection: true, sr: "1", EmployeeName: "jack", Department: "Yes", EarningAmount: "No", DeductionAmount: "Nill", GrossAmount: "200-3000", OverTime: "Rs", SickPay: "No", VacationPay: "No", LastCheck: "12-12-2014" },
+                    { all: "", checkboxSelection: true, sr: "1", EmployeeName: "jack", Department: "Yes", EarningAmount: "No", DeductionAmount: "Nill", GrossAmount: "200-3000", OverTime: "Rs", SickPay: "No", VacationPay: "No", LastCheck: "12-12-2014" },
+                    { all: "", checkboxSelection: true, sr: "1", EmployeeName: "jack", Department: "Yes", EarningAmount: "No", DeductionAmount: "Nill", GrossAmount: "200-3000", OverTime: "Rs", SickPay: "No", VacationPay: "No", LastCheck: "12-12-2014" },
+                    { all: "", checkboxSelection: true, sr: "1", EmployeeName: "jack", Department: "Yes", EarningAmount: "No", DeductionAmount: "Nill", GrossAmount: "200-3000", OverTime: "Rs", SickPay: "No", VacationPay: "No", LastCheck: "12-12-2014" },
+                    { all: "", checkboxSelection: true, sr: "1", EmployeeName: "jack", Department: "Yes", EarningAmount: "No", DeductionAmount: "Nill", GrossAmount: "200-3000", OverTime: "Rs", SickPay: "No", VacationPay: "No", LastCheck: "12-12-2014" },
+                    { all: "", checkboxSelection: true, sr: "1", EmployeeName: "jack", Department: "Yes", EarningAmount: "No", DeductionAmount: "Nill", GrossAmount: "200-3000", OverTime: "Rs", SickPay: "No", VacationPay: "No", LastCheck: "12-12-2014" },
+                    { all: "", checkboxSelection: true, sr: "1", EmployeeName: "jack", Department: "Yes", EarningAmount: "No", DeductionAmount: "Nill", GrossAmount: "200-3000", OverTime: "Rs", SickPay: "No", VacationPay: "No", LastCheck: "12-12-2014" },
+                    { all: "", checkboxSelection: true, sr: "1", EmployeeName: "jack", Department: "Yes", EarningAmount: "No", DeductionAmount: "Nill", GrossAmount: "200-3000", OverTime: "Rs", SickPay: "No", VacationPay: "No", LastCheck: "12-12-2014" },
+                    { all: "", checkboxSelection: true, sr: "1", EmployeeName: "jack", Department: "Yes", EarningAmount: "No", DeductionAmount: "Nill", GrossAmount: "200-3000", OverTime: "Rs", SickPay: "No", VacationPay: "No", LastCheck: "12-12-2014" },
+                ];
+
+                // let the grid know which columns and what data to use
+                var gridOptions = {
+                    columnDefs: columnDefs,
+                    rowData: rowData,
+                    enableSorting: true,
+
+                    enableFilter: true
+                };
+
+                // lookup the container we want the Grid to use
+                var eGridDiv = document.querySelector('#myGrid');
+
+                // create the grid passing in the div to use together with the columns & data we want to use
+                new agGrid.Grid(eGridDiv, gridOptions);
+
+
+            </script>
+            <div class="buttonCon pull-right mt-2">
+                <input type="button" onclick="SavePayDays()" value="Create Paychecks" class="btn templateBg" />
+            </div>
+        </div>
+        <div class="container-fluid gridBody tab-pane fade" id="approvePaychecks">
+            <div class="panel-head">
+                <div class="panel-title">
+                    <h6 class="mb-0 pl-0">
+                        Approve Paychecks
+                    </h6>
+                </div>
+            </div>
+
+            <div id="myGrid1" style="height: 320px; width:100%;" class="ag-theme-balham">
+
+            </div>
+
+            <script type="text/javascript" charset="utf-8">
+
+                // specify the columns
+
+
+                var columnDefs = [
+                    { headerName: "All", checkboxSelection: true, field: "all", width: 150 },
+                    { headerName: "Employee Name.", field: "EmployeeName", width: 150 },
+                    { headerName: "Regular", field: "Regular", width: 200 },
+                    { headerName: "Over Time", field: "OverTime", width: 200 },
+                    { headerName: "Deduction Amount", field: "DeductionAmount", width: 250 },
+                    { headerName: "Vacation Pay", field: "VacationPay", width: 250 },
+                    { headerName: "Last Check", field: "LastCheck", width: 150 },
+                    { headerName: "Over Time", field: "OverTime", width: 150 }
+                ];
+
+                // specify the data
+                var rowData = [
+                    { all: "", checkboxSelection: true, EmployeeName: "jack", Regular: "Yes", OverTime: "No", DeductionAmount: "Nill", VacationPay: "200-3000", LastCheck: "Rs", OverTime:"No" },
+                    { all: "", checkboxSelection: true, EmployeeName: "jack", Regular: "Yes", OverTime: "No", DeductionAmount: "Nill", VacationPay: "200-3000", LastCheck: "Rs", OverTime: "No" },
+                    { all: "", checkboxSelection: true, EmployeeName: "jack", Regular: "Yes", OverTime: "No", DeductionAmount: "Nill", VacationPay: "200-3000", LastCheck: "Rs", OverTime: "No" },
+                    { all: "", checkboxSelection: true, EmployeeName: "jack", Regular: "Yes", OverTime: "No", DeductionAmount: "Nill", VacationPay: "200-3000", LastCheck: "Rs", OverTime: "No" },
+                    { all: "", checkboxSelection: true, EmployeeName: "jack", Regular: "Yes", OverTime: "No", DeductionAmount: "Nill", VacationPay: "200-3000", LastCheck: "Rs", OverTime: "No" },
+                    { all: "", checkboxSelection: true, EmployeeName: "jack", Regular: "Yes", OverTime: "No", DeductionAmount: "Nill", VacationPay: "200-3000", LastCheck: "Rs", OverTime: "No" },
+                    { all: "", checkboxSelection: true, EmployeeName: "jack", Regular: "Yes", OverTime: "No", DeductionAmount: "Nill", VacationPay: "200-3000", LastCheck: "Rs", OverTime: "No" },
+                    { all: "", checkboxSelection: true, EmployeeName: "jack", Regular: "Yes", OverTime: "No", DeductionAmount: "Nill", VacationPay: "200-3000", LastCheck: "Rs", OverTime: "No" },
+                    { all: "", checkboxSelection: true, EmployeeName: "jack", Regular: "Yes", OverTime: "No", DeductionAmount: "Nill", VacationPay: "200-3000", LastCheck: "Rs", OverTime: "No" },
+                    { all: "", checkboxSelection: true, EmployeeName: "jack", Regular: "Yes", OverTime: "No", DeductionAmount: "Nill", VacationPay: "200-3000", LastCheck: "Rs", OverTime: "No" },
+                ];
+
+                // let the grid know which columns and what data to use
+                var gridOptions = {
+                    columnDefs: columnDefs,
+                    rowData: rowData,
+                    enableSorting: true,
+                    enableFilter: true
+                };
+
+                // lookup the container we want the Grid to use
+                var eGridDiv = document.querySelector('#myGrid1');
+
+                // create the grid passing in the div to use together with the columns & data we want to use
+                new agGrid.Grid(eGridDiv, gridOptions);
+
+
+            </script>
+            <div class="buttonCon pull-right mt-2">
+                <input type="button" onclick="SaveApprovedPayCheck()" value="Approve Paychecks" class="btn templateBg" />
+            </div>
+        </div>
+        <div class="container-fluid gridBody tab-pane fade" id="print">
+            <div class="panel-head">
+                <div class="panel-title">
+                    <h6 class="mb-0">
+                        Pay Slip for the month of June
+                    </h6>
+                </div>
+            </div>
+            <div class="formBody clearfix top-border">
+                <form>
+                    <div class="pull-left col-12 col-md-6 pl-0">
+                        <div class="form-inline">
+                            <label for="Employee Name" class="col-4 col-md-4 pl-0">
+                                Employee Name:
+                            </label>
+                            <input type="text" class="form-control col-7 col-md-7 ptb-4" id="ddlEmp" name="name"
+                                   placeholder="Employee Name">
+                        </div>
+                        <div class="form-inline">
+                            <label for="EmployeeID" class="col-4 col-md-4 pl-0">
+                                Employee ID:
+                            </label>
+                            <input type="text" class="form-control col-7 col-md-7 ptb-4" id="empIds" name="Employee ID" readonly
+                                   placeholder="Emp Id">
+                        </div>
+                    </div>
+                    <div class="pull-right col-12 col-md-6 pl-0">
+                        <div class="form-inline">
+                            <label for="Designation" class="col-4 col-md-4 pl-0">
+                                Designation:
+                            </label>
+                            <input type="text" class="form-control col-8 col-md-8 ptb-4" id="ddldesign" name="Designation" readonly
+                                   placeholder="Designation">
+                        </div>
+                        <div class="form-inline">
+                            <label for="Joining Date" class="col-4 col-md-4 pl-0">
+                                Joining Date:
+                            </label>
+                            <input type="text" class="form-control col-8 col-md-8 ptb-4" id="jDate" name="Joining Date" readonly
+                                   placeholder="dd/mm/yyyy">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="row p-0 paychecks">
+                <div class="col-12 col-md-6">
+                    <table class="table greyBorder mb-4 top-border p-0" id="tblEarning">
+                        <thead>
+                            <tr class="lightGreen">
+                                <th>
+                                    Earnings
+                                </th>
+                                <th>
+                                    Amount
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                        <tfoot>
+                            <tr>
+                                <td>
+                                    Total Earnings
+                                </td>
+                                <td>
+                                    Rs.<label class="lblEAmt"></label>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <div class="col-12 col-md-6">
+                    <table class="table greyBorder mb-4 top-border p-0" id="tblDeduction">
+                        <thead>
+                            <tr class="lightGreen">
+                                <th>
+                                    Deductions
+                                </th>
+                                <th>
+                                    Amount
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                        <tfoot>
+                            <tr>
+                                <td>
+                                    Total Deductions
+                                </td>
+                                <td>
+                                    Rs.<label class="lblDAmt"></label>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+            <div class="container clearfix p-0 mb-2" style="border: 1px solid #babbbb">
+                <div class="noteCon lightGrey pull-left clearfix">
+                    <div class="note">
+                        <span class="font-weight-bold pb-0 mr-2" style="display: inline-block">
+                            <h6>
+                                Payment Date:
+                            </h6>
+                        </span><span style="display: inline-block">
+                            <h6>
+                                <label id="lblPayDate"></label>
+                            </h6>
+                        </span>
+                    </div>
+                </div>
+                <div class="total pull-right">
+                    <div class="formBody p-0 clearfix">
+                        <form>
+                            <div class="form-inline greyBorder-bottom m-0">
+                                <span class="col-8 col-md-8 p-1">
+                                    <h6 class="p-0 mb-0 font-weight-bold">
+                                        Net Pay:
+                                    </h6>
+                                </span><span class="col-4 col-md-4 p-1 text-right">
+                                    <h6 class="p-0 mb-0 font-weight-bold">
+                                        Rs.<label id="lblNetAmt"></label>
+                                    </h6>
+                                </span>
+                            </div>
+                            <div class="form-inline mb-0 m-0">
+                                <span class="col-12 col-md-12 font-weight-bold p-1">
+                                    <h6 class="p-0 mb-0">
+                                        <label id="lblAmtinWord"></label>
+                                    </h6>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="buttonCon pull-right">
+                <input type="submit" value="Print" class="btn templateBg" />
+            </div>
+        </div>
+    </div>
+    <script>
+
+
+        jquery_1_11_3_min_p('body').append('<div class="modal fade" id="viewHeads"><div class="modal-dialog modal-dialog-centered" id="leavePopup"><div class="modal-content"><div class="modal-header"><h5>Paychecks</h5> <button type="button" class="close" data-dismiss="modal" style="background:#a24c50">&times;</button></div><div class="modal-body tab-content"><div class="row p-0 paychecks"><div class="col-6 col-md-6"><h5>Earnings</h5><table id="ListEarningType" class="table greyBorder mb-4 top-border p-0"><tbody></tbody><tfoot> <tr><td> Total Earnings</td><td> Rs.<label class="lblEAmt"></label></td> </tr></tfoot></table> </div><div class="col-6 col-md-6"><h5>Deductions</h5><table id="ListDeductionType" class="table greyBorder mb-4 top-border p-0"><tbody><tfoot> <tr><td> Total Deduction</td><td> Rs.<label class="lblDAmt"></label></td> </tr></tfoot></tbody></table></div></div></div><div class="modal-footer"> <button type="button" class="btn btn-submit" data-dismiss="modal" onClick="javascript: document.location.href="payday.aspx"">SUBMIT</button></div></div></div></div>');
+    </script>
+</body>
+</html>
+
+

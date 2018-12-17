@@ -5,81 +5,84 @@
 
 <html>
 <head>
+    <script src="~/Content/js/ag-grid-community.min.noStyle.js"></script>
+    <link href="~/Content/css/ag-grid.css" rel="stylesheet" />
+    <link href="~/Content/css/ag-theme-balham.css" rel="stylesheet" />
     <script src="../js/jquery-2.2.3.min.js" type="text/javascript"></script>
     <script src="../js/jquery-ui.js" type="text/javascript"></script>
     <script src="../javaScriptFiles/PayrollSetUp.js" type="text/javascript"></script>
     <link href="../css/jquery-ui.css" rel="stylesheet" type="text/css" />
     @*<style>
-        .ui-draggable, .ui-droppable
-        {
-            background-position: top;
+                .ui-draggable, .ui-droppable
+                {
+                    background-position: top;
+                }
+                #sortable
+                {
+                    list-style-type: none;
+                    margin: 0;
+                    padding: 0;
+                    width: 60%;
+                }
+                #sortable li
+                {
+                    margin: 0 3px 3px 3px;
+                    padding: 0.4em;
+                    padding-left: 1.5em;
+                    font-size: 1.4em;
+                    height: 18px;
+                }
+                #sortable li span
+                {
+                    position: absolute;
+                    margin-left: -1.3em;
+                }
+                .nopadding{padding:0px;}
+
+                @media screen and (max-width: 414px){
+        .gridBody {
+            overflow-y: scroll !important;
+            height: 265px !important;
         }
-        #sortable
-        {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            width: 60%;
-        }
-        #sortable li
-        {
-            margin: 0 3px 3px 3px;
-            padding: 0.4em;
-            padding-left: 1.5em;
-            font-size: 1.4em;
-            height: 18px;
-        }
-        #sortable li span
-        {
-            position: absolute;
-            margin-left: -1.3em;
-        }
+
         .nopadding{padding:0px;}
 
-        @media screen and (max-width: 414px){
-.gridBody {
-    overflow-y: scroll !important;
-    height: 265px !important;
-}
-
-.nopadding{padding:0px;}
-
-  .btnpadding{padding: 4px!important;}
-  .checkmark1 {
-    position: absolute;
-    top: -10px;
-    left: 0;
+          .btnpadding{padding: 4px!important;}
+          .checkmark1 {
+            position: absolute;
+            top: -10px;
+            left: 0;
 
 
-    border: 1px solid #398d94;
+            border: 1px solid #398d94;
 
-}
-.formBody .form-inline label {
-    display: inline-block;
-    color: #3e3e3e;
-    font-size: 0.6875rem;
-         width: 100%;
-    font-weight: 600;
-}
-
-
-.AddFormulaE
-{
-    padding: 4px;
-
-    }
-
-
-
-
-
-
+        }
+        .formBody .form-inline label {
+            display: inline-block;
+            color: #3e3e3e;
+            font-size: 0.6875rem;
+                 width: 100%;
+            font-weight: 600;
         }
 
 
+        .AddFormulaE
+        {
+            padding: 4px;
+
+            }
 
 
-    </style>*@
+
+
+
+
+                }
+
+
+
+
+            </style>*@
 
 </head>
     
@@ -115,7 +118,7 @@
                     Pay Slab
                 </a>
             </li>
-            <li class="nav-item payrollTab col-12 col-md-3 nopadding">
+            <li class="nav-item payrollTab col-12 col-md-3 p-0">
                 <a class="nav-link" data-toggle="tab" href="#payStructure">
                     Pay Structure
                 </a>
@@ -147,7 +150,7 @@
                                                    placeholder="search" />
                                             <div class="input-group-append">
                                                 <button class="btn btn-outline-secondary" type="button">
-                                                    <img src="../images/search-icon.png" alt="Search">
+                                                    <img src="~/Content/images/search-icon.png" alt="Search">
                                                 </button>
                                             </div>
                                         </div>
@@ -254,11 +257,11 @@
                                                     <div class="buttonCon col-12 col-md-4 pull-left p-0">
                                                         <button type="button" class="btn col-4 col-md-4 pl-0 templateBg" id="btnSaveE" value="Save"
                                                                 style="display: inline-block;">
-                                                            <img src="../images/save-icon.png">Save
+                                                            <img src="~/Content/images/save-icon.png">Save
                                                         </button>
                                                         <button type="button" class="btn col-4 col-md-4 pl-0 templateBg" id="btnCancelE"
                                                                 value="Cancel">
-                                                            <img src="../images/close-icon.png" />Cancel
+                                                            <img src="~/Content/images/close-icon.png" />Cancel
                                                         </button>
                                                     </div>
 
@@ -271,11 +274,11 @@
 
                             <div class="buttonCon col-12 col-md-4 pull-left mt-3 p-0">
                                 <button type="button" class="btn col-3 col-md-3 templateBg btnpadding" id="btnNewE">
-                                    <img src="../images/new-icon.png" alt="add new">Add New
+                                    <img src="~/Content/images/new-icon.png" alt="add new">Add New
                                 </button>
                                 <button type="button" class="btn col-3 col-md-3 templateBg" id="btnDeleteE" data-toggle="modal"
                                         data-target="#deletePopup">
-                                    <img src="../images/delete-icon.png" alt="delete">Delete
+                                    <img src="~/Content/images/delete-icon.png" alt="delete">Delete
                                 </button>
                             </div>
 
@@ -308,7 +311,7 @@
                                                    placeholder="search">
                                             <div class="input-group-append">
                                                 <button class="btn btn-outline-secondary" type="button">
-                                                    <img src="../images/search-icon.png" alt="Search">
+                                                    <img src="~/Content/images/search-icon.png" alt="Search">
                                                 </button>
                                             </div>
                                         </div>
@@ -417,11 +420,11 @@
                                                     <div class="buttonCon col-12 col-md-4 pull-left p-0">
                                                         <button type="button" class="btn col-4 col-md-4 pl-0 templateBg" id="btnSaveD" value="Save"
                                                                 style="display: inline-block;">
-                                                            <img src="../images/save-icon.png">Save
+                                                            <img src="~/Content/images/save-icon.png">Save
                                                         </button>
                                                         <button type="button" class="btn col-4 col-md-4 pl-0 templateBg" id="btnCancelD"
                                                                 value="Cancel">
-                                                            <img src="../images/close-icon.png" />Cancel
+                                                            <img src="~/Content/images/close-icon.png" />Cancel
                                                         </button>
                                                     </div>
 
@@ -433,11 +436,11 @@
                             </div>
                             <div class="buttonCon col-12 col-md-4 pull-left mt-3 p-0">
                                 <button type="button" class="btn col-3 col-md-3 templateBg btnpadding" id="btnNewD">
-                                    <img src="../images/new-icon.png" alt="add new">Add New
+                                    <img src="~/Content/images/new-icon.png" alt="add new">Add New
                                 </button>
                                 <button type="button" class="btn col-3 col-md-3 templateBg" id="deletebtn" data-toggle="modal"
                                         data-target="#deletePopup">
-                                    <img src="../images/delete-icon.png" alt="delete">Delete
+                                    <img src="~/Content/images/delete-icon.png" alt="delete">Delete
                                 </button>
                             </div>
 
@@ -461,23 +464,69 @@
                     <div class="col-7 col-md-7">
                         <div class="buttonCon pull-left">
                             <button type="button" onclick="NewPaySlab()" class="btn templateBg mb-2" onclick="javascript: document.location.href='../HRPayroll/payslab.aspx'">
-                                <img src="../images/new-icon.png" alt="new">Create New
+                                <img src="~/Content/images/new-icon.png" alt="new">@Html.ActionLink("Create New", "payslab", "HR")
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="DivPaySlab">
+            <div id="myGrid" style="height: 320px; width:100%;" class="ag-theme-balham">
+
             </div>
+
+            <script type="text/javascript" charset="utf-8">
+
+                // specify the columns
+
+
+                var columnDefs = [
+                    { headerName: "All", checkboxSelection: true, field: "all", width: 150 },
+                    { headerName: "Sr.No.", field: "sl", width: 150 },
+                    { headerName: "Type", field: "Type", width: 200 },
+                    { headerName: "Name", field: "Name", width: 200 },
+                    { headerName: "Range", field: "Range", width: 250 },
+                    { headerName: "Currency", field: "Currency", width: 150 }
+                ];
+
+                // specify the data
+                var rowData = [
+                    { all: "", checkboxSelection: true, sl: "201", Type: "Noida", Name: "jack", Range: "200-3000", Currency:"Rs" },
+                    { all: "", checkboxSelection: true, sl: "201", Type: "Noida", Name: "jack", Range: "200-3000", Currency: "Rs" },
+                    { all: "", checkboxSelection: true, sl: "201", Type: "Noida", Name: "jack", Range: "200-3000", Currency: "Rs" },
+                    { all: "", checkboxSelection: true, sl: "201", Type: "Noida", Name: "jack", Range: "200-3000", Currency: "Rs" },
+                    { all: "", checkboxSelection: true, sl: "201", Type: "Noida", Name: "jack", Range: "200-3000", Currency: "Rs" },
+                    { all: "", checkboxSelection: true, sl: "201", Type: "Noida", Name: "jack", Range: "200-3000", Currency: "Rs" },
+                    { all: "", checkboxSelection: true, sl: "201", Type: "Noida", Name: "jack", Range: "200-3000", Currency: "Rs" },
+                    { all: "", checkboxSelection: true, sl: "201", Type: "Noida", Name: "jack", Range: "200-3000", Currency: "Rs" },
+                    { all: "", checkboxSelection: true, sl: "201", Type: "Noida", Name: "jack", Range: "200-3000", Currency: "Rs" },
+                    { all: "", checkboxSelection: true, sl: "201", Type: "Noida", Name: "jack", Range: "200-3000", Currency: "Rs" },
+                ];
+
+                // let the grid know which columns and what data to use
+                var gridOptions = {
+                    columnDefs: columnDefs,
+                    rowData: rowData,
+                    enableSorting: true,
+                    enableFilter: true
+                };
+
+                // lookup the container we want the Grid to use
+                var eGridDiv = document.querySelector('#myGrid');
+
+                // create the grid passing in the div to use together with the columns & data we want to use
+                new agGrid.Grid(eGridDiv, gridOptions);
+
+
+            </script>
             <div class="buttonCon pull-left mt-3">
                 <button type="button" id="btnEdit" class="btn templateBg">
-                    <img src="../images/edit-icon.png" alt="edit" />Edit
+                    <img src="~/Content/images/edit-icon.png" alt="edit" />Edit
                 </button>
                 <button type="button" class="btn templateBg" id="btnDelete" data-toggle="modal" data-target="#deletePopup">
-                    <img src="../images/delete-icon.png" alt="delete" />Delete
+                    <img src="~/Content/images/delete-icon.png" alt="delete" />Delete
                 </button>
                 <button type="button" class="btn templateBg" onclick="DownloadPaySlab()">
-                    <img src="../images/download-icon.png" alt="download" />Download
+                    <img src="~/Content/images/download-icon.png" alt="download" />Download
                 </button>
             </div>
         </div>
@@ -496,26 +545,73 @@
                     <div class="col-7 col-md-7">
                         <div class="buttonCon pull-left">
                             <button type="button" onclick="NewPayStructure()" class="btn templateBg mb-2">
-                                <img src="../images/new-icon.png" alt="new">Create New
+                                <img src="~/Content/images/new-icon.png" alt="new">@Html.ActionLink("Create New", "paystructure", "HR")
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="DivPayStructure">
+            <div id="myGrid1" style="height: 320px; width:100%;" class="ag-theme-balham">
+
             </div>
+
+            <script type="text/javascript" charset="utf-8">
+
+                // specify the columns
+
+
+                var columnDefs = [
+                    { headerName: "All", checkboxSelection: true, field: "all", width: 150 },
+                    { headerName: "Sr.No.", field: "sl", width: 150 },
+                    { headerName: "Pay slab", field: "Payslab", width: 200 },
+                    { headerName: "Type", field: "Type", width: 200 },
+                    { headerName: "Name", field: "Name", width: 250 },
+                    { headerName: "Range", field: "Range", width: 250 },
+                    { headerName: "Currency", field: "Currency", width: 150 }
+                ];
+
+                // specify the data
+                var rowData = [
+                    { all: "", checkboxSelection: true, sl: "201", Type: "Noida", Payslab:"5", Name: "jack", Range: "200-3000", Currency: "Rs" },
+                    { all: "", checkboxSelection: true, sl: "201", Type: "Noida", Payslab: "5", Name: "jack", Range: "200-3000", Currency: "Rs" },
+                    { all: "", checkboxSelection: true, sl: "201", Type: "Noida", Payslab: "5", Name: "jack", Range: "200-3000", Currency: "Rs" },
+                    { all: "", checkboxSelection: true, sl: "201", Type: "Noida", Payslab: "5", Name: "jack", Range: "200-3000", Currency: "Rs" },
+                    { all: "", checkboxSelection: true, sl: "201", Type: "Noida", Payslab: "5", Name: "jack", Range: "200-3000", Currency: "Rs" },
+                    { all: "", checkboxSelection: true, sl: "201", Type: "Noida", Payslab: "5", Name: "jack", Range: "200-3000", Currency: "Rs" },
+                    { all: "", checkboxSelection: true, sl: "201", Type: "Noida", Payslab: "5", Name: "jack", Range: "200-3000", Currency: "Rs" },
+                    { all: "", checkboxSelection: true, sl: "201", Type: "Noida", Payslab: "5", Name: "jack", Range: "200-3000", Currency: "Rs" },
+                    { all: "", checkboxSelection: true, sl: "201", Type: "Noida", Payslab: "5", Name: "jack", Range: "200-3000", Currency: "Rs" },
+                    { all: "", checkboxSelection: true, sl: "201", Type: "Noida", Payslab: "5", Name: "jack", Range: "200-3000", Currency: "Rs" },
+                ];
+
+                // let the grid know which columns and what data to use
+                var gridOptions = {
+                    columnDefs: columnDefs,
+                    rowData: rowData,
+                    enableSorting: true,
+                    enableFilter: true
+                };
+
+                // lookup the container we want the Grid to use
+                var eGridDiv = document.querySelector('#myGrid1');
+
+                // create the grid passing in the div to use together with the columns & data we want to use
+                new agGrid.Grid(eGridDiv, gridOptions);
+
+
+            </script>
 
             <div class="buttonCon pull-left mt-3">
                 <button type="button" id="btnEditStr" class="btn templateBg">
-                    <img src="../images/edit-icon.png" alt="edit" />Edit
+                    <img src="~/Content/images/edit-icon.png" alt="edit" />Edit
                 </button>
 
                 <button type="button" class="btn templateBg" id="btnDeleteStr" data-toggle="modal"
                         data-target="#deletePopup">
-                    <img src="../images/delete-icon.png" alt="delete" />Delete
+                    <img src="~/Content/images/delete-icon.png" alt="delete" />Delete
                 </button>
                 <button type="button" class="btn templateBg" id="btnDownloadStr">
-                    <img src="../images/download-icon.png" alt="download" />Download
+                    <img src="~/Content/images/download-icon.png" alt="download" />Download
                 </button>
             </div>
         </div>

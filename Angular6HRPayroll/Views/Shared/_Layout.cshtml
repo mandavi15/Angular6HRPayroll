@@ -193,7 +193,7 @@
                                                     </ul>
                                                 </li>
                                                 <li class="dropdown-submenu">
-                                                    <a class="test nav-link" tabindex="-1" href="#" onclick="javascript: document.location.href='../Master/payrollAreapage.aspx'"><i class="fa fa-credit-card arrow" style="font-size:14px !important"></i>Payroll    <i class="fa fa-caret-down" style=""></i> </a>
+                                                    <a class="test nav-link" tabindex="-1" href="#"><i class="fa fa-credit-card arrow" style="font-size:14px !important"></i>Payroll    <i class="fa fa-caret-down" style=""></i> </a>
                                                     <ul class="dropdown-menu show">
                                                         <li><img src="~/Content/images/earning_icon.png" class="arrow" />@Html.ActionLink("Earnings", "setup", "PR")</li>
                                                         <li><img src="~/Content/images/deduction_icon.png" class="arrow" />@Html.ActionLink("Deductions", "setup", "PR")</li>
@@ -204,6 +204,20 @@
                                                     </ul>
                                                 </li>
 
+
+                                                <li class="dropdown-submenu">
+                                                    <a class="test nav-link" tabindex="-1" href="#"><i class="fa fa-credit-card arrow" style="font-size:14px !important"></i>Payroll Setup   <i class="fa fa-caret-down" style=""></i> </a>
+                                                    <ul class="dropdown-menu show">
+                                                        <li><img src="~/Content/images/payday_icon.png" class="arrow" />@Html.ActionLink("Employee Pay Elements", "EmpPayElements", "PayrollSetup1")</li>
+                                                        <li><img src="~/Content/images/payday_icon.png" class="arrow" />@Html.ActionLink("Pay Group", "PayGroup", "PayrollSetup1")</li>
+                                                        <li><img src="~/Content/images/payday_icon.png" class="arrow" />@Html.ActionLink("Pay Element Code", "PayElementCode", "PayrollSetup1")</li>
+                                                        <li><img src="~/Content/images/payday_icon.png" class="arrow" />@Html.ActionLink("Salary Plan", "SalaryPlan", "PayrollSetup1")</li>
+                                                        <li><img src="~/Content/images/payday_icon.png" class="arrow" />@Html.ActionLink("Salary Plan Pay Element", "SalaryPlanPayElement", "PayrollSetup1")</li>
+                                                        <li><img src="~/Content/images/payday_icon.png" class="arrow" />@Html.ActionLink("Benefits", "Benefits", "PayrollSetup1")</li>
+                                                        <li><img src="~/Content/images/payday_icon.png" class="arrow" />@Html.ActionLink("Salary Plan Benefits", "SalaryPlanBenefits", "PayrollSetup1")</li>
+
+                                                    </ul>
+                                                </li>
 
                                             </ul>
                                         </div>

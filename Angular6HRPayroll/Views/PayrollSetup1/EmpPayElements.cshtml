@@ -1,0 +1,121 @@
+﻿
+@{
+    ViewBag.Title = "EmpPayElements";
+}
+
+<body>
+   
+
+        <div class="container-fluid gridBody">
+            <div class="buttonCon pull-right">
+                @*<button type="submit" class="btn templateBg" onClick="javascript: document.location.href='HR-form.html'"><img src="~/Content/images/back-icon.png" alt="back" />Back</button>*@
+                <button type="button" class="btn templateBg"><img src="~/Content/images/home-icon.png" alt="home" />@Html.ActionLink("Home", "HRAreaPage", "Home")</button>
+            </div>
+            <h5 style="text-transform:uppercase">Employee Pay Elements</h5>
+            <div class="row">
+
+                <div class="col-7 col-md-7">
+                    <div class="buttonCon pull-left">
+                        @*<button type="button" class="btn templateBg"><img src="~/Content/images/new-icon.png" alt="new" />@Html.ActionLink("Add New", "CreateComplaint", "HR")</button>*@
+                    </div>
+                </div>
+                <div class="col-5 col-md-5 pull-right">
+                    <div class="input-group mb-2 col-6 col-md-6 pull-right pl-0">
+                        <input class="form-control border-secondary" type="search" placeholder="search">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button"> <img src="~/Content/images/search-icon.png" alt="search" /> </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div id="myGrid2" style="height: 200px; width:100%;" class="ag-theme-balham "></div>
+
+
+                <div class="buttonCon pull-left mt-3">
+
+                    <button type="button" class="btn templateBg" id="btnEdit" onclick="Edit();" value="Add New"><img src="~/Content/images/edit-icon.png" alt="edit" />Edit</button>
+
+
+                    <button type="button" class="btn templateBg" id="btnDelete" data-toggle="modal" data-target="#deletePopup"><img src="~/Content/images/delete-icon.png" alt="delete" />Delete</button>
+
+                </div>
+            </div>
+            <script type="text/javascript" charset="utf-8">
+
+                // specify the columns
+
+
+                var columnDefs = [
+                    { headerName: "All", checkboxSelection: true, field: "all", width: 100 },
+                    { headerName: "Sr. No.", field: "sl", width: 120 },
+                    { headerName: "Effective Date", field: "effectiveDate", width: 150, editable: true },
+                    { headerName: "Employee ID", field: "employeeID", width: 150, editable: true },
+                    { headerName: "Branch", field: "branch", width: 150, editable: true },
+                    { headerName: "Name", field: "name", width: 150, editable: true },
+                    { headerName: "Period", field: "period", width: 150, editable: true },
+                    { headerName: "Amount", field: "amount", width: 150, editable: true },
+                    { headerName: "Active", field: "active", checkboxSelection: true, width: 150 }
+
+                ];
+
+                // specify the data
+                var rowData = [
+                    { checkboxSelection: true, sl: "1", effectiveDate: "dd/mm/yyyy", employeeID: "EMP 001", branch: "Branch", name: "Branch Name", period: "Quarterly", amount: "Rs. 1000", checkboxSelection: true},
+                    { checkboxSelection: true, sl: "2", effectiveDate: "dd/mm/yyyy", employeeID: "EMP 002", branch: "Branch", name: "Branch Name", period: "Half Yearly", amount: "Rs. 1000", checkboxSelection: true },
+                    { checkboxSelection: true, sl: "3", effectiveDate: "dd/mm/yyyy", employeeID: "EMP 003", branch: "Branch", name: "Branch Name", period: "Annualy", amount: "Rs. 1000", checkboxSelection: true },
+                    { checkboxSelection: true, sl: "4", effectiveDate: "dd/mm/yyyy", employeeID: "EMP 004", branch: "Branch", name: "Branch Name", period: "Quarterly", amount: "Rs. 1000", checkboxSelection: true },
+                    { checkboxSelection: true, sl: "5", effectiveDate: "dd/mm/yyyy", employeeID: "EMP 005", branch: "Branch", name: "Branch Name", period: "Annualy", amount: "Rs. 1000", checkboxSelection: true },
+                ];
+
+                // let the grid know which columns and what data to use
+                var gridOptions = {
+                    columnDefs: columnDefs,
+                    rowData: rowData,
+                    enableSorting: true,
+                    enableFilter: true
+                };
+
+                // lookup the container we want the Grid to use
+                var eGridDiv = document.querySelector('#myGrid2');
+
+                // create the grid passing in the div to use together with the columns & data we want to use
+                new agGrid.Grid(eGridDiv, gridOptions);
+
+
+            </script>
+            @*<div class="buttonCon pull-left mt-3">
+                    <button type="button" id="btnEdit" class="btn templateBg"><img src="~/Content/images/edit-icon.png" alt="edit" />Edit</button>
+                    <button type="submit" class="btn templateBg" data-toggle="modal" data-target="#successPopup"><img src="~/Content/images/save-icon.png" alt="save" />Save</button>
+                    <button type="button" id="btnDelete" class="btn templateBg" data-toggle="modal" data-target="#deletePopup"><img src="~/Content/images/delete-icon.png" alt="delete" />Delete</button>
+                    <button type="submit" class="btn templateBg"><img src="~/Content/images/download-icon.png" alt="download" />Download</button>
+                    <button type="submit" class="btn templateBg"><img src="~/Content/images/download-icon.png" alt="download" />Reject</button>
+                    <button type="submit" class="btn templateBg"><img src="~/Content/images/download-icon.png" alt="download" />Accept</button>
+                    <button type="submit" class="btn templateBg" data-toggle="modal" data-target="#successPopup"><img src="~/Content/images/save-icon.png" alt="save" />Leave</button>
+                </div>*@
+
+
+
+
+
+        </div>
+        
+        
+
+        <div id="gvDiv" style="width:100%" class="mt-2"></div>
+        <table class="table greyBorder mb-4 mt-2">
+            <thead>
+
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <div class="buttonCon pull-right mt-3">
+            <button type="button" class="btn templateBg" data-toggle="modal" onclick="javascript: document.location.href='../HRPayroll/leave-balance-employee.aspx'" style="display:none;">Day Wise Report</button>
+        </div>
+  
+
+
+</body>
+
+

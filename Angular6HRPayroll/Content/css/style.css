@@ -1144,10 +1144,10 @@ max-width:100%}
 	.hamburger:before{top:-8px;}
 	.hamburger:after{top:8px;}
 .icon.active .hamburger {
-    top: 44%;    background: rgba(0,0,0,0);
+    top: 63%;    background: rgba(0,0,0,0);
 }
-	.icon.active .hamburger:after{top:0; transform:rotate(45deg);}
-	.icon.active .hamburger:before{top:11px; transform:rotate(135deg);}
+	.icon.active .hamburger:after{top:3px; transform:rotate(45deg);}
+	.icon.active .hamburger:before{top:-10px; transform:rotate(135deg);}
 	.sidemenu{margin-left: -17%;}
 .posting .nav-tabs li.requisitionLi{ width:25% !important}	
 span.check{ height: 13px !important; width: 13px !important;}

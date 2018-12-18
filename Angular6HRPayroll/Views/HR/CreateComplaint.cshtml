@@ -2,7 +2,13 @@
 @{
     ViewBag.Title = "CreateComplaint";
 }
+<html>
+<head>
+    <script src="~/Content/js/jquery-ui.js"></script>
+    <script>var jquery_1_12_1_min_p = jQuery.noConflict();</script>
 
+
+</head>
 <body>
     <div class="container-fluid gridBody " id="form2">
 
@@ -22,8 +28,8 @@
 
                                     <select class="form-control col-7 col-md-7" name="quantity" style="height:25px" id="dropSelect">
                                         <option value="Select">Select</option>
-                                        <option value="Grievance">Grievance</option>
                                         <option value="Complaint">Complaint</option>
+                                        <option value="Grievance">Grievance</option>
                                     </select>
 
                                 </div>
@@ -45,83 +51,85 @@
                                 <div class="pull-left col-6 col-md-6">
                                     <div class="form-inline">
                                         <label for="Date">Date:</label>
-                                        <input type="text" id="datepicker" class="form-control col-7 col-md-7 ptb-4 hasDatepicker" name="Date" placeholder="dd/mm/yyyy">
+                                        <input type="text" id="datepicker" class="form-control col-7 col-md-7 ptb-4" name="Date" placeholder="dd/mm/yyyy">
                                     </div>
                                     <div class="form-inline">
                                         <label for="Employee">Employee Name:</label>
-
-                                        <select class="form-control col-7 col-md-7" style="height:25px" name="Employee">
-                                            <option value="0">Select</option>
-                                            <option>Employee 1</option>
-                                            <option>Employee 2</option>
-                                            <option>Employee 3</option>
-                                            <option>Employee 4</option>
-                                        </select>
-
+                                        <input type="text" class="form-control col-7 col-md-7" id="employee" name="Employee" placeholder="Employee" readonly>
                                     </div>
                                     <div class="form-inline">
                                         <label for="Department">Department:</label>
-                                        <input type="text" class="form-control col-7 col-md-7" id="department" name="Department" placeholder="Department" readonly>
+                                        <input type="text" class="form-control col-7 col-md-7" id="department" name="Department" placeholder="Dot Net" readonly>
                                     </div>
                                     <div class="form-inline">
-                                        <label for="manager">Manager Name:</label>
+                                        <label for="Designation">Designation:</label>
+                                        <input type="text" class="form-control col-7 col-md-7" id="designation" name="Designation" placeholder="Developer" readonly>
+                                    </div>
+                                    <div class="form-inline">
+                                        <label for="Designation">Manager:</label>
+                                        <input type="text" class="form-control col-7 col-md-7" id="manager" name="Manager" placeholder="Manager" readonly>
+                                    </div>
+                                    <div id="complaint" style="display:none;">
+                                        <div class="form-inline">
+                                            <label for="Complaint">Complaint Against:</label>
 
-                                        <select class="form-control col-7 col-md-7" style="height:25px" name="manager">
-                                            <option>Select</option>
-                                            <option>Manager 1</option>
-                                            <option>Manager 2</option>
-                                            <option>Manager 3</option>
-                                            <option>Manager 4</option>
-                                            <option>Manager 5</option>
-                                        </select>
+                                            <select class="form-control col-7 col-md-7" style="height:25px" name="Employee">
+                                                <option>Select</option>
+                                                <option>Employee 1</option>
+                                                <option>Employee 2</option>
+                                                <option>Employee 3</option>
+                                                <option>Employee 4</option>
+                                            </select>
+
+                                        </div>
+                                        
+                                        <div class="form-inline">
+                                            <label for="Description">Complaint:</label>
+                                            <textarea type="text" class="form-control col-7 col-md-7" id="desc" style="min-height: 20px;" name="Description" placeholder=""></textarea>
+                                        </div>
+                                        <div class="buttonCon col-12 col-md-12 pull-left mt-3 p-0">
+                                            <button type="button" id="btnEdit" class="btn templateBg col-3 col-md-2">Submit</button>
+                                            <button type="submit" class="btn templateBg col-3 col-md-2" data-toggle="modal" data-target="#successPopup">Save</button>
+                                            <button type="button" id="btnDelete" class="btn templateBg col-3 col-md-2">Cancel</button>
+                                        </div>
 
                                     </div>
 
                                     <div id="grievance" style="display:none;">
                                         <div class="form-inline">
-                                            <label for="Person involved">Name of person involved:</label>
-                                            <textarea type="text" class="form-control col-7 col-md-7" id="description" style="min-height: 20px;" name="Description" placeholder=""></textarea>
-                                        </div>
-                                        <div class="form-inline">
-                                            <label for="Policies">Policies, Procedures violated:</label>
-                                            <textarea type="text" class="form-control col-7 col-md-7" id="policies" style="min-height: 20px;" name="Policies" placeholder=""></textarea>
-                                        </div>
-                                        <div class="form-inline">
-                                            <label for="Proposed Solution">Proposed Solution:</label>
-                                            <textarea type="text" class="form-control col-7 col-md-7" id="proposed" style="min-height: 20px;" name="Proposed Solution" placeholder=""></textarea>
-                                        </div>
+                                            <label for="GrievanceType">Grievance Type:</label>
 
-                                    </div>
-                                    <div id="complaint" style="display:none;">
-                                        <div class="form-inline">
-                                            <label for="manager">Colleague's Name:</label>
-
-                                            <select class="form-control col-7 col-md-7" style="height:25px" name="Colleague">
+                                            <select class="form-control col-7 col-md-7" style="height:25px" name="Employee">
                                                 <option>Select</option>
-                                                <option>Colleague 1</option>
-                                                <option>Colleague 2</option>
-                                                <option>Colleague 3</option>
-                                                <option>Colleague 4</option>
+                                                <option>Harassment</option>
+                                                <option>Molestation</option>
+                                                <option>Bad Behaviour</option>
+                                             
                                             </select>
 
                                         </div>
                                         <div class="form-inline">
-                                            <label for="manager">Colleague's Department:</label>
+                                            <label for="GrievanceAgainst">Grievance Against:</label>
 
-                                            <select class="form-control col-7 col-md-7" style="height:25px" name="Colleague">
+                                            <select class="form-control col-7 col-md-7" style="height:25px" name="Employee">
                                                 <option>Select</option>
-                                                <option>Department 1</option>
-                                                <option>Department 2</option>
-                                                <option>Department 3</option>
-                                                <option>Department 4</option>
+                                                <option>Employee 1</option>
+                                                <option>Employee 2</option>
+                                                <option>Employee 3</option>
+                                                <option>Employee 4</option>
                                             </select>
 
                                         </div>
+
                                         <div class="form-inline">
-                                            <label for="Description">Description:</label>
+                                            <label for="Grievance">Grievance:</label>
                                             <textarea type="text" class="form-control col-7 col-md-7" id="desc" style="min-height: 20px;" name="Description" placeholder=""></textarea>
                                         </div>
-
+                                        <div class="buttonCon col-12 col-md-12 pull-left mt-3 p-0">
+                                            <button type="button" id="btnEdit" class="btn templateBg col-3 col-md-2">Submit</button>
+                                            <button type="submit" class="btn templateBg col-3 col-md-2" data-toggle="modal" data-target="#successPopup">Save</button>
+                                            <button type="button" id="btnDelete" class="btn templateBg col-3 col-md-2">Cancel</button>
+                                        </div>
 
                                     </div>
 
@@ -144,28 +152,6 @@
         </div>
 
     </div>
-    <script>
-        jquery_1_11_3_min_p(document).ready(function () {
-            jquery_1_11_3_min_p('#dropSelect').on('change', function () {
-                if (this.value == 'Grievance') {
-                    jquery_1_11_3_min_p("#grievance").show();
-                }
-                else {
-                    jquery_1_11_3_min_p("#grievance").hide();
-                }
-            });
-            jquery_1_11_3_min_p('#dropSelect').on('change', function () {
-                if (this.value == 'Complaint') {
-                    jquery_1_11_3_min_p("#complaint").show();
-                }
-                else {
-                    jquery_1_11_3_min_p("#complaint").hide();
-                }
-            });
-
-
-        })
-    </script>
     <script>
         jquery_1_12_1_min_p(function () {
             jquery_1_12_1_min_p("#datepicker").datepicker({
@@ -190,5 +176,28 @@
             });
         });
     </script>
-</body>
+    <script>
+        jquery_1_11_3_min_p(document).ready(function () {
+            jquery_1_11_3_min_p('#dropSelect').on('change', function () {
+                if (this.value == 'Grievance') {
+                    jquery_1_11_3_min_p("#grievance").show();
+                }
+                else {
+                    jquery_1_11_3_min_p("#grievance").hide();
+                }
+            });
+            jquery_1_11_3_min_p('#dropSelect').on('change', function () {
+                if (this.value == 'Complaint') {
+                    jquery_1_11_3_min_p("#complaint").show();
+                }
+                else {
+                    jquery_1_11_3_min_p("#complaint").hide();
+                }
+            });
 
+
+        })
+    </script>
+
+</body>
+</html>

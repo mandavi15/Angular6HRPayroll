@@ -41,7 +41,7 @@ var AppComponent = /** @class */ (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'login',
-            templateUrl: './Login/Login.cshtml',
+            templateUrl: '../Views/Login/Login.cshtml',
         }),
         __metadata("design:paramtypes", [forms_1.FormBuilder])
     ], AppComponent);

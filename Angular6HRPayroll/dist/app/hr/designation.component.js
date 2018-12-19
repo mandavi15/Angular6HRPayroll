@@ -6,20 +6,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-//import { Component } from '@angular/core';
 var core_1 = require("@angular/core");
-//import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-var AppComponent = /** @class */ (function () {
-    function AppComponent() {
-        this.name = 'Angular';
+var DesignationComponent = /** @class */ (function () {
+    function DesignationComponent() {
+        this.name = "amarjeet";
     }
-    AppComponent = __decorate([
+    DesignationComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: "<h1>Hello {{name}}</h1>",
+            selector: 'designation',
+            template: 'My good name is {{name}}'
         })
-    ], AppComponent);
-    return AppComponent;
+    ], DesignationComponent);
+    return DesignationComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.DesignationComponent = DesignationComponent;
+//# sourceMappingURL=designation.component.js.map

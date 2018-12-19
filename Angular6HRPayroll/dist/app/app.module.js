@@ -11,6 +11,7 @@ var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/http");
 var app_component_1 = require("./app.component");
+var designation_component_1 = require("./HR/designation.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -18,8 +19,8 @@ var AppModule = /** @class */ (function () {
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule,
                 forms_1.ReactiveFormsModule, http_1.HttpModule],
-            declarations: [app_component_1.AppComponent],
-            bootstrap: [app_component_1.AppComponent]
+            declarations: [app_component_1.AppComponent, designation_component_1.DesignationComponent],
+            bootstrap: [app_component_1.AppComponent, designation_component_1.DesignationComponent]
         })
     ], AppModule);
     return AppModule;

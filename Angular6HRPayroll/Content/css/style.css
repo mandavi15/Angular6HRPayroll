@@ -1639,7 +1639,7 @@ span.localizationIcon { width: 64px; border-radius: 50%; margin: 0 auto; height:
     background: #18656b;
 }
 .img-circle {
-    width: 38px;
+    width: 38px; 
     height: 38px;
     border-radius: 50%;
     border: 1px solid #cdcdcd;

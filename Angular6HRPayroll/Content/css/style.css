@@ -1626,268 +1626,682 @@ span.localizationIcon { width: 64px; border-radius: 50%; margin: 0 auto; height:
     text-decoration: none;
 }
 
-@media (min-width:1366px) {
-    .companySelect { display: inline-block; width: 48%;}
+
+.leftwrap {
+    border:1px solid #cdcdcd;
 }
-@media (min-width:1200px)
-{
-.loginBody { padding: 5% 7% 16%;}
-}
-@media (max-width:1100px)
-{
-.headListing { width: 100%;}
-.profileDropdown{ width:73%}
-#payChecks tbody.scrollbar { margin-bottom: 0; height: 195px;}
-.pay-head .scrollbar { height: 332px;}
-.formulaBox { width: 47% !important;}
-.navigation .scrollbar{ height: 515px;}
-#DivFormEarning .scrollbar, #provident .scrollbar{height: 258px;}
-.infoCon {width: 53%;}
-.headListing {width: 58%;}
-.profileDropdown {width: 42%;}
-    
 
-    
-
-
-
-
-
-}
-@media screen and (max-width: 1024px)
-{
-.infoCon { width: 64%;}
-.progressCount { margin-right: 15px;}
-.businessBox li p a { font-size: 0.8rem;}
-.headListing {width: 64%;}
-.profileDropdown { width: 36%;}
+.rightwrap {
+    border: 1px solid #cdcdcd;
    
-
-    
-
-
-
-
 }
-
-@media screen and (max-width: 824px)
-{
-.infoCon { width: 91%;}
-/*.gridBody { overflow-y:scroll !important; height:300px !important;}*/
-.topNav { padding: 20px 10px 10px;}
-.addrCon, select.addrCon, .addressView span.addrCon {width: 48.5% !important;}
-.profile { padding: 10% 3% 5%;}
-.primaryField { max-width: 32.2%;}
-.editProfile .profile{ padding:10% 7% 5%}
-img.selectedImg { max-width: 80%; margin: 0 auto; display: block;}
-.color-picker { top: 153px;}
-.top-space{margin-top:12px !important}
-.no-space{ padding-left:0 !important}
-.profileDropdown { width: 43%;}
- .headListing {width: 56%;}
-    
+.name {
+    height: 40px;
+    background: #18656b;
+}
+.img-circle {
+    width: 38px; 
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid #cdcdcd;
+    background: #f3f1f1;
+    text-align:center;
+    float:left;
+}
+    .img-circle i {
+        color: #398d94;
+        font-size: 21px;
+        margin-top: 5px;
+    }
+.name h4 {
+    color: #ffffff;
+    font-size: 20px;
+    padding: 6px 6px 6px 42px;
+}
+.menu {
+}
+.content{
+    text-align:center;
   
-
-
-
-
-
-
-
-
 }
-@media screen and (max-width: 991px)
-{
-.sidemenu { margin-left: -25%;}
-.profileDropdown {width: 44%;}
-.infoCon {width: 76%;}
- .headListing {
-    width: 56%;
-}   
+    .content h6 {
+        color: #000 !important;
+        padding-bottom: 0;
+    }
+    .content label{
+        font-size:12px;
+    }
 
+.menu, .out {
     
-
-
-
-
-
-
+    border-bottom: 1px solid #cdcdcd;
 }
-@media screen and (max-width: 767px)
-{
- .mobileNav{position: absolute; top: 0px; left: 0px; z-index: 9999;}
-.sidemenu{margin-left: -33%;}
-.profile .form-inline label { font-size: 0.6rem; line-height: 0.8rem; margin-top: 5px;}
-span.addrCon { width: 49.2% !important;}
-.mblMargin{ margin-bottom:3px !important}
-.infoCon {width: 73%;}
-.headListing {width: 56%;}
-.profileDropdown { width: 43%;}
-   
-
-    
-
-    
-
-
-
-
-
-
+    .menu button {
+        font-size: 12px;
+        color: #fff;
+    }
+    .out h6{
+        font-size:11px;
+    }
+    .celeb ul li{
+        list-style:none;
+    }
+.celeb h6{
+    color:#000!important;
+    font-size:11px;
 }
-
-@media screen and (max-width: 736px)
-{
-.primaryField { max-width: 32.1%;}
-.infoCon { width: 100%;}
-.mainCon .leftCon{float:none; background-size: cover; padding: 2% 3% 2%;}
-.loginBody{ padding: 2% 7% 11%;}
-.mainCon h2, .mainCon h6{ padding-bottom: 0px;}
-.loginBody .btn { margin-top: 2%;}
-.loginfooter{ width:94%}
-.logo{ margin-top: 18%;}
-.logo img{ width:75%}
-.mainCon .rightCon h6, .mainCon .resetCon h6 { padding: 2% 7%;}
-.no-space{ padding-left:0 !important}
-.top-space{margin-top:10px !important}
-.profileDropdown {width: 41%;}
-.headListing {width: 59%;}
-    
-   
-
-
-
-
-
-
-
-
+.celeb i {
+    font-size: 15px;
+    color: #a7a4a4;
+}
+.celeb li div {
+    border-bottom: 1px solid #e2e1e1;
+}
+.celeb li:last-child div {
+    border: none;
+}
+.rightwrap h6{
+    color:#000!important;
+    font-size:12px;
+}
+.rightwrap label {
+    font-size: 12px;
+}
+.graph i{
+    color:#cdcdcd;
+    font-size:30px;
+}
+.graph h6 {
+    color: #cdcdcd!important;
+}
+.wrap {
+    height: 200px;
+    background: #398d94;
+}
+.listicon i {
+    font-size:22px;
+}
+.compList li {
+    font-size: 12px;
+    list-style:none;
+}
+.head{
+    border-bottom:1px solid #cdcdcd;
 }
 
-@media screen and (max-width: 680px)
-{
-/*.mainCon { width: 63%;}*/
-.organizationView .form-inline label{ padding:0}
-.txtValue{ width:95% !important}
-.hrListing li { width: 32% !important;}
-.addrCon, select.addrCon, .addressView span.addrCon { width: 48% !important;}
-.gridBody { padding: 10px;}
-.businessBox li{ width:46%; margin-bottom:1rem; margin-right:3%}
-.businessBox li p, .businessBox li p a { font-size:0.7rem;}
-.businessBox li:nth-child(2n){ margin-right:0px}
-.businessBox li:nth-child(3n){ margin-right:3%}
-#addpopUp{ max-width: 620px !important;}
-.natureSearch{ width: 44%; margin-right: 2.1rem!important;}
-.profileDropdown {width: 43%;}
-.headListing {width: 54%;} 
-    
- 
+@media (min-width:1366px) {
+    .companySelect {
+            display: inline-block;
+            width: 48%;
+        }
+    }
 
-}
-/* @media screen and (min-width: 577px)
+    @media (min-width:1200px) {
+        .loginBody {
+            padding: 5% 7% 16%;
+        }
+    }
+
+    @media (max-width:1100px) {
+        .headListing {
+            width: 100%;
+        }
+
+        .profileDropdown {
+            width: 73%
+        }
+
+        #payChecks tbody.scrollbar {
+            margin-bottom: 0;
+            height: 195px;
+        }
+
+        .pay-head .scrollbar {
+            height: 332px;
+        }
+
+        .formulaBox {
+            width: 47% !important;
+        }
+
+        .navigation .scrollbar {
+            height: 515px;
+        }
+
+        #DivFormEarning .scrollbar, #provident .scrollbar {
+            height: 258px;
+        }
+
+        .infoCon {
+            width: 53%;
+        }
+
+        .headListing {
+            width: 58%;
+        }
+
+        .profileDropdown {
+            width: 42%;
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        .infoCon {
+            width: 64%;
+        }
+
+        .progressCount {
+            margin-right: 15px;
+        }
+
+        .businessBox li p a {
+            font-size: 0.8rem;
+        }
+
+        .headListing {
+            width: 64%;
+        }
+
+        .profileDropdown {
+            width: 36%;
+        }
+    }
+
+    @media screen and (max-width: 824px) {
+        .infoCon {
+            width: 91%;
+        }
+        /*.gridBody { overflow-y:scroll !important; height:300px !important;}*/
+        .topNav {
+            padding: 20px 10px 10px;
+        }
+
+        .addrCon, select.addrCon, .addressView span.addrCon {
+            width: 48.5% !important;
+        }
+
+        .profile {
+            padding: 10% 3% 5%;
+        }
+
+        .primaryField {
+            max-width: 32.2%;
+        }
+
+        .editProfile .profile {
+            padding: 10% 7% 5%
+        }
+
+        img.selectedImg {
+            max-width: 80%;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .color-picker {
+            top: 153px;
+        }
+
+        .top-space {
+            margin-top: 12px !important
+        }
+
+        .no-space {
+            padding-left: 0 !important
+        }
+
+        .profileDropdown {
+            width: 43%;
+        }
+
+        .headListing {
+            width: 56%;
+        }
+    }
+
+    @media screen and (max-width: 991px) {
+        .sidemenu {
+            margin-left: -25%;
+        }
+
+        .profileDropdown {
+            width: 44%;
+        }
+
+        .infoCon {
+            width: 76%;
+        }
+
+        .headListing {
+            width: 56%;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .mobileNav {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 9999;
+        }
+
+        .sidemenu {
+            margin-left: -33%;
+        }
+
+        .profile .form-inline label {
+            font-size: 0.6rem;
+            line-height: 0.8rem;
+            margin-top: 5px;
+        }
+
+        span.addrCon {
+            width: 49.2% !important;
+        }
+
+        .mblMargin {
+            margin-bottom: 3px !important
+        }
+
+        .infoCon {
+            width: 73%;
+        }
+
+        .headListing {
+            width: 56%;
+        }
+
+        .profileDropdown {
+            width: 43%;
+        }
+    }
+
+    @media screen and (max-width: 736px) {
+        .primaryField {
+            max-width: 32.1%;
+        }
+
+        .infoCon {
+            width: 100%;
+        }
+
+        .mainCon .leftCon {
+            float: none;
+            background-size: cover;
+            padding: 2% 3% 2%;
+        }
+
+        .loginBody {
+            padding: 2% 7% 11%;
+        }
+
+        .mainCon h2, .mainCon h6 {
+            padding-bottom: 0px;
+        }
+
+        .loginBody .btn {
+            margin-top: 2%;
+        }
+
+        .loginfooter {
+            width: 94%
+        }
+
+        .logo {
+            margin-top: 18%;
+        }
+
+            .logo img {
+                width: 75%
+            }
+
+        .mainCon .rightCon h6, .mainCon .resetCon h6 {
+            padding: 2% 7%;
+        }
+
+        .no-space {
+            padding-left: 0 !important
+        }
+
+        .top-space {
+            margin-top: 10px !important
+        }
+
+        .profileDropdown {
+            width: 41%;
+        }
+
+        .headListing {
+            width: 59%;
+        }
+    }
+
+    @media screen and (max-width: 680px) {
+        /*.mainCon { width: 63%;}*/
+        .organizationView .form-inline label {
+            padding: 0
+        }
+
+        .txtValue {
+            width: 95% !important
+        }
+
+        .hrListing li {
+            width: 32% !important;
+        }
+
+        .addrCon, select.addrCon, .addressView span.addrCon {
+            width: 48% !important;
+        }
+
+        .gridBody {
+            padding: 10px;
+        }
+
+        .businessBox li {
+            width: 46%;
+            margin-bottom: 1rem;
+            margin-right: 3%
+        }
+
+            .businessBox li p, .businessBox li p a {
+                font-size: 0.7rem;
+            }
+
+            .businessBox li:nth-child(2n) {
+                margin-right: 0px
+            }
+
+            .businessBox li:nth-child(3n) {
+                margin-right: 3%
+            }
+
+        #addpopUp {
+            max-width: 620px !important;
+        }
+
+        .natureSearch {
+            width: 44%;
+            margin-right: 2.1rem !important;
+        }
+
+        .profileDropdown {
+            width: 43%;
+        }
+
+        .headListing {
+            width: 54%;
+        }
+    }
+    /* @media screen and (min-width: 577px)
 {
     .smscreen{display:none;}
 .lgscreen{display:block;}
     } */
-@media screen and (max-width: 590px)
-{    
-#employeePopup input {
-    padding-left: 3px;
-}
-}
-@media screen and (max-width: 576px)
-{
-    .profileDropdown {width: 43%;}
-    .headListing {width: 54%;}
-    
-.smscreen{display:block;}
-.lgscreen{display:none;}
-.sidemenu { margin-left: -67%;}
-.ms { margin-left: -67%;}
-.mblMargin{ margin-top:10px}
-}
-@media screen and (max-width: 568px)
-{
- #addNew .modal-dialog { min-width: 90% !important;}
-.modal-dialog { min-width: 90% !important;}
-.organizationView .form-inline{ padding:10px}
-.profileDropdown { width: 62%;}
-.headListing { width: 78%; display: block; float: right;}
-.companySelect { width: 59%;}
-}
-@media screen and (max-width: 536px)
-{
-.companyLogos{ float: none !important;
-    display: block;
-    width: 100%;
-    text-align: center;
-}
-.copyRight{ float: none !important; text-align: center;}
-}
+    @media screen and (max-width: 590px) {
+        #employeePopup input {
+            padding-left: 3px;
+        }
+    }
 
-@media screen and (min-width: 414px) and (max-width:528px)
-{
+    @media screen and (max-width: 576px) {
+        .profileDropdown {
+            width: 43%;
+        }
 
-}
+        .headListing {
+            width: 54%;
+        }
 
-@media screen and (max-width: 480px)
-{
-.businessBox li{ width:98%;}
-.loginfooter { width: 89%;}
-.loginBody { padding: 2% 7% 18%;}
-}
+        .smscreen {
+            display: block;
+        }
+
+        .lgscreen {
+            display: none;
+        }
+
+        .sidemenu {
+            margin-left: -67%;
+        }
+
+        .ms {
+            margin-left: -67%;
+        }
+
+        .mblMargin {
+            margin-top: 10px
+        }
+    }
+
+    @media screen and (max-width: 568px) {
+        #addNew .modal-dialog {
+            min-width: 90% !important;
+        }
+
+        .modal-dialog {
+            min-width: 90% !important;
+        }
+
+        .organizationView .form-inline {
+            padding: 10px
+        }
+
+        .profileDropdown {
+            width: 62%;
+        }
+
+        .headListing {
+            width: 78%;
+            display: block;
+            float: right;
+        }
+
+        .companySelect {
+            width: 59%;
+        }
+    }
+
+    @media screen and (max-width: 536px) {
+        .companyLogos {
+            float: none !important;
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+
+        .copyRight {
+            float: none !important;
+            text-align: center;
+        }
+    }
+
+    @media screen and (min-width: 414px) and (max-width:528px) {
+    }
+
+    @media screen and (max-width: 480px) {
+        .businessBox li {
+            width: 98%;
+        }
+
+        .loginfooter {
+            width: 89%;
+        }
+
+        .loginBody {
+            padding: 2% 7% 18%;
+        }
+    }
 
 
-@media screen and (max-width: 415px)
-{
-/*.companyLogos{ float: none !important; display: block; width: 71%; margin: 0 auto !important;}
+    @media screen and (max-width: 415px) {
+        /*.companyLogos{ float: none !important; display: block; width: 71%; margin: 0 auto !important;}
 .copyRight{ float: none !important; text-align: center;} */
-.headListing { width: 100%;}
-.profileDropdown { width: 74%;}
-.gridBody { overflow-y: scroll !important; height: 730px !important;}
-.loginBody .form-group, .signupBody .form-group, .profile .form-inline { margin-bottom: 0px;}
-span.addrCon { width: 49% !important;}
-#txtAddr1{ margin-bottom:10px}
-.top-margin{top:0}
-.navigation .scrollbar { height: 480px;}
-.formulaBox { width: 46% !important;}
+        .headListing {
+            width: 100%;
+        }
 
-.benifitcheckbox{margin-left: -13px;} 
-.top-space {margin-top: 15px !important;}
-.responsiveBtn{ padding:5px !important;}
-.progressCount { margin-right: 24px;}
-.close2 { padding: 0px 5px 4px !important; line-height: 12px !important; font-size: 15px !important;}
-.natureSearch { width: 84%; margin-right: 1.5rem!important;}
-.natureSearch .input-group input{ padding-bottom:0px;}
-.leaveAdmin-policy{ margin-top:-27px !important}
-.request { margin-top: -15%; }
-.txtValue { width: 100% !important;}
-.PanelbdyLegalentitybelodiv .rowcount{ padding-right:0 !important}
-.PayRoll{margin-left: -5%;}
-.jobtime { position: relative; padding-left: 24px; margin-bottom: 12px; cursor: pointer; font-size: 22px; user-select: none; padding-top: 2px;}
-.mbl-noPadding{ padding:0 !important}
-.setup .employeeSearch { width: 70%;}
-.pay-head .scrollbar { height: 123px;}
-}
-@media screen and (max-width: 380px)
-{
-.companyLogos { width: 90%;}
-.infoCon { width: 90%; margin-top: -5%;}
-.companySelect { width: 50%;}
-.profileDropdown { width: 90%; margin-top: -5%;}
-.gridBody { overflow-y: scroll !important; height: 540px !important;}
-.natureSearch { margin-right: 1.2rem!important;}
-.primaryField { max-width: 100%; margin-right:0 !important; margin-bottom:5px}
-.navigation .scrollbar {height: 480px;}
-.posting .nav-tabs li.leaveLi { width: 100%!important;}
- 
-}
+        .profileDropdown {
+            width: 74%;
+        }
 
-@media screen and (max-width: 320px)
-{
-.companyLogos { width: 92%;}
-.stateCity span.addrCon{ width: 100% !important; margin-right:0 !important; margin-bottom:5px !important}
-}
+        .gridBody {
+            overflow-y: scroll !important;
+            height: 730px !important;
+        }
 
-#scroll-style1 .dropdown-menu{background: transparent;border: none;}
+        .loginBody .form-group, .signupBody .form-group, .profile .form-inline {
+            margin-bottom: 0px;
+        }
+
+        span.addrCon {
+            width: 49% !important;
+        }
+
+        #txtAddr1 {
+            margin-bottom: 10px
+        }
+
+        .top-margin {
+            top: 0
+        }
+
+        .navigation .scrollbar {
+            height: 480px;
+        }
+
+        .formulaBox {
+            width: 46% !important;
+        }
+
+        .benifitcheckbox {
+            margin-left: -13px;
+        }
+
+        .top-space {
+            margin-top: 15px !important;
+        }
+
+        .responsiveBtn {
+            padding: 5px !important;
+        }
+
+        .progressCount {
+            margin-right: 24px;
+        }
+
+        .close2 {
+            padding: 0px 5px 4px !important;
+            line-height: 12px !important;
+            font-size: 15px !important;
+        }
+
+        .natureSearch {
+            width: 84%;
+            margin-right: 1.5rem !important;
+        }
+
+            .natureSearch .input-group input {
+                padding-bottom: 0px;
+            }
+
+        .leaveAdmin-policy {
+            margin-top: -27px !important
+        }
+
+        .request {
+            margin-top: -15%;
+        }
+
+        .txtValue {
+            width: 100% !important;
+        }
+
+        .PanelbdyLegalentitybelodiv .rowcount {
+            padding-right: 0 !important
+        }
+
+        .PayRoll {
+            margin-left: -5%;
+        }
+
+        .jobtime {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            font-size: 22px;
+            user-select: none;
+            padding-top: 2px;
+        }
+
+        .mbl-noPadding {
+            padding: 0 !important
+        }
+
+        .setup .employeeSearch {
+            width: 70%;
+        }
+
+        .pay-head .scrollbar {
+            height: 123px;
+        }
+    }
+
+    @media screen and (max-width: 380px) {
+        .companyLogos {
+            width: 90%;
+        }
+
+        .infoCon {
+            width: 90%;
+            margin-top: -5%;
+        }
+
+        .companySelect {
+            width: 50%;
+        }
+
+        .profileDropdown {
+            width: 90%;
+            margin-top: -5%;
+        }
+
+        .gridBody {
+            overflow-y: scroll !important;
+            height: 540px !important;
+        }
+
+        .natureSearch {
+            margin-right: 1.2rem !important;
+        }
+
+        .primaryField {
+            max-width: 100%;
+            margin-right: 0 !important;
+            margin-bottom: 5px
+        }
+
+        .navigation .scrollbar {
+            height: 480px;
+        }
+
+        .posting .nav-tabs li.leaveLi {
+            width: 100% !important;
+        }
+    }
+
+    @media screen and (max-width: 320px) {
+        .companyLogos {
+            width: 92%;
+        }
+
+        .stateCity span.addrCon {
+            width: 100% !important;
+            margin-right: 0 !important;
+            margin-bottom: 5px !important
+        }
+    }
+
+    #scroll-style1 .dropdown-menu{background: transparent;border: none;}
 

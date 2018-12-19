@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -164,61 +164,63 @@
                                     <ul class="navbar-nav">
                                         <div class="dropdown">
 
-                                            <ul class="dropdown-menu show">
-                                                <li class="nav-item"><i class="fa fa-home arrow"></i>@Html.ActionLink("Home", "HRAreaPage", "Home", new { @class = "nav-link" })</li>
-                                                @*@Html.ActionLink("HRAreaPage", "HRAreaPage", "Home");*@
+                                          <ul class="dropdown-menu show">
+                                            <li><i class="fa fa-building arrow"></i>@Html.ActionLink("Dashboard", "Dashboardfinal", "HOME")</li>
+                                            <li class="nav-item"><i class="fa fa-home arrow"></i>@Html.ActionLink("Home", "HRAreaPage", "Home", new { @class = "nav-link" })</li>
+                                            @*@Html.ActionLink("HRAreaPage", "HRAreaPage", "Home");*@
+                                            <li class="dropdown-submenu">
+                                              <a class="test nav-link"><i class="fa fa-user arrow"></i>Human Resources   <i class="fa fa-caret-down" style=""></i></a>
+                                              <ul class="dropdown-menu show">
+
+                                                <li><i class="fa fa-building arrow"></i>@Html.ActionLink("Company", "Company", "HR")</li>
+                                                <li><i class="fa fa-map-marker arrow"></i>@Html.ActionLink("Location", "Location", "Home")</li>
+                                                <li><i class="fa fa-sitemap arrow"></i>@Html.ActionLink("Department", "Department", "HR")</li>
+                                                <li><img src="~/Content/images/id-card_icon.png" class="arrow" />@Html.ActionLink("Designation", "Designation", "HR")</li>
+                                                <li><img src="~/Content/images/skill_icon.png" class="arrow" />@Html.ActionLink("Skills", "Skills", "HR")</li>
+                                                <li><i class="fa fa-user arrow"></i>@Html.ActionLink("Employee", "Employees", "HR")</li>
                                                 <li class="dropdown-submenu">
-                                                    <a class="test nav-link"><i class="fa fa-user arrow"></i>Human Resources   <i class="fa fa-caret-down" style=""></i></a>
-                                                    <ul class="dropdown-menu show">
-                                                        <li><i class="fa fa-building arrow"></i>@Html.ActionLink("Company", "Company", "HR")</li>
-                                                        <li><i class="fa fa-map-marker arrow"></i>@Html.ActionLink("Location", "Location", "Home")</li>
-                                                        <li><i class="fa fa-sitemap arrow"></i>@Html.ActionLink("Department", "Department", "HR")</li>
-                                                        <li><img src="~/Content/images/id-card_icon.png" class="arrow" />@Html.ActionLink("Designation", "Designation", "HR")</li>
-                                                        <li><img src="~/Content/images/skill_icon.png" class="arrow" />@Html.ActionLink("Skills", "Skills", "HR")</li>
-                                                        <li><i class="fa fa-user arrow"></i>@Html.ActionLink("Employee", "Employees", "HR")</li>
-                                                        <li class="dropdown-submenu">
-                                                            <a class="test nav-link" href="#"><img src="~/Content/images/recruitment_icon.png" class="arrow" />Recruitment    <i class="fa fa-caret-down" style=""></i></a>
-                                                            <ul class="dropdown-menu show">
-                                                                <li><img src="~/Content/images/id-card_icon.png" class="arrow" />@Html.ActionLink("Requisition", "Requisition", "HR")</li>
-                                                                <li><i class="fa fa-user arrow"></i>@Html.ActionLink("Applicants", "Requisition", "HR")</li>
-                                                            </ul>
-                                                        </li>
-                                                        <li><img src="~/Content/images/leave_management-icon.png" class="arrow" />@Html.ActionLink("Leave Type", "LeaveType", "HR")</li>
-                                                        <li><img src="~/Content/images/leave_management-icon.png" class="arrow" />@Html.ActionLink("Leave Employee", "LeaveEmployee", "HR")</li>
-                                                        <li><a class="nav-link" tabindex="-1" href="../Master/errorPage.aspx"><i class="fa fa-users arrow"></i>Team</a></li>
-                                                        <li><a class="nav-link" tabindex="-1" href="../Master/errorPage.aspx"><img src="~/Content/images/approval_icon.png" class="arrow" />Approval Process</a></li>
-                                                        <li><a class="nav-link" tabindex="-1" href="../Master/errorPage.aspx"><img src="~/Content/images/appraisal_icon.png" class="arrow" />Appraisal</a></li>
-                                                        <li><img src="~/Content/images/request_icon.png" class="arrow" />@Html.ActionLink("Employee Doc Master", "EmployeeDocMaster", "Home")</li>
-                                                    </ul>
+                                                  <a class="test nav-link" href="#"><img src="~/Content/images/recruitment_icon.png" class="arrow" />Recruitment    <i class="fa fa-caret-down" style=""></i></a>
+                                                  <ul class="dropdown-menu show">
+                                                    <li><img src="~/Content/images/id-card_icon.png" class="arrow" />@Html.ActionLink("Requisition", "Requisition", "HR")</li>
+                                                    <li><i class="fa fa-user arrow"></i>@Html.ActionLink("Applicants", "Requisition", "HR")</li>
+                                                  </ul>
                                                 </li>
-                                                <li class="dropdown-submenu">
-                                                    <a class="test nav-link" tabindex="-1" href="#"><i class="fa fa-credit-card arrow" style="font-size:14px !important"></i>Payroll    <i class="fa fa-caret-down" style=""></i> </a>
-                                                    <ul class="dropdown-menu show">
-                                                        <li><img src="~/Content/images/earning_icon.png" class="arrow" />@Html.ActionLink("Earnings", "setup", "PR")</li>
-                                                        <li><img src="~/Content/images/deduction_icon.png" class="arrow" />@Html.ActionLink("Deductions", "setup", "PR")</li>
-                                                        <li><img src="~/Content/images/paySlab_icon.png" class="arrow" />@Html.ActionLink("Pay Slab", "setup", "PR")</li>
-                                                        <li><i class="fa fa-money arrow"></i>@Html.ActionLink("Pay Cycle", "Paycycle", "PR")</li>
-                                                        <li><img src="~/Content/images/payStructure_icon.png" class="arrow" />@Html.ActionLink("Pay Structure", "setup", "PR")</li>
-                                                        <li><img src="~/Content/images/payday_icon.png" class="arrow" />@Html.ActionLink("Pay day", "Payday", "PR")</li>
-                                                    </ul>
-                                                </li>
+                                                <li><img src="~/Content/images/leave_management-icon.png" class="arrow" />@Html.ActionLink("Leave Type", "LeaveType", "HR")</li>
+                                                <li><img src="~/Content/images/leave_management-icon.png" class="arrow" />@Html.ActionLink("Leave Employee", "LeaveEmployee", "HR")</li>
+                                                <li><a class="nav-link" tabindex="-1" href="../Master/errorPage.aspx"><i class="fa fa-users arrow"></i>Team</a></li>
+                                                <li><a class="nav-link" tabindex="-1" href="../Master/errorPage.aspx"><img src="~/Content/images/approval_icon.png" class="arrow" />Approval Process</a></li>
+                                                <li><a class="nav-link" tabindex="-1" href="../Master/errorPage.aspx"><img src="~/Content/images/appraisal_icon.png" class="arrow" />Appraisal</a></li>
+                                                <li><img src="~/Content/images/request_icon.png" class="arrow" />@Html.ActionLink("Employee Doc Master", "EmployeeDocMaster", "Home")</li>
+                                              </ul>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a class="test nav-link" tabindex="-1" href="#"><i class="fa fa-credit-card arrow" style="font-size:14px !important"></i>Payroll    <i class="fa fa-caret-down" style=""></i> </a>
+                                              <ul class="dropdown-menu show">
+                                                <li><img src="~/Content/images/earning_icon.png" class="arrow" />@Html.ActionLink("Earnings", "setup", "PR")</li>
+                                                <li><img src="~/Content/images/deduction_icon.png" class="arrow" />@Html.ActionLink("Deductions", "setup", "PR")</li>
+                                                <li><img src="~/Content/images/paySlab_icon.png" class="arrow" />@Html.ActionLink("Pay Slab", "setup", "PR")</li>
+                                                <li><i class="fa fa-money arrow"></i>@Html.ActionLink("Pay Cycle", "Paycycle", "PR")</li>
+                                                <li><img src="~/Content/images/payStructure_icon.png" class="arrow" />@Html.ActionLink("Pay Structure", "setup", "PR")</li>
+                                                <li><img src="~/Content/images/payday_icon.png" class="arrow" />@Html.ActionLink("Pay day", "Payday", "PR")</li>
+                                              </ul>
+                                            </li>
 
 
-                                                <li class="dropdown-submenu">
-                                                    <a class="test nav-link" tabindex="-1" href="#"><i class="fa fa-credit-card arrow" style="font-size:14px !important"></i>Payroll Setup   <i class="fa fa-caret-down" style=""></i> </a>
-                                                    <ul class="dropdown-menu show">
-                                                        <li><img src="~/Content/images/payday_icon.png" class="arrow" />@Html.ActionLink("Employee Pay Elements", "EmpPayElements", "PayrollSetup1")</li>
-                                                        <li><img src="~/Content/images/payday_icon.png" class="arrow" />@Html.ActionLink("Pay Group", "PayGroup", "PayrollSetup1")</li>
-                                                        <li><img src="~/Content/images/payday_icon.png" class="arrow" />@Html.ActionLink("Pay Element Code", "PayElementCode", "PayrollSetup1")</li>
-                                                        <li><img src="~/Content/images/payday_icon.png" class="arrow" />@Html.ActionLink("Salary Plan", "SalaryPlan", "PayrollSetup1")</li>
-                                                        <li><img src="~/Content/images/payday_icon.png" class="arrow" />@Html.ActionLink("Salary Plan Pay Element", "SalaryPlanPayElement", "PayrollSetup1")</li>
-                                                        <li><img src="~/Content/images/payday_icon.png" class="arrow" />@Html.ActionLink("Benefits", "Benefits", "PayrollSetup1")</li>
-                                                        <li><img src="~/Content/images/payday_icon.png" class="arrow" />@Html.ActionLink("Salary Plan Benefits", "SalaryPlanBenefits", "PayrollSetup1")</li>
+                                            <li class="dropdown-submenu">
+                                              <a class="test nav-link" tabindex="-1" href="#"><i class="fa fa-credit-card arrow" style="font-size:14px !important"></i>Payroll Setup   <i class="fa fa-caret-down" style=""></i> </a>
+                                              <ul class="dropdown-menu show">
+                                                <li><img src="~/Content/images/payday_icon.png" class="arrow" />@Html.ActionLink("Employee Pay Elements", "EmpPayElements", "PayrollSetup1")</li>
+                                                <li><img src="~/Content/images/payday_icon.png" class="arrow" />@Html.ActionLink("Pay Group", "PayGroup", "PayrollSetup1")</li>
+                                                <li><img src="~/Content/images/payday_icon.png" class="arrow" />@Html.ActionLink("Pay Element Code", "PayElementCode", "PayrollSetup1")</li>
+                                                <li><img src="~/Content/images/payday_icon.png" class="arrow" />@Html.ActionLink("Salary Plan", "SalaryPlan", "PayrollSetup1")</li>
+                                                <li><img src="~/Content/images/payday_icon.png" class="arrow" />@Html.ActionLink("Salary Plan Pay Element", "SalaryPlanPayElement", "PayrollSetup1")</li>
+                                                <li><img src="~/Content/images/payday_icon.png" class="arrow" />@Html.ActionLink("Benefits", "Benefits", "PayrollSetup1")</li>
+                                                <li><img src="~/Content/images/payday_icon.png" class="arrow" />@Html.ActionLink("Salary Plan Benefits", "SalaryPlanBenefits", "PayrollSetup1")</li>
 
-                                                    </ul>
-                                                </li>
+                                              </ul>
+                                            </li>
 
-                                            </ul>
+                                          </ul>
                                         </div>
                                         <li class="nav-item"><i class="fa fa-sign-out  arrow"></i>@Html.ActionLink("Exit Management", "ExitManagement", "HR")</li>
                                         <li class="nav-item">

@@ -337,6 +337,7 @@
     <Content Include="Content\js\moment.min.js" />
     <Content Include="Content\js\multiselect.js" />
     <Content Include="Content\js\script.js" />
+    <Content Include="Content\js\typescript.compile.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -432,6 +433,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="app\app.component.ts" />
     <TypeScriptCompile Include="app\app.module.ts" />
+    <TypeScriptCompile Include="app\HR\designation.component.ts" />
     <TypeScriptCompile Include="app\login.ts" />
     <TypeScriptCompile Include="app\main.ts" />
   </ItemGroup>

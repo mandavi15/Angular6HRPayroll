@@ -413,6 +413,7 @@
     <Content Include="Views\HR\ComplaintGrievance.cshtml" />
     <Content Include="Views\HR\CreateComplaint.cshtml" />
     <Content Include="Views\Home\Dashboardfinal.cshtml" />
+    <Content Include="Views\HR\Localization.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

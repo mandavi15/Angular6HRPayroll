@@ -733,7 +733,7 @@ ul.navbar-nav{ width:100%}
     }
 a.nav-link:hover { color: #fff !important;}
 
-.arrow{ padding-right:10px; padding-bottom: 5px;}
+.arrow{ padding-right:8px; padding-bottom: 5px;}
 .topNav{ padding:20px; border-bottom:2px solid #398d94;}
 .gridBody{ padding: 20px;
      overflow: hidden; 
@@ -1061,7 +1061,7 @@ select.addrCon{ height: 25px !important; padding: 2px 10px !important;}
 .noteCon{width:58.5%; border-right: 1px solid #babbbb}
 .note{ border-bottom:1px solid #babbbb}
 .note, .tnc{ padding:6px 10px 5px}
-.note h6, .note p{ color:#1f4c50}
+.note h6, .note p { color: #3e3e3e !important}
 .tnc{ padding-top:8px}
 .tnc p{ color:#3e3e3e}
 
@@ -1454,7 +1454,7 @@ span.addrCon{ width:49.4% !important}
     padding: 0 3px 3px;
     line-height: 14px; box-shadow: 1px 1px 5px #000; cursor:pointer; display:none}   
 input.inpt{ min-height:26px}
-.rangeBox{ width:41.7% !important; display:inline-block}
+.rangeBox{ width:46% !important; display:inline-block}
 .labelTo{ display:inline-block}
 .rangeBox input{ width:100% !important}
 i.faSearch{ position: absolute; top: 10px; right: 12px;}
@@ -1614,7 +1614,7 @@ span.localizationIcon { width: 64px; border-radius: 50%; margin: 0 auto; height:
 .DivDesc{ width:96% !important}
 .modal-header .close { color: #fff !important}
 
-.loginBody button a { color:#fff !important}
+.loginBody button a { color:#fff !important; display:block}
 
 .panel-heading h4{
     display: block;
@@ -1728,7 +1728,9 @@ span.localizationIcon { width: 64px; border-radius: 50%; margin: 0 auto; height:
 .head{
     border-bottom:1px solid #cdcdcd;
 }
-
+.compList .active {
+    font-weight: 700;
+}
 @media (min-width:1366px) {
     .companySelect {
             display: inline-block;

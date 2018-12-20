@@ -76,8 +76,8 @@ i.faSearch {
             <button type="button" class="btn templateBg" onclick="SavePaySlab();">
                 <img src="~/Content/images/save-icon.png" alt="home">Save
             </button>
-            <button type="button" id="Button1" class="btn templateBg" onclick="javascript: document.location.href='../Master/setup.aspx'">
-                <img src="~/Content/images/back-icon.png" alt="home">Back
+            <button type="button" id="btnBack" class="btn templateBg">
+                <img src="~/Content/images/back-icon.png" alt="home">@Html.ActionLink("Back", "setup", "PR")
             </button>
         </div>
         <div class="panel-head">
@@ -153,7 +153,7 @@ i.faSearch {
                             </div>
 
                             <div class="labelTo">
-                                <span class="col-1 col-md-1" style="color: #3e3e3e; font-size: 0.7875rem;">to</span>
+                                <span class="col-1 col-md-1 p-0" style="color: #3e3e3e; font-size: 0.7875rem;">to</span>
                                 <label style="display: none" id="lblto"></label>
                             </div>
                             <div id="Divtxtto" class="rangeBox">

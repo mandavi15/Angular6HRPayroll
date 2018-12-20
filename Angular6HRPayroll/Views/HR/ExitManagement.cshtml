@@ -35,12 +35,11 @@
         <div class="tab-content">
             <div class="container-fluid gridBody tab-pane fade active show" id="resign">
                 <div class="buttonCon pull-right">
-                    <button type="button" class="btn templateBg" data-toggle="modal" data-target="#dues" >
+                    <button type="button" class="btn templateBg" data-toggle="modal" data-target="#dues">
                         <img src="~/Content/images/save-icon.png" alt="home" />Dues
                     </button>
-                    <button type="button" class="btn templateBg" onclick="javascript: document.location.href='../Master/HRareapage.aspx'">
-                        <img src="~/Content/images/home-icon.png" alt="home" />Home
-                    </button>
+                    <button type="button" class="btn templateBg"><img src="~/Content/images/home-icon.png" alt="home" />@Html.ActionLink("Home", "HRAreaPage", "Home")</button>
+
                 </div>
                 <h5 style="text-transform: uppercase">
                     Resignation Form
@@ -173,12 +172,10 @@
                         </h5>
                     </div>
                     
-                        <div class="buttonCon pull-right">
-                                   <button type="button" class="btn templateBg" onclick="javascript: document.location.href='../Master/HRareapage.aspx'">
-                                    <img src="~/Content/images/home-icon.png" alt="home">Home
-                                </button>
-                         
-                        </div>
+                    <div class="buttonCon pull-right">
+                        <button type="button" class="btn templateBg"><img src="~/Content/images/home-icon.png" alt="home" />@Html.ActionLink("Home", "HRAreaPage", "Home")</button>
+
+                    </div>
                    
                 </div>
 

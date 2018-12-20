@@ -1721,6 +1721,13 @@ span.localizationIcon { width: 64px; border-radius: 50%; margin: 0 auto; height:
 .listicon i {
     font-size:22px;
 }
+.compList li {
+    font-size: 12px;
+    list-style:none;
+}
+.head{
+    border-bottom:1px solid #cdcdcd;
+}
 
 @media (min-width:1366px) {
     .companySelect {

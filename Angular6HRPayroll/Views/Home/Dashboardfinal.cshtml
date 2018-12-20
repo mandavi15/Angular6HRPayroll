@@ -5,43 +5,17 @@
 @*<script type="text/javascript">
         window.onload = function () {
 
-            var options = {
-                exportEnabled: true,
-                animationEnabled: true,
-                title: {
-                    text: "Accounting"
-                },
-                legend: {
-                    horizontalAlign: "right",
-                    verticalAlign: "center"
-                },
-                data: [{
-                    type: "pie",
-                    showInLegend: true,
-                    toolTipContent: "<b>{name}</b>: ${y} (#percent%)",
-                    indexLabel: "{name}",
-                    legendText: "{name} (#percent%)",
-                    indexLabelPlacement: "inside",
-                    dataPoints: [
-                        { y: 6566.4, name: "Housing" },
-                        { y: 2599.2, name: "Food" },
-                        { y: 1231.2, name: "Fun" },
-                        { y: 1368, name: "Clothes" },
-                        { y: 684, name: "Others" },
-                        { y: 1231.2, name: "Utilities" }
-                    ]
-                }]
-            };
-            $("#chartContainer").CanvasJSChart(options);
+       
 
         }
     </script>*@
+
 <script type="text/javascript">
     window.onload = function () {
 
         var options = {
             title: {
-                text: "Website Traffic Source"
+                text: "Headcount"
             },
             data: [{
                 type: "pie",
@@ -63,6 +37,99 @@
         };
         jquery_1_11_1_min_p("#chartContainer").CanvasJSChart(options);
 
+        var options2 = {
+            title: {
+                text: "Employment Status"
+            },
+            data: [{
+                type: "pie",
+                startAngle: 45,
+                showInLegend: "true",
+                legendText: "{label}",
+                indexLabel: "{label} ({y})",
+                yValueFormatString: "#,##0.#" % "",
+                dataPoints: [
+                    { label: "Organic", y: 36 },
+                    { label: "Email Marketing", y: 31 },
+                    { label: "Referrals", y: 7 },
+                    { label: "Twitter", y: 7 },
+                    { label: "Facebook", y: 6 },
+                    { label: "Google", y: 10 },
+                    { label: "Others", y: 3 }
+                ]
+            }]
+        };
+        jquery_1_11_1_min_p("#chartContainer2").CanvasJSChart(options2);
+
+        var options3 = {
+            title: {
+                text: "Department"
+            },
+            data: [{
+                type: "pie",
+                startAngle: 45,
+                showInLegend: "true",
+                legendText: "{label}",
+                indexLabel: "{label} ({y})",
+                yValueFormatString: "#,##0.#" % "",
+                dataPoints: [
+                    { label: "Organic", y: 36 },
+                    { label: "Email Marketing", y: 31 },
+                    { label: "Referrals", y: 7 },
+                    { label: "Twitter", y: 7 },
+                    { label: "Facebook", y: 6 },
+                    { label: "Google", y: 10 },
+                    { label: "Others", y: 3 }
+                ]
+            }]
+        };
+        jquery_1_11_1_min_p("#chartContainer3").CanvasJSChart(options3);
+        var options4 = {
+            title: {
+                text: "Division"
+            },
+            data: [{
+                type: "pie",
+                startAngle: 45,
+                showInLegend: "true",
+                legendText: "{label}",
+                indexLabel: "{label} ({y})",
+                yValueFormatString: "#,##0.#" % "",
+                dataPoints: [
+                    { label: "Organic", y: 36 },
+                    { label: "Email Marketing", y: 31 },
+                    { label: "Referrals", y: 7 },
+                    { label: "Twitter", y: 7 },
+                    { label: "Facebook", y: 6 },
+                    { label: "Google", y: 10 },
+                    { label: "Others", y: 3 }
+                ]
+            }]
+        };
+        jquery_1_11_1_min_p("#chartContainer4").CanvasJSChart(options4);
+        var options5 = {
+            title: {
+                text: "Location"
+            },
+            data: [{
+                type: "pie",
+                startAngle: 45,
+                showInLegend: "true",
+                legendText: "{label}",
+                indexLabel: "{label} ({y})",
+                yValueFormatString: "#,##0.#" % "",
+                dataPoints: [
+                    { label: "Organic", y: 36 },
+                    { label: "Email Marketing", y: 31 },
+                    { label: "Referrals", y: 7 },
+                    { label: "Twitter", y: 7 },
+                    { label: "Facebook", y: 6 },
+                    { label: "Google", y: 10 },
+                    { label: "Others", y: 3 }
+                ]
+            }]
+        };
+        jquery_1_11_1_min_p("#chartContainer5").CanvasJSChart(options5);
     }
 </script>
 <div class="container-fluid gridBody">
@@ -316,24 +383,59 @@
                             <div class="col-md-9 col-sm-9 col-xs-9 pl-0" style="border-right:1px solid #cdcdcd;">
                                 @*<h6 class="head p-1">HeadCount</h6>*@
                                 @*<div id="chartContainer" style="height: 300px; width: 100%;"></div>*@
-                                <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+                                <div id="Headcount" class="tabcontent">
+                                    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+                                </div>
+                                <div id="Employment" class="tabcontent">
+                                    <div id="chartContainer2" style="height: 300px; width: 100%;"></div>
+                                </div>
+                                <div id="Department" class="tabcontent">
+                                    <div id="chartContainer3" style="height: 300px; width: 100%;"></div>
+                                </div>
+                                <div id="Division" class="tabcontent">
+                                    <div id="chartContainer4" style="height: 300px; width: 100%;"></div>
+                                </div>
+                                <div id="Location" class="tabcontent">
+                                    <div id="chartContainer5" style="height: 300px; width: 100%;"></div>
+                                </div>
                             </div>
-                            <div class="col-md-3 col-sm-3 col-xs-3">
-                                <h6 class="p-0">Common Reports</h6>
-                                <ul class="compList p-0">
-                                    <li class="p-1">Headcount</li>
-                                    <li class="p-1">Employment Status</li>
-                                    <li class="p-1">Department</li>
-                                    <li class="p-1">Division</li>
-                                    <li class="p-1">Location</li>
-                                </ul>
-
+                                <div class="col-md-3 col-sm-3 col-xs-3">
+                                    <h6 class="p-0">Common Reports</h6>
+                                    <div class="tab">
+                                        <ul class="compList p-0">
+                                            <li class="p-1 tablinks active" onclick="openCity(event, 'Headcount')" id="defaultOpen">Headcount</li>
+                                            <li class="p-1 tablinks" onclick="openCity(event, 'Employment')">Employment Status</li>
+                                            <li class="p-1 tablinks" onclick="openCity(event, 'Department')">Department</li>
+                                            <li class="p-1 tablinks" onclick="openCity(event, 'Division')">Division</li>
+                                            <li class="p-1 tablinks" onclick="openCity(event, 'Location')">Location</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+    
+        function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
 
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+
+  
+</script>

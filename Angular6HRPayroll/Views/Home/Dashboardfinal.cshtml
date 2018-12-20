@@ -1,48 +1,47 @@
 ﻿
-<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+
+<script src="~/Content/js/jquery-1.11.1.min.js"></script>
 <script>var jquery_1_11_1_min_p = jQuery.noConflict();</script>
-<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+
+<script src="~/Content/js/jquery.canvasjs.min.js"></script>
 @*<script type="text/javascript">
         window.onload = function () {
 
-            var options = {
-                exportEnabled: true,
-                animationEnabled: true,
-                title: {
-                    text: "Accounting"
-                },
-                legend: {
-                    horizontalAlign: "right",
-                    verticalAlign: "center"
-                },
-                data: [{
-                    type: "pie",
-                    showInLegend: true,
-                    toolTipContent: "<b>{name}</b>: ${y} (#percent%)",
-                    indexLabel: "{name}",
-                    legendText: "{name} (#percent%)",
-                    indexLabelPlacement: "inside",
-                    dataPoints: [
-                        { y: 6566.4, name: "Housing" },
-                        { y: 2599.2, name: "Food" },
-                        { y: 1231.2, name: "Fun" },
-                        { y: 1368, name: "Clothes" },
-                        { y: 684, name: "Others" },
-                        { y: 1231.2, name: "Utilities" }
-                    ]
-                }]
-            };
-            $("#chartContainer").CanvasJSChart(options);
+
 
         }
     </script>*@
+
 <script type="text/javascript">
     window.onload = function () {
-
         var options = {
-            title: {
-                text: "Website Traffic Source"
-            },
+
+            data: [
+                {
+                    // Change type to "doughnut", "line", "splineArea", etc.
+                    type: "column",
+                    dataPoints: [
+                        { label: "Jan", y: 10 },
+                        { label: "Feb", y: 15 },
+                        { label: "Mar", y: 25 },
+                        { label: "Apr", y: 30 },
+                        { label: "May", y: 28 },
+                        { label: "Jun", y: 10 },
+                        { label: "Jul", y: 15 },
+                        { label: "Aug", y: 25 },
+                        { label: "Sep", y: 30 },
+                        { label: "Oct", y: 28 },
+                        { label: "Nov", y: 30 },
+                        { label: "Dec", y: 28 }
+                    ]
+                }
+            ]
+        };
+
+        jquery_1_11_1_min_p("#chartContainer").CanvasJSChart(options);
+
+        var options2 = {
+
             data: [{
                 type: "pie",
                 startAngle: 45,
@@ -51,283 +50,368 @@
                 indexLabel: "{label} ({y})",
                 yValueFormatString: "#,##0.#" % "",
                 dataPoints: [
-                    { label: "Organic", y: 36 },
+                    { label: "Full Time", y: 36 },
+                    { label: "Part Time", y: 25 },
+                    { label: "Student", y: 6 },
+                    { label: "Internship", y: 17 },
+                    { label: "Work From Home", y: 16 }
+
+                ]
+            }]
+        };
+        jquery_1_11_1_min_p("#chartContainer2").CanvasJSChart(options2);
+
+        var options3 = {
+
+            data: [{
+                type: "pie",
+                startAngle: 45,
+                showInLegend: "true",
+                legendText: "{label}",
+                indexLabel: "{label} ({y})",
+                yValueFormatString: "#,##0.#" % "",
+                dataPoints: [
+                    { label: "AX", y: 36 },
                     { label: "Email Marketing", y: 31 },
-                    { label: "Referrals", y: 7 },
-                    { label: "Twitter", y: 7 },
-                    { label: "Facebook", y: 6 },
-                    { label: "Google", y: 10 },
+                    { label: ".NET", y: 7 },
+                    { label: "SAP", y: 7 },
+                    { label: "Socail Marketing", y: 6 },
+                    { label: "UI/UX", y: 10 },
                     { label: "Others", y: 3 }
                 ]
             }]
         };
-        jquery_1_11_1_min_p("#chartContainer").CanvasJSChart(options);
+        jquery_1_11_1_min_p("#chartContainer3").CanvasJSChart(options3);
+        var options4 = {
 
+            data: [{
+                type: "pie",
+                startAngle: 45,
+                showInLegend: "true",
+                legendText: "{label}",
+                indexLabel: "{label} ({y})",
+                yValueFormatString: "#,##0.#" % "",
+                dataPoints: [
+                    { label: "Employee", y: 36 },
+                    { label: "Senior Employee", y: 31 },
+                    { label: "Senior Managers", y: 7 },
+                    { label: "Managers", y: 7 },
+                    { label: "Team Leaders", y: 6 },
+                    { label: "MD", y: 10 },
+                    { label: "CEO", y: 1 }
+                ]
+            }]
+        };
+        jquery_1_11_1_min_p("#chartContainer4").CanvasJSChart(options4);
+        var options5 = {
+
+            data: [{
+                type: "pie",
+                startAngle: 45,
+                showInLegend: "true",
+                legendText: "{label}",
+                indexLabel: "{label} ({y})",
+                yValueFormatString: "#,##0.#" % "",
+                dataPoints: [
+                    { label: "Noida", y: 36 },
+                    { label: "Gurugram", y: 31 },
+                    { label: "Chennai", y: 7 },
+                    { label: "Goa", y: 7 },
+                    { label: "US", y: 6 },
+                    { label: "Japan", y: 10 },
+                    { label: "Others", y: 3 }
+                ]
+            }]
+        };
+        jquery_1_11_1_min_p("#chartContainer5").CanvasJSChart(options5);
     }
 </script>
-<div class="container-fluid gridBody">
-    <div class="wrap">
-        <div class="row" style="position: absolute;
-    top: 35%;
+<div class=" ">
+    <div class="container-fluid gridBody" style=" overflow-y: auto;">
+        <div class=" dash-body" style="position: relative;    height: 481px;">
+            <div class="bg-color" style="background-color: #398c94; height: 300px;"></div>
+            <div class="row" style="position: absolute;
+    top: 20%;
     left: 8%;    margin-bottom: 5%;">
-            <div class="col-md-3 col-sm-3 col-xs-3">
-                <div class="col-md-12 col-sm-12 col-xs-12 leftwrap p-0 pb-2" style="background: #fff;">
-                    <div class="name">
-                        <div class="img-circle">
-                            <i class="fa fa-user"></i>
-
-                        </div>
-                        <div>
-                            <h4>Vishal Verma</h4>
-
-                        </div>
-
-                    </div>
-                    <div class="col-md-12 menu mt-2">
-                        <div class="row">
-                            <div class="col-6 col-md-6 col-sm-6 col-xs-6" style="  border-right:1px solid #cdcdcd;">
-                                <div class="content">
-
-                                    <h6>Vacation</h6>
-                                    <i class="fa fa-home arrow"></i>
-                                    <label>Lorem Ipsum is simply dummy text</label>
-                                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3">
+                    <div class="col-md-12 col-sm-12 col-xs-12 leftwrap p-0 pb-2" style="background: #fff;">
+                        <div class="name">
+                            <div class="img-circle">
+                                <i class="fa fa-user"></i>
 
                             </div>
-                            <div class="col-6 col-md-6 col-sm-6 col-xs-6">
-                                <div class="content">
-
-                                    <h6>Sick</h6>
-                                    <i class="fa fa-home arrow"></i>
-                                    <label>Lorem Ipsum is simply dummy text</label>
-                                </div>
+                            <div>
+                                <h4>Vishal Verma</h4>
 
                             </div>
+
                         </div>
-                        <button type="button" class="col-md-12 col-sm-12 col-xs-12 btn templateBg p-1 mb-3 mt-3">Request Time Off</button>
-                    </div>
-                    <div class="out mb-2 pb-3">
-                        <h5 class="m-0 p-1">Who's Out</h5>
-                        <div class="col-md-12 row">
-                            <div class="col-md-12">
-                                <h6 style="
+                        <div class="col-md-12 menu mt-2">
+                            <div class="row">
+                                <div class="col-6 col-md-6 col-sm-6 col-xs-6" style="  border-right:1px solid #cdcdcd;">
+                                    <div class="content">
+
+                                        <h6>Vacation</h6>
+                                        <i class="fa fa-home arrow"></i>
+                                        <label>Lorem Ipsum is simply dummy text</label>
+                                    </div>
+
+                                </div>
+                                <div class="col-6 col-md-6 col-sm-6 col-xs-6">
+                                    <div class="content">
+
+                                        <h6>Sick</h6>
+                                        <i class="fa fa-home arrow"></i>
+                                        <label>Lorem Ipsum is simply dummy text</label>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <button type="button" class="col-md-12 col-sm-12 col-xs-12 btn templateBg p-1 mb-3 mt-3">Request Time Off</button>
+                        </div>
+                        <div class="out mb-2 pb-3">
+                            <h5 class="m-0 p-1">Who's Out</h5>
+                            <div class="col-md-12 row">
+                                <div class="col-md-12">
+                                    <h6 style="
     color: #000!important;
 " class="pb-2 m-0">
-                                    Today
-                                </h6>
-                                <div class="col-md-12 col-sm-12 col-xs-12 p-0">
-                                    <div class="img-circle mr-2">
-                                    </div>
-                                    <div class="img-circle mr-2">
+                                        Today
+                                    </h6>
+                                    <div class="col-md-12 col-sm-12 col-xs-12 p-0">
+                                        <div class="img-circle mr-2">
+                                        </div>
+                                        <div class="img-circle mr-2">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-12 pt-2">
-                                <h6 style="
+                                <div class="col-md-12 pt-2">
+                                    <h6 style="
     color: #000!important;
 " class="pb-2 m-0">
-                                    Tomorrow
-                                </h6>
-                                <div class="col-md-12 col-sm-12 col-xs-12 p-0">
-                                    <div class="img-circle mr-2">
-                                    </div>
-                                    <div class="img-circle mr-2">
+                                        Tomorrow
+                                    </h6>
+                                    <div class="col-md-12 col-sm-12 col-xs-12 p-0">
+                                        <div class="img-circle mr-2">
+                                        </div>
+                                        <div class="img-circle mr-2">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-12">
-                                <h6 style="
+                                <div class="col-md-12">
+                                    <h6 style="
     color: #000!important;
 " class="pb-2 m-0">
-                                    Thursday, 20 Dec
-                                </h6>
-                                <div class="col-md-12 col-sm-12 col-xs-12 p-0">
-                                    <div class="img-circle mr-2">
-                                    </div>
-                                    <div class="img-circle mr-2">
+                                        Thursday, 20 Dec
+                                    </h6>
+                                    <div class="col-md-12 col-sm-12 col-xs-12 p-0">
+                                        <div class="img-circle mr-2">
+                                        </div>
+                                        <div class="img-circle mr-2">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
+                        </div>
+                        <div class="celeb">
+                            <h5 class="m-0 p-1">Celebrations</h5>
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <ul class="p-0 m-0">
+                                    <li class="row p-2">
+
+                                        <div class="img-circle mr-2">
+                                        </div>
+                                        <div class="col-md-8 col-sm-8 col-xs-8 p-0">
+                                            <h6 class="p-0 pb-1 m-0">Saloni Mittal</h6>
+                                            <h6 class="p-0">12 June- Happy Birthday</h6>
+                                        </div>
+
+                                        <i class="fa fa-birthday-cake pt-2"></i>
+
+                                    </li>
+                                    <li class="row p-2">
+
+                                        <div class="img-circle mr-2">
+                                        </div>
+                                        <div class="col-md-8 col-sm-8 col-xs-8 p-0">
+                                            <h6 class="p-0 pb-1 m-0">Saloni Mittal</h6>
+                                            <h6 class="p-0">12 June- Happy Birthday</h6>
+                                        </div>
+
+                                        <i class="fa fa-birthday-cake pt-2"></i>
+
+                                    </li>
+                                    <li class="row p-2">
+
+                                        <div class="img-circle mr-2">
+                                        </div>
+                                        <div class="col-md-8 col-sm-8 col-xs-8 p-0">
+                                            <h6 class="p-0 pb-1 m-0">Saloni Mittal</h6>
+                                            <h6 class="p-0">12 June- Happy Birthday</h6>
+                                        </div>
+
+                                        <i class="fa fa-birthday-cake pt-2"></i>
+
+                                    </li>
+                                </ul>
+
+                            </div>
+
+                        </div>
                     </div>
-                    <div class="celeb">
-                        <h5 class="m-0 p-1">Celebrations</h5>
-                        <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p-0 pb-2 mt-2">
+                        <h5 class="p-0 m-0">Company Links</h5>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 leftwrap p-0 pb-2">
+                        <div class="col-md-12 col-sm-12 col-xs-12 celeb">
                             <ul class="p-0 m-0">
                                 <li class="row p-2">
 
-                                    <div class="img-circle mr-2">
-                                    </div>
-                                    <div class="col-md-8 col-sm-8 col-xs-8 p-0">
-                                        <h6 class="p-0 pb-1 m-0">Saloni Mittal</h6>
-                                        <h6 class="p-0">12 June- Happy Birthday</h6>
+                                    <div class="col-md-12 col-sm-12 col-xs-12 p-0">
+                                        <h6 class="p-0 pb-1 m-0">Company</h6>
+                                        <h6 class="p-0">Company Website</h6>
                                     </div>
 
-                                    <i class="fa fa-birthday-cake pt-2"></i>
 
                                 </li>
                                 <li class="row p-2">
 
-                                    <div class="img-circle mr-2">
-                                    </div>
-                                    <div class="col-md-8 col-sm-8 col-xs-8 p-0">
-                                        <h6 class="p-0 pb-1 m-0">Saloni Mittal</h6>
-                                        <h6 class="p-0">12 June- Happy Birthday</h6>
+                                    <div class="col-md-12 col-sm-12 col-xs-12 p-0">
+                                        <h6 class="p-0 pb-1 m-0">Company</h6>
+                                        <h6 class="p-0">Company Website</h6>
                                     </div>
 
-                                    <i class="fa fa-birthday-cake pt-2"></i>
 
                                 </li>
-                                <li class="row p-2">
 
-                                    <div class="img-circle mr-2">
-                                    </div>
-                                    <div class="col-md-8 col-sm-8 col-xs-8 p-0">
-                                        <h6 class="p-0 pb-1 m-0">Saloni Mittal</h6>
-                                        <h6 class="p-0">12 June- Happy Birthday</h6>
-                                    </div>
-
-                                    <i class="fa fa-birthday-cake pt-2"></i>
-
-                                </li>
                             </ul>
 
                         </div>
-
                     </div>
                 </div>
-                <div class="col-md-12 col-sm-12 col-xs-12 p-0 pb-2 mt-2">
-                    <h5 class="p-0 m-0">Company Links</h5>
-                </div>
-                <div class="col-md-12 col-sm-12 col-xs-12 leftwrap p-0 pb-2">
-                    <div class="col-md-12 col-sm-12 col-xs-12 celeb">
-                        <ul class="p-0 m-0">
-                            <li class="row p-2">
-
-                                <div class="col-md-12 col-sm-12 col-xs-12 p-0">
-                                    <h6 class="p-0 pb-1 m-0">Company</h6>
-                                    <h6 class="p-0">Company Website</h6>
-                                </div>
-
-
-                            </li>
-                            <li class="row p-2">
-
-                                <div class="col-md-12 col-sm-12 col-xs-12 p-0">
-                                    <h6 class="p-0 pb-1 m-0">Company</h6>
-                                    <h6 class="p-0">Company Website</h6>
-                                </div>
-
-
-                            </li>
-
-                        </ul>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-8 col-sm-8 col-xs-8">
-                <div class="col-md-12 col-sm-12 col-xs-12 rightwrap p-3" style="background: #fff;">
-                    <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                        <h4>WELCOME VISHAL!</h4>
-                        <h6>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-                            dummy text ever since the 1500
-                        </h6>
-                    </div>
-                    <div class="col-md-12 col-sm-12 col-xs-12 mt-2 listicon">
-                        <div class="row">
-                            <div class="col-md-4 col-sm-4 col-xs-4" style="border-right:1px solid #cdcdcd; border-bottom:1px solid #cdcdcd">
-                                <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                                    <i class="fa fa-home"></i>
-                                    <h6 class="p-0">Request Time Off</h6>
-                                    <label>Lorem Ipsum is simply dummy text of the printing and typesetting industry</label>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-4 col-xs-4" style="border-right:1px solid #cdcdcd; border-bottom:1px solid #cdcdcd">
-                                <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                                    <i class="fa fa-home"></i>
-                                    <h6 class="p-0">Request Time Off</h6>
-                                    <label>Lorem Ipsum is simply dummy text of the printing and typesetting industry</label>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-4 col-xs-4" style="border-bottom:1px solid #cdcdcd">
-                                <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                                    <i class="fa fa-home"></i>
-                                    <h6 class="p-0">Request Time Off</h6>
-                                    <label>Lorem Ipsum is simply dummy text of the printing and typesetting industry</label>
-                                </div>
-                            </div>
+                <div class="col-md-8 col-sm-8 col-xs-8">
+                    <div class="col-md-12 col-sm-12 col-xs-12 rightwrap p-3" style="background: #fff;">
+                        <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                            <h4>WELCOME VISHAL!</h4>
+                            <h6>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+                                dummy text ever since the 1500
+                            </h6>
                         </div>
-                        <div class="row">
-                            <div class="col-md-4 col-sm-4 col-xs-4 pt-3" style="border-right:1px solid #cdcdcd;">
-                                <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                                    <i class="fa fa-home"></i>
-                                    <h6 class="p-0">Request Time Off</h6>
-                                    <label>Lorem Ipsum is simply dummy text of the printing and typesetting industry</label>
+                        <div class="col-md-12 col-sm-12 col-xs-12 mt-2 listicon">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4 col-xs-4" style="border-right:1px solid #cdcdcd; border-bottom:1px solid #cdcdcd">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                                        <i class="fa fa-home"></i>
+                                        <h6 class="p-0">Request Time Off</h6>
+                                        <label>Lorem Ipsum is simply dummy text of the printing and typesetting industry</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4" style="border-right:1px solid #cdcdcd; border-bottom:1px solid #cdcdcd">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                                        <i class="fa fa-home"></i>
+                                        <h6 class="p-0">Request Time Off</h6>
+                                        <label>Lorem Ipsum is simply dummy text of the printing and typesetting industry</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4" style="border-bottom:1px solid #cdcdcd">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                                        <i class="fa fa-home"></i>
+                                        <h6 class="p-0">Request Time Off</h6>
+                                        <label>Lorem Ipsum is simply dummy text of the printing and typesetting industry</label>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 col-sm-4 col-xs-4 pt-3" style="border-right:1px solid #cdcdcd;">
-                                <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                                    <i class="fa fa-home"></i>
-                                    <h6 class="p-0">Request Time Off</h6>
-                                    <label>Lorem Ipsum is simply dummy text of the printing and typesetting industry</label>
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4 col-xs-4 pt-3" style="border-right:1px solid #cdcdcd;">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                                        <i class="fa fa-home"></i>
+                                        <h6 class="p-0">Request Time Off</h6>
+                                        <label>Lorem Ipsum is simply dummy text of the printing and typesetting industry</label>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-4 col-sm-4 col-xs-4 pt-3">
-                                <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                                    <i class="fa fa-home"></i>
-                                    <h6 class="p-0">Request Time Off</h6>
-                                    <label>Lorem Ipsum is simply dummy text of the printing and typesetting industry</label>
+                                <div class="col-md-4 col-sm-4 col-xs-4 pt-3" style="border-right:1px solid #cdcdcd;">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                                        <i class="fa fa-home"></i>
+                                        <h6 class="p-0">Request Time Off</h6>
+                                        <label>Lorem Ipsum is simply dummy text of the printing and typesetting industry</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4 pt-3">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                                        <i class="fa fa-home"></i>
+                                        <h6 class="p-0">Request Time Off</h6>
+                                        <label>Lorem Ipsum is simply dummy text of the printing and typesetting industry</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-12 col-sm-12 col-xs-12 p-0 pb-2 mt-3">
-                    <h5 class="p-0 m-0">What's Happening at IACE</h5>
-                </div>
-                <div class="col-md-12 col-sm-12 col-xs-12 rightwrap p-3">
-                    <div class="col-md-12 col-sm-12 col-xs-12 text-center graph">
-                        <i class="fa fa-home"></i>
-                        <h6>
-                            You don't have any notifications at the moments...
-                        </h6>
+                    <div class="col-md-12 col-sm-12 col-xs-12 p-0 pb-2 mt-3">
+                        <h5 class="p-0 m-0">What's Happening at IACE</h5>
                     </div>
-                </div>
-                <div class="col-md-12 col-sm-12 col-xs-12 p-0 pb-2 mt-3">
-                    <h5 class="p-0 m-0">Welcome to IACE</h5>
-                </div>
-                <div class="col-md-12 col-sm-12 col-xs-12 rightwrap p-3">
-                    <div class="col-md-12 col-sm-12 col-xs-12 text-center graph">
-                        <i class="fa fa-home"></i>
-                        <h6>
-                            Nobody will be joining IACE for the next little while.
-                        </h6>
+                    <div class="col-md-12 col-sm-12 col-xs-12 rightwrap p-3">
+                        <div class="col-md-12 col-sm-12 col-xs-12 text-center graph">
+                            <i class="fa fa-home"></i>
+                            <h6>
+                                You don't have any notifications at the moments...
+                            </h6>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-12 col-sm-12 col-xs-12 p-0 pb-2 mt-3">
-                    <h5 class="p-0 m-0">Reports</h5>
-                </div>
-                <div class="col-md-12 col-sm-12 col-xs-12 rightwrap p-3">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="row">
-                            <div class="col-md-9 col-sm-9 col-xs-9 pl-0" style="border-right:1px solid #cdcdcd;">
-                                @*<h6 class="head p-1">HeadCount</h6>*@
-                                @*<div id="chartContainer" style="height: 300px; width: 100%;"></div>*@
-                                <div id="chartContainer" style="height: 300px; width: 100%;"></div>
-                            </div>
-                            <div class="col-md-3 col-sm-3 col-xs-3">
-                                <h6 class="p-0">Common Reports</h6>
-                                <ul class="compList p-0">
-                                    <li class="p-1">Headcount</li>
-                                    <li class="p-1">Employment Status</li>
-                                    <li class="p-1">Department</li>
-                                    <li class="p-1">Division</li>
-                                    <li class="p-1">Location</li>
-                                </ul>
-
+                    <div class="col-md-12 col-sm-12 col-xs-12 p-0 pb-2 mt-3">
+                        <h5 class="p-0 m-0">Welcome to IACE</h5>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 rightwrap p-3">
+                        <div class="col-md-12 col-sm-12 col-xs-12 text-center graph">
+                            <i class="fa fa-home"></i>
+                            <h6>
+                                Nobody will be joining IACE for the next little while.
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 p-0 pb-2 mt-3">
+                        <h5 class="p-0 m-0">Reports</h5>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 rightwrap p-3">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="col-md-9 col-sm-9 col-xs-9 pl-0" style="border-right:1px solid #cdcdcd;">
+                                    @*<h6 class="head p-1">HeadCount</h6>*@
+                                    @*<div id="chartContainer" style="height: 300px; width: 100%;"></div>*@
+                                    <div id="Headcount" class="tabcontent">
+                                        <h6 class="head p-1">HeadCount</h6>
+                                        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+                                    </div>
+                                    <div id="Employment" class="tabcontent">
+                                        <h6 class="head p-1">Employment Status</h6>
+                                        <div id="chartContainer2" style="height: 300px; width: 100%;"></div>
+                                    </div>
+                                    <div id="Department" class="tabcontent">
+                                        <h6 class="head p-1">Department</h6>
+                                        <div id="chartContainer3" style="height: 300px; width: 100%;"></div>
+                                    </div>
+                                    <div id="Division" class="tabcontent">
+                                        <h6 class="head p-1">Division</h6>
+                                        <div id="chartContainer4" style="height: 300px; width: 100%;"></div>
+                                    </div>
+                                    <div id="Location" class="tabcontent">
+                                        <h6 class="head p-1">Location</h6>
+                                        <div id="chartContainer5" style="height: 300px; width: 100%;"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-xs-3">
+                                    <h6 class="p-0">Common Reports</h6>
+                                    <div class="tab">
+                                        <ul class="compList p-0">
+                                            <li class="p-1 tablinks active" onclick="openCity(event, 'Headcount')" id="defaultOpen">Headcount</li>
+                                            <li class="p-1 tablinks" onclick="openCity(event, 'Employment')">Employment Status</li>
+                                            <li class="p-1 tablinks" onclick="openCity(event, 'Department')">Department</li>
+                                            <li class="p-1 tablinks" onclick="openCity(event, 'Division')">Division</li>
+                                            <li class="p-1 tablinks" onclick="openCity(event, 'Location')">Location</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -336,4 +420,24 @@
         </div>
     </div>
 </div>
+<script>
 
+    function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+
+
+</script>

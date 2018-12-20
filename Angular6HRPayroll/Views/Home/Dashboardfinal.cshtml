@@ -1,11 +1,13 @@
 ﻿
-<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+
+<script src="~/Content/js/jquery-1.11.1.min.js"></script>
 <script>var jquery_1_11_1_min_p = jQuery.noConflict();</script>
-<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+
+<script src="~/Content/js/jquery.canvasjs.min.js"></script>
 @*<script type="text/javascript">
         window.onload = function () {
 
-       
+
 
         }
     </script>*@
@@ -13,9 +15,7 @@
 <script type="text/javascript">
     window.onload = function () {
         var options = {
-            title: {
-                text: "Headcount"
-            },
+
             data: [
                 {
                     // Change type to "doughnut", "line", "splineArea", etc.
@@ -31,7 +31,7 @@
                         { label: "Aug", y: 25 },
                         { label: "Sep", y: 30 },
                         { label: "Oct", y: 28 },
-                          { label: "Nov", y: 30 },
+                        { label: "Nov", y: 30 },
                         { label: "Dec", y: 28 }
                     ]
                 }
@@ -41,9 +41,7 @@
         jquery_1_11_1_min_p("#chartContainer").CanvasJSChart(options);
 
         var options2 = {
-            title: {
-                text: "Employment Status"
-            },
+
             data: [{
                 type: "pie",
                 startAngle: 45,
@@ -57,16 +55,14 @@
                     { label: "Student", y: 6 },
                     { label: "Internship", y: 17 },
                     { label: "Work From Home", y: 16 }
-                   
+
                 ]
             }]
         };
         jquery_1_11_1_min_p("#chartContainer2").CanvasJSChart(options2);
 
         var options3 = {
-            title: {
-                text: "Department"
-            },
+
             data: [{
                 type: "pie",
                 startAngle: 45,
@@ -87,9 +83,7 @@
         };
         jquery_1_11_1_min_p("#chartContainer3").CanvasJSChart(options3);
         var options4 = {
-            title: {
-                text: "Division"
-            },
+
             data: [{
                 type: "pie",
                 startAngle: 45,
@@ -110,9 +104,7 @@
         };
         jquery_1_11_1_min_p("#chartContainer4").CanvasJSChart(options4);
         var options5 = {
-            title: {
-                text: "Location"
-            },
+
             data: [{
                 type: "pie",
                 startAngle: 45,
@@ -386,34 +378,39 @@
                                 @*<h6 class="head p-1">HeadCount</h6>*@
                                 @*<div id="chartContainer" style="height: 300px; width: 100%;"></div>*@
                                 <div id="Headcount" class="tabcontent">
+                                    <h6 class="head p-1">HeadCount</h6>
                                     <div id="chartContainer" style="height: 300px; width: 100%;"></div>
                                 </div>
                                 <div id="Employment" class="tabcontent">
+                                    <h6 class="head p-1">Employment Status</h6>
                                     <div id="chartContainer2" style="height: 300px; width: 100%;"></div>
                                 </div>
                                 <div id="Department" class="tabcontent">
+                                    <h6 class="head p-1">Department</h6>
                                     <div id="chartContainer3" style="height: 300px; width: 100%;"></div>
                                 </div>
                                 <div id="Division" class="tabcontent">
+                                    <h6 class="head p-1">Division</h6>
                                     <div id="chartContainer4" style="height: 300px; width: 100%;"></div>
                                 </div>
                                 <div id="Location" class="tabcontent">
+                                    <h6 class="head p-1">Location</h6>
                                     <div id="chartContainer5" style="height: 300px; width: 100%;"></div>
                                 </div>
                             </div>
-                                <div class="col-md-3 col-sm-3 col-xs-3">
-                                    <h6 class="p-0">Common Reports</h6>
-                                    <div class="tab">
-                                        <ul class="compList p-0">
-                                            <li class="p-1 tablinks active" onclick="openCity(event, 'Headcount')" id="defaultOpen">Headcount</li>
-                                            <li class="p-1 tablinks" onclick="openCity(event, 'Employment')">Employment Status</li>
-                                            <li class="p-1 tablinks" onclick="openCity(event, 'Department')">Department</li>
-                                            <li class="p-1 tablinks" onclick="openCity(event, 'Division')">Division</li>
-                                            <li class="p-1 tablinks" onclick="openCity(event, 'Location')">Location</li>
-                                        </ul>
-                                    </div>
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                                <h6 class="p-0">Common Reports</h6>
+                                <div class="tab">
+                                    <ul class="compList p-0">
+                                        <li class="p-1 tablinks active" onclick="openCity(event, 'Headcount')" id="defaultOpen">Headcount</li>
+                                        <li class="p-1 tablinks" onclick="openCity(event, 'Employment')">Employment Status</li>
+                                        <li class="p-1 tablinks" onclick="openCity(event, 'Department')">Department</li>
+                                        <li class="p-1 tablinks" onclick="openCity(event, 'Division')">Division</li>
+                                        <li class="p-1 tablinks" onclick="openCity(event, 'Location')">Location</li>
+                                    </ul>
                                 </div>
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -421,23 +418,23 @@
     </div>
 </div>
 <script>
-    
-        function openCity(evt, cityName) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-            document.getElementById(cityName).style.display = "block";
-            evt.currentTarget.className += " active";
+
+    function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
         }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
 
-        // Get the element with id="defaultOpen" and click on it
-        document.getElementById("defaultOpen").click();
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
 
-  
+
 </script>

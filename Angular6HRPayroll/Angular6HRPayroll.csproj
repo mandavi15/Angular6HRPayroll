@@ -414,6 +414,8 @@
     <Content Include="Views\HR\CreateComplaint.cshtml" />
     <Content Include="Views\Home\Dashboardfinal.cshtml" />
     <Content Include="Views\HR\Localization.cshtml" />
+    <Content Include="Views\Home\EventAndTraining.cshtml" />
+    <Content Include="Views\Home\SetupCriteria.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,105 @@
+﻿
+@{
+    ViewBag.Title = "EventAndTraining";
+}
+
+<div class="container-fluid gridBody">
+
+    <div class="row">
+        <div class="col-12 col-md-11">
+            <h5 style="text-transform: uppercase">
+                EVENT &amp; Training
+            </h5>
+        </div>
+
+        <div class="buttonCon pull-right">
+            <button type="button" class="btn templateBg"><img src="~/Content/images/home-icon.png" alt="home" />@Html.ActionLink("Home", "HRAreaPage", "Home")</button>
+
+        </div>
+
+    </div>
+
+    <div class="row mt-3">
+
+        <div class="col-12 col-md-9">
+            <div class="row ">
+                <div class="col-4 col-md-2">
+                    <div class="buttonCon pull-left ">
+
+                        <button type="button" class="btn templateBg" placeholder="Add New" id="btnNewReq"
+                                onclick="NewRequisition()">
+                            <img src="~/Content/images/new-icon.png" alt="new">@Html.ActionLink("Add New", "SetupCriteria", "Home")
+                        </button>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-12 col-md-3 pull-right">
+            <div class="input-group mb-2 pull-right pl-0 searchboxmargin">
+                <input class="form-control border-secondary" type="search" placeholder="search">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button">
+                        <img src="~/Content/images/search-icon.png" alt="search">
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div>
+        <div>
+        </div>
+        <div>
+            <div id="myGrid2" style="height: 200px; width:100%;" class="ag-theme-balham"></div>
+        </div>
+    </div>
+
+    <div class="buttonCon pull-right mt-3">
+        <button type="button" class="btn templateBg" id="btnEdit">Submit</button>
+
+    </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+
+    // specify the columns
+
+
+    var columnDefs = [
+        { headerName: "All", checkboxSelection: true, field: "all", width: 80 },
+        { headerName: "Sr. No.", field: "sl", width: 100 },
+        { headerName: "Title", field: "Title", width: 230, editable: true },
+        { headerName: "Location", field: "Location", width: 220, editable: true },
+        { headerName: "Date", field: "Date", width: 230, editable: true },
+        { headerName: "Time", field: "Time", width: 240, editable: true }
+    ];
+
+    // specify the data
+    var rowData = [
+        { all: "", checkboxSelection: true, sl: "1", Title: "Title 1", Location: "Noida", Date: "dd/mm/yyyy", Time: "08:00AM - 06:00PM" },
+        { all: "", checkboxSelection: true, sl: "2", Title: "Title 2", Location: "Delhi", Date: "dd/mm/yyyy", Time: "08:00AM - 06:00PM" },
+        { all: "", checkboxSelection: true, sl: "3", Title: "Title 3", Location: "Gurugram", Date: "dd/mm/yyyy", Time: "08:00AM - 06:00PM" },
+        { all: "", checkboxSelection: true, sl: "4", Title: "Title 4", Location: "Faridabad", Date: "dd/mm/yyyy", Time: "08:00AM - 06:00PM" },
+        { all: "", checkboxSelection: true, sl: "5", Title: "Title 5", Location: "Agra", Date: "dd/mm/yyyy", Time: "08:00AM - 06:00PM" }];
+
+    // let the grid know which columns and what data to use
+    var gridOptions = {
+        columnDefs: columnDefs,
+        rowData: rowData,
+        enableSorting: true,
+        enableFilter: true
+    };
+
+    // lookup the container we want the Grid to use
+    var eGridDiv = document.querySelector('#myGrid2');
+
+    // create the grid passing in the div to use together with the columns & data we want to use
+    new agGrid.Grid(eGridDiv, gridOptions);
+
+
+</script>

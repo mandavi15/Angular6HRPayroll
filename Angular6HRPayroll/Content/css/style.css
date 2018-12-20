@@ -395,7 +395,10 @@ select.addrCon1{ max-width: 31% !important;}
 .greyBorder{ border:1px solid #babbbb}
 .greenBorder{ border:1px solid #b7dbde}
 .greyBorder-bottom{ border-bottom:1px solid #dee2e6}
-.top-border{border-top:2px solid #2e6c71;} 
+.top-border{border-top:2px solid #2e6c71;}
+.right-border {
+    border-right: 1px solid #2e6c71;
+} 
 .textGrey{ color:#3e3e3e}
 .hide{ display:none}
 .show{display:block;}
@@ -511,7 +514,15 @@ thead>tr>th, tbody>tr>td{ font-size:0.6875rem !important}
     }
 .mainCon .rightCon h6, .mainCon .resetCon h6{ color:#3e3e3e !important; font-weight:600; border-bottom:1px solid #b7b7b6; padding: 3% 7%; font-size: 1rem; margin-bottom:0}
 .mainCon .resetCon{background:#f5f5f4; margin-top:1px; padding:0}
-.plainCon h6{font-size:1rem; line-height:1.2; text-align:center; color:#1f4c50; text-transform:uppercase; text-decoration:underline; font-weight:600}
+.plainCon h6 {
+    font-size: 1rem;
+    line-height: 1.2;
+    text-align: center;
+    color: #3e3e3e !important;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-weight: 600
+}
 .loginBody, .innerBody{ padding:10% 7% 20%}
 .signupBody{ padding:3% 7%}
 .profile{ padding:10% 7% 5%;}
@@ -552,7 +563,14 @@ select option:disabled{ color:#969696 !important}
 /*option:not(:first-of-type){ color:#969696 !important}*/
 /*.innerBody .form-group{ position:relative}*/
 .innerBody label{font-size:0.875rem; line-height:1.2; color:#1f4c50; font-weight:600}
-.innerBody .btn{ float:right; color:#fff; border-radius:.25rem; padding: .25rem 1.5rem; font-size:0.6875rem; margin-top:10%}
+.innerBody .btn {
+    float: right;
+    color: #fff;
+    border-radius: .25rem;
+    padding: .25rem 1.5rem;
+    font-size: 0.6875rem;
+    margin-top: 10%; margin-bottom: 10px;
+}
 .innerBody .btn1{ float:left; color:#fff; border-radius:.25rem; padding: .25rem 1.5rem; font-size:0.6875rem; margin-top:10%; border:0}
 .innerBody select.form-control { background: transparent; border: none;}
 .local{ -webkit-appearance:none; apperance:none; -moz-appearance:none}
@@ -610,7 +628,16 @@ tfoot td{ font-size:0.825rem; font-weight:bold; color:#1f4c50}
     border-radius: 3px; margin-left: 4px;}
 .faEdit{ position:absolute; right:10px; margin-top: 2px;}
 .progressCount{ float:right; font-size:0.65rem; font-weight:bold; color:#155169}
-.businessBox li{ display:inline-block; width:29%; background-color:#398d94; padding:1.25rem; border-radius:3px; margin-right:4%; margin-bottom:1.5rem; text-align:center}
+.businessBox li {
+    display: inline-block;
+    width: 29%;
+    background-color: #398d94;
+    padding: 1.25rem;
+    border-radius: 3px;
+    margin-right: 3.8%;
+    margin-bottom: 1.5rem;
+    text-align: center
+}
 .businessBox li p, .businessBox li p a{ font-size:1rem; line-height:1.2; color:#fff; text-decoration:underline; text-transform:uppercase; font-weight:600; margin-top:1.5rem; margin-bottom:0}
 /*.businessBox li:nth-child(4), .businessBox li:nth-child(5){ margin-bottom:0}
 .businessBox li:nth-child(4){ margin-left:18%}*/

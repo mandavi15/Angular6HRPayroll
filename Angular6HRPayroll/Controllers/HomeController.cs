@@ -47,7 +47,17 @@ namespace Angular6HRPayroll.Controllers
 
             return View();
         }
+        public ActionResult EventAndTraining()
+        {
 
+            return View();
+        }
+        
+        public ActionResult SetupCriteria()
+        {
+
+            return View();
+        }
     }
 
 }

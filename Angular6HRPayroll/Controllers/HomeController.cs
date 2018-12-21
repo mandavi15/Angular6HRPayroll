@@ -58,6 +58,22 @@ namespace Angular6HRPayroll.Controllers
 
             return View();
         }
+        public ActionResult ViewSetupCriteria()
+        {
+
+            return View();
+        }
+        
+        public ActionResult payrollForms()
+        {
+
+            return View();
+        }
+        public ActionResult claimReimbursement()
+        {
+
+            return View();
+        }
     }
 
 }

@@ -1,0 +1,103 @@
+﻿
+@{
+    ViewBag.Title = "ViewSetupCriteria";
+}
+
+
+<div class="container-fluid gridBody">
+    <div class="buttonCon pull-right">
+        <button type="submit" class="btn templateBg"><img src="~/Content/images/back-icon.png" alt="back" />@Html.ActionLink("Back", "EventAndTraining", "Home")</button>
+        <button type="button" class="btn templateBg"><img src="~/Content/images/home-icon.png" alt="home" />@Html.ActionLink("Home", "HRAreaPage", "Home")</button>
+    </div>
+
+    <div class="container p-0" style="overflow:hidden">
+        <div class="formBody clearfix p-0 mt-1">
+            <form id="event">
+                <div class="pull-left col-12 col-md-12 pr-0 pb-4">
+                    <h5>Event &amp; Training</h5>
+                    <div class="form-inline">
+                        <label for="Event ID" class="col-3 col-md-3 p-0">Event ID:</label>
+                        <div class="col-5 col-md-5 p-0">
+                            <input type="text" class="form-control col-12 col-md-12" name="Employee Name" placeholder="Event ID" readonly style="width:100%" />
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-inline">
+                        <label for="Title" class="col-3 col-md-3 p-0">Title:</label>
+                        <div class="col-5 col-md-5 p-0">
+                            <input type="text" class="form-control col-12 col-md-12" id="ddlDesignationReq" name="position" placeholder="Event Title" readonly style="width:100%" />
+                        </div>
+
+                    </div>
+                    <div class="form-inline">
+                        <label for="Description" class="col-3 col-md-3 p-0">Description:</label>
+                        <div class="col-5 col-md-5 p-0">
+                            <input type="text" class="form-control col-12 col-md-12" id="ddlDepartmentReq" name="Description" placeholder="Event Description" readonly style="width:100%" />
+                        </div>
+
+                    </div>
+                    <div class="form-inline">
+                        <label for="Description" class="col-3 col-md-3 p-0">Location:</label>
+                        <div class="col-5 col-md-5 p-0">
+                            <input type="text" class="form-control col-12 col-md-12" id="lcation" name="Location" placeholder="Location" readonly style="width:100%" />
+                        </div>
+
+                    </div>
+                    <div class="form-inline">
+                        <label for="Description" class="col-3 col-md-3 p-0">Vendor (If Any):</label>
+                        <div class="col-5 col-md-5 p-0">
+                            <input type="text" class="form-control col-12 col-md-12" id="vendor" name="Description" placeholder="Vendor Name" readonly style="width:100%" />
+                        </div>
+
+                    </div>
+                    <div class="form-inline">
+                        <label for="Date" class="col-3 col-md-3 p-0">Date:</label>
+                        <div class="col-5 col-md-5 p-0">
+                            <input type="text" class="form-control col-12 col-md-12" name="txtDOB" placeholder="dd/mm/yyyy" readonly style="width:100%" />
+                        </div>
+
+                    </div>
+                    <div class="form-inline">
+                        <label for="Time" class="col-3 col-md-3 p-0">Time:</label>
+                        <div class="col-5 col-md-5 p-0">
+                            <input type="text" class="form-control col-12 col-md-12" id="time" name="Location" placeholder="09:00AM - 06:00PM" readonly style="width:100%" />
+                        </div>
+
+                    </div>
+                    <div class="form-inline">
+                        <label for="Duration" class="col-3 col-md-3 p-0">Duration:</label>
+                        <div class="col-5 col-md-5 p-0">
+                            <input type="text" class="form-control col-12 col-md-12" id="duration" name="Description" placeholder="09Hrs" readonly style="width:100%" />
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+                
+
+            </form>
+        </div>
+        <div class="buttonCon pull-left mt-3">
+            <div class="eventBtn pull-left mr-2">
+                <span>Accept</span>
+
+            </div>
+            <div class="eventBtn pull-left mr-2">
+                <span>Decline</span>
+
+            </div>
+            <div class="eventBtn pull-left mr-2">
+                <span>Tentative</span>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+

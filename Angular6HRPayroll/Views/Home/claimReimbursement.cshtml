@@ -1,15 +1,13 @@
 ﻿
 @{
-    ViewBag.Title = "EventAndTraining";
+    ViewBag.Title = "claimReimbursement";
 }
 
 <div class="container-fluid gridBody">
 
     <div class="row">
         <div class="col-12 col-md-11">
-            <h5 style="text-transform: uppercase">
-                EVENT &amp; Training
-            </h5>
+            <h5 style="text-transform: uppercase">Claim/Reimbursement</h5>
         </div>
 
         <div class="buttonCon pull-right">
@@ -26,13 +24,7 @@
                 <div class="col-12 col-md-6">
                     <div class="buttonCon pull-left ">
 
-                        <button type="button" class="btn templateBg" placeholder="Add New">
-                            <img src="~/Content/images/new-icon.png" alt="new">@Html.ActionLink("Add New", "SetupCriteria", "Home")
-                        </button>
-                        <button type="button" class="btn templateBg" placeholder="View">
-                            <img src="~/Content/images/eye-icon.png" alt="new">@Html.ActionLink("View", "ViewSetupCriteria", "Home")
-                        </button>
-
+                        <button type="button" class="btn templateBg" ><img src="~/Content/images/new-icon.png" alt="new">Add New</button>
                     </div>
 
                 </div>
@@ -74,10 +66,13 @@
     var columnDefs = [
         { headerName: "All", checkboxSelection: true, field: "all", width: 80 },
         { headerName: "Sr. No.", field: "sl", width: 100 },
-        { headerName: "Title", field: "Title", width: 230, editable: true },
-        { headerName: "Location", field: "Location", width: 220, editable: true },
-        { headerName: "Date", field: "Date", width: 230, editable: true },
-        { headerName: "Time", field: "Time", width: 240, editable: true }
+        { headerName: "Claim Type", field: "claimType", width: 200, editable: true },
+        { headerName: "From Date", field: "FromDate", width: 200, editable: true },
+        { headerName: "To Date", field: "ToDate", width: 200, editable: true },
+        { headerName: "Receipt No.", field: "ReceiptNo", width: 200, editable: true },
+        { headerName: "Amount", field: "amount", width: 200, editable: true },
+        { headerName: "Attachment", field: "Attachment", width: 200, editable: true },
+        { headerName: "Status", field: "Status", width: 200, editable: true }
     ];
 
     // specify the data
@@ -104,3 +99,4 @@
 
 
 </script>
+

@@ -225,6 +225,7 @@
     <Content Include="Content\images\employee-icon1.png" />
     <Content Include="Content\images\error-msg.png" />
     <Content Include="Content\images\error-msg1.png" />
+    <Content Include="Content\images\eye-icon.png" />
     <Content Include="Content\images\flag-ind.png" />
     <Content Include="Content\images\flag-uk.png" />
     <Content Include="Content\images\flag-us.png" />
@@ -418,6 +419,9 @@
     <Content Include="Views\HR\Localization.cshtml" />
     <Content Include="Views\Home\EventAndTraining.cshtml" />
     <Content Include="Views\Home\SetupCriteria.cshtml" />
+    <Content Include="Views\Home\ViewSetupCriteria.cshtml" />
+    <Content Include="Views\Home\payrollForms.cshtml" />
+    <Content Include="Views\Home\claimReimbursement.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

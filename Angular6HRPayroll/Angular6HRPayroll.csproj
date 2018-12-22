@@ -422,6 +422,7 @@
     <Content Include="Views\Home\ViewSetupCriteria.cshtml" />
     <Content Include="Views\Home\payrollForms.cshtml" />
     <Content Include="Views\Home\claimReimbursement.cshtml" />
+    <Content Include="Views\Home\claimTypeMaster.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

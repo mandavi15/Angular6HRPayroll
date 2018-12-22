@@ -74,6 +74,11 @@ namespace Angular6HRPayroll.Controllers
 
             return View();
         }
+        public ActionResult claimTypeMaster()
+        {
+
+            return View();
+        }
     }
 
 }

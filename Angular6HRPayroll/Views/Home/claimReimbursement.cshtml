@@ -66,22 +66,22 @@
     var columnDefs = [
         { headerName: "All", checkboxSelection: true, field: "all", width: 80 },
         { headerName: "Sr. No.", field: "sl", width: 100 },
-        { headerName: "Claim Type", field: "claimType", width: 200, editable: true },
-        { headerName: "From Date", field: "FromDate", width: 200, editable: true },
-        { headerName: "To Date", field: "ToDate", width: 200, editable: true },
-        { headerName: "Receipt No.", field: "ReceiptNo", width: 200, editable: true },
-        { headerName: "Amount", field: "amount", width: 200, editable: true },
-        { headerName: "Attachment", field: "Attachment", width: 200, editable: true },
-        { headerName: "Status", field: "Status", width: 200, editable: true }
+        { headerName: "Claim Type", field: "claimType", width: 150, editable: true },
+        { headerName: "From Date", field: "FromDate", width: 150, editable: true },
+        { headerName: "To Date", field: "ToDate", width: 150, editable: true },
+        { headerName: "Receipt No.", field: "ReceiptNo", width: 150, editable: true },
+        { headerName: "Amount", field: "amount", width: 150, editable: true },
+        { headerName: "Attachment", field: "Attachment", width: 150, editable: true },
+        { headerName: "Status", field: "Status", width: 100, editable: true }
     ];
 
     // specify the data
     var rowData = [
-        { all: "", checkboxSelection: true, sl: "1", Title: "Title 1", Location: "Noida", Date: "dd/mm/yyyy", Time: "08:00AM - 06:00PM" },
-        { all: "", checkboxSelection: true, sl: "2", Title: "Title 2", Location: "Delhi", Date: "dd/mm/yyyy", Time: "08:00AM - 06:00PM" },
-        { all: "", checkboxSelection: true, sl: "3", Title: "Title 3", Location: "Gurugram", Date: "dd/mm/yyyy", Time: "08:00AM - 06:00PM" },
-        { all: "", checkboxSelection: true, sl: "4", Title: "Title 4", Location: "Faridabad", Date: "dd/mm/yyyy", Time: "08:00AM - 06:00PM" },
-        { all: "", checkboxSelection: true, sl: "5", Title: "Title 5", Location: "Agra", Date: "dd/mm/yyyy", Time: "08:00AM - 06:00PM" }];
+        { all: "", checkboxSelection: true, sl: "1", claimType: "Conveyance", FromDate: "01/12/2018", ToDate: "05/12/2018", ReceiptNo: "Receipt 001", amount: "Rs.2000", Attachment:"abc.png", Status:"Yes" },
+        { all: "", checkboxSelection: true, sl: "2", claimType: "Conveyance", FromDate: "01/12/2018", ToDate: "05/12/2018", ReceiptNo: "Receipt 001", amount: "Rs.2000", Attachment: "def.png", Status: "No" },
+        { all: "", checkboxSelection: true, sl: "3", claimType: "Conveyance", FromDate: "01/12/2018", ToDate: "05/12/2018", ReceiptNo: "Receipt 001", amount: "Rs.2000", Attachment: "ghi.png", Status: "Yes" },
+        { all: "", checkboxSelection: true, sl: "4", claimType: "Conveyance", FromDate: "01/12/2018", ToDate: "05/12/2018", ReceiptNo: "Receipt 001", amount: "Rs.2000", Attachment: "jkl.png", Status: "No" },
+        { all: "", checkboxSelection: true, sl: "5", claimType: "Conveyance", FromDate: "01/12/2018", ToDate: "05/12/2018", ReceiptNo: "Receipt 001", amount: "Rs.2000", Attachment: "abcd.png", Status: "Yes" }];
 
     // let the grid know which columns and what data to use
     var gridOptions = {

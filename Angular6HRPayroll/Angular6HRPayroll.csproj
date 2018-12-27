@@ -164,8 +164,10 @@
     <Content Include="Content\css\font-awesome\4.5.0\css\font-awesome.min.css" />
     <Content Include="Content\css\font-awesome\4.5.0\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\css\gijgo.min.css" />
+    <Content Include="Content\css\hierarchy-view.css" />
     <Content Include="Content\css\jquery-ui.css" />
     <Content Include="Content\css\jquerysctipttop.css" />
+    <Content Include="Content\css\main.css" />
     <Content Include="Content\css\mdtimepicker.css" />
     <Content Include="Content\css\mdtimepicker.min.css" />
     <Content Include="Content\css\style.css" />
@@ -423,6 +425,7 @@
     <Content Include="Views\Home\payrollForms.cshtml" />
     <Content Include="Views\Home\claimReimbursement.cshtml" />
     <Content Include="Views\Home\claimTypeMaster.cshtml" />
+    <Content Include="Views\Home\organizationHierarchy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

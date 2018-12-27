@@ -232,7 +232,14 @@
                                         <li class="nav-item"><i class="fa fa-sign-out  arrow"></i>@Html.ActionLink("Complaint/Grievance", "ComplaintGrievance", "HR")</li>
                                         <li class="nav-item"><i class="fa fa-sign-out  arrow"></i>@Html.ActionLink("Event & Training", "EventAndTraining", "Home")</li>
                                         <li class="nav-item"><i class="fa fa-sign-out  arrow"></i>@Html.ActionLink("Payroll Forms", "payrollForms", "Home")</li>
-                                        <li class="nav-item"><i class="fa fa-sign-out  arrow"></i>@Html.ActionLink("Claim/Reimbursement", "claimReimbursement", "Home")</li>
+                                        <li class="nav-item">
+                                            <i class="fa fa-sign-out  arrow"></i>@Html.ActionLink("Claim/Reimbursement", "claimReimbursement", "Home")
+                                            <ul class="dropdown-menu show">
+                                                <li><img src="/Content/images/request_icon.png" class="arrow">@Html.ActionLink("Claim Type Master", "claimTypeMaster", "Home")</li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item"><i class="fa fa-sign-out  arrow"></i>@Html.ActionLink("Organization Hierarchy", "organizationHierarchy", "Home")</li>
+
                                     </ul>
                                 </nav>
                             </div>

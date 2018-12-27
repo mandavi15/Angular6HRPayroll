@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewBag.Title = "organizationHierarchy";
+}
+
+
+<html>
+<head>
+    <link href="~/Content/css/main.css" rel="stylesheet" />
+    <link href="~/Content/css/hierarchy-view.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <div class="container-fluid gridBody">
+
+        <div class="buttonCon pull-right">
+
+            <button type="button" class="btn templateBg"><img src="~/Content/images/home-icon.png" alt="home" />@Html.ActionLink("Home", "HRAreaPage", "Home")</button>
+        </div>
+        <h5>Organization Hierarchy</h5>
+
+        <div class="hv-container">
+            <div class="hv-wrapper">
+
+                <!-- Key component -->
+                <div class="hv-item">
+
+                    <div class="hv-item-parent">
+                        <p class="simple-card"> Parent </p>
+                    </div>
+
+                    <div class="hv-item-children">
+
+                        <div class="hv-item-child">
+                            <!-- Key component -->
+                            <div class="hv-item">
+
+                                <div class="hv-item-parent">
+                                    <p class="simple-card"> Parent </p>
+                                </div>
+
+                                <div class="hv-item-children">
+
+                                    <div class="hv-item-child">
+                                        <p class="simple-card"> Child 1 </p>
+                                    </div>
+
+
+                                    <div class="hv-item-child">
+                                        <p class="simple-card"> Child 2 </p>
+                                    </div>
+
+                                    <div class="hv-item-child">
+                                        <p class="simple-card"> Child 2 </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                  
+
+                        <div class="hv-item-child">
+                            <p class="simple-card"> Child 2 </p>
+                        </div>
+
+                        <div class="hv-item-child">
+                            <p class="simple-card"> Child 3 </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        @*<div class="buttonCon pull-left mt-3">
+                <button type="submit" class="btn templateBg"><img src="~/Content/images/new-icon.png" alt="new">Create</button>
+                <button type="button" id="btnEdit" class="btn templateBg"><img src="~/Content/images/edit-icon.png" alt="edit" />Edit</button>
+                <button type="submit" class="btn templateBg" data-toggle="modal" data-target="#successPopup"><img src="~/Content/images/save-icon.png" alt="save" />Save</button>
+                <button type="button" id="btnDelete" class="btn templateBg" data-toggle="modal" data-target="#deletePopup"><img src="~/Content/images/delete-icon.png" alt="delete" />Delete</button>
+            </div>*@
+    </div>
+</body>
+</html>
+

@@ -23,7 +23,6 @@
             <div class="row ">
                 <div class="col-12 col-md-6">
                     <div class="buttonCon pull-left ">
-
                         <button type="button" class="btn templateBg" ><img src="~/Content/images/new-icon.png" alt="new">Add New</button>
                     </div>
 
@@ -60,9 +59,6 @@
 </div>
 <script type="text/javascript" charset="utf-8">
 
-    // specify the columns
-
-
     var columnDefs = [
         { headerName: "All", checkboxSelection: true, field: "all", width: 80 },
         { headerName: "Sr. No.", field: "sl", width: 100 },
@@ -75,7 +71,6 @@
         { headerName: "Status", field: "Status", width: 100, editable: true }
     ];
 
-    // specify the data
     var rowData = [
         { all: "", checkboxSelection: true, sl: "1", claimType: "Conveyance", FromDate: "01/12/2018", ToDate: "05/12/2018", ReceiptNo: "Receipt 001", amount: "Rs.2000", Attachment:"abc.png", Status:"Yes" },
         { all: "", checkboxSelection: true, sl: "2", claimType: "Conveyance", FromDate: "01/12/2018", ToDate: "05/12/2018", ReceiptNo: "Receipt 001", amount: "Rs.2000", Attachment: "def.png", Status: "No" },
@@ -83,7 +78,6 @@
         { all: "", checkboxSelection: true, sl: "4", claimType: "Conveyance", FromDate: "01/12/2018", ToDate: "05/12/2018", ReceiptNo: "Receipt 001", amount: "Rs.2000", Attachment: "jkl.png", Status: "No" },
         { all: "", checkboxSelection: true, sl: "5", claimType: "Conveyance", FromDate: "01/12/2018", ToDate: "05/12/2018", ReceiptNo: "Receipt 001", amount: "Rs.2000", Attachment: "abcd.png", Status: "Yes" }];
 
-    // let the grid know which columns and what data to use
     var gridOptions = {
         columnDefs: columnDefs,
         rowData: rowData,
@@ -91,10 +85,8 @@
         enableFilter: true
     };
 
-    // lookup the container we want the Grid to use
     var eGridDiv = document.querySelector('#myGrid2');
 
-    // create the grid passing in the div to use together with the columns & data we want to use
     new agGrid.Grid(eGridDiv, gridOptions);
 
 

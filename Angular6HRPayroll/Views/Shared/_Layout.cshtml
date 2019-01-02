@@ -29,7 +29,32 @@
     <script>var jquery_1_12_1_min_p = jQuery.noConflict();</script>
     <link href="~/Content/css/ag-grid.css" rel="stylesheet" />
     <link href="~/Content/css/ag-theme-balham.css" rel="stylesheet" />
+    <link href="~/Content/css/jquerysctipttop.css" rel="stylesheet" />
+    <link href="~/Content/css/orgchart.css" rel="stylesheet" />
+    <script src="~/Content/js/orgchart.js"></script>
+    <script>var jquery_1_12_1_org_p = jQuery.noConflict();</script>
+    <script>
+        jquery_1_12_1_org_p(document).ready(function () {
+            // create a tree
+            jquery_1_12_1_org_p("#tree-data").jOrgChart({
+                chartElement: jquery_1_12_1_org_p("#tree-view"),
+                nodeClicked: nodeClicked
+            });
 
+            // lighting a node in the selection
+            function nodeClicked(node, type) {
+                node = node || jquery_1_12_1_org_p(this);
+                jquery_1_12_1_org_p('.jOrgChart .selected').removeClass('selected');
+                node.addClass('selected');
+            }
+        });
+    </script>
+    <style>
+        .container {
+            max-width: 960px;
+            margin: 50px auto;
+        }
+    </style>
     <script src="/systemjs.config.js"></script>
 
 

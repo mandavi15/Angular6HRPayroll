@@ -85,6 +85,11 @@ namespace Angular6HRPayroll.Controllers
 
             return View();
         }
+        public ActionResult organizationHierarchy1()
+        {
+
+            return View();
+        }
     }
 
 }

@@ -8,7 +8,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 //import { Component } from '@angular/core';
 var core_1 = require("@angular/core");
-//import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
         this.name = 'Angular';

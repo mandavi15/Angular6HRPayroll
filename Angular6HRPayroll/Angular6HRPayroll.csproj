@@ -170,6 +170,7 @@
     <Content Include="Content\css\main.css" />
     <Content Include="Content\css\mdtimepicker.css" />
     <Content Include="Content\css\mdtimepicker.min.css" />
+    <Content Include="Content\css\orgchart.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\images\add-icon-lg.png" />
     <Content Include="Content\images\add-icon.png" />
@@ -279,6 +280,8 @@
     <Content Include="Content\images\next-icon-black1.png" />
     <Content Include="Content\images\next-icon.png" />
     <Content Include="Content\images\order-icon.png" />
+    <Content Include="Content\images\orgchart.minus.png" />
+    <Content Include="Content\images\orgchart.plus.png" />
     <Content Include="Content\images\payday_icon.png" />
     <Content Include="Content\images\payment-icon.png" />
     <Content Include="Content\images\payment-setup.png" />
@@ -341,6 +344,7 @@
     <Content Include="Content\js\mdtimepicker.min.js" />
     <Content Include="Content\js\moment.min.js" />
     <Content Include="Content\js\multiselect.js" />
+    <Content Include="Content\js\orgchart.js" />
     <Content Include="Content\js\script.js" />
     <Content Include="Content\js\typescript.compile.min.js" />
     <Content Include="favicon.ico" />
@@ -426,6 +430,7 @@
     <Content Include="Views\Home\claimReimbursement.cshtml" />
     <Content Include="Views\Home\claimTypeMaster.cshtml" />
     <Content Include="Views\Home\organizationHierarchy.cshtml" />
+    <Content Include="Views\Home\organizationHierarchy1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

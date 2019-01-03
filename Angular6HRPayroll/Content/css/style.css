@@ -1785,6 +1785,58 @@ span.localizationIcon { width: 64px; border-radius: 50%; margin: 0 auto; height:
     padding: 3px 10px;
     cursor: pointer;
 }
+.ag-theme-balham .ag-row-odd {
+    background-color: #e7eeef !important;
+}
+.ag-theme-balham .ag-header {
+    background-color: #b7dbde !important;
+    color: #3e3e3e !important;
+}
+
+.red .ag-theme-balham .ag-row-odd {
+    background-color: #f7eeef !important;
+}
+
+.red .ag-theme-balham .ag-header {
+    background-color: #efc6c9 !important;
+    color: #3e3e3e !important;
+}
+.royal-blue .ag-theme-balham .ag-row-odd {
+    background-color: #dbd9e6 !important;
+}
+
+.royal-blue .ag-theme-balham .ag-header {
+    background-color: #a7a4bf !important;
+    color: #3e3e3e !important;
+}
+
+.orange .ag-theme-balham .ag-row-odd {
+    background-color: #f5e8e0 !important;
+}
+
+.orange .ag-theme-balham .ag-header {
+    background-color: #cca68b !important;
+    color: #3e3e3e !important;
+}
+
+.purple .ag-theme-balham .ag-row-odd {
+    background-color: #dbd9e6 !important;
+}
+
+.purple .ag-theme-balham .ag-header {
+    background-color: #a7a4bf !important;
+    color: #3e3e3e !important;
+}
+
+.black .ag-theme-balham .ag-row-odd {
+    background-color: #e6e6e8 !important;
+}
+
+.black .ag-theme-balham .ag-header {
+    background-color: #a6a6a9 !important;
+    color: #3e3e3e !important;
+}
+
 @media (min-width:1366px) {
     .companySelect {
             display: inline-block;

@@ -38,12 +38,13 @@ var AppComponent = /** @class */ (function () {
         }
         alert('SUCCESS!! :-)');
     };
+    var _a;
     AppComponent = __decorate([
         core_1.Component({
             selector: 'app',
             templateUrl: 'app.component.html'
         }),
-        __metadata("design:paramtypes", [forms_1.FormBuilder])
+        __metadata("design:paramtypes", [typeof (_a = typeof forms_1.FormBuilder !== "undefined" && forms_1.FormBuilder) === "function" ? _a : Object])
     ], AppComponent);
     return AppComponent;
 }());
